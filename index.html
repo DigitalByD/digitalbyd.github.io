@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalByD Studio | Magazin virtual pentru invitatii digitale si produse de eveniment</title>
+    <meta name="description" content="Magazin virtual cu invitatii digitale pentru nunta, botez si evenimente private, coduri QR pentru poze si videoclipuri si alte produse digitale pentru evenimente.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand-mark" aria-label="DigitalByD Studio home">
+                <img src="img/logo.png" alt="DigitalByD Studio Logo" class="logo">
+            </a>
+
+            <input type="checkbox" id="menu-toggle" aria-label="Deschide meniul">
+            <div class="header-actions">
+                <a href="cosul-meu.html" class="mobile-cart-link" data-cart-link aria-label="Cosul meu">
+                    <span class="mobile-cart-label">Cos</span>
+                    <span class="cart-count is-empty" data-cart-count>0</span>
+                </a>
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            </div>
+
+            <nav class="nav-links" aria-label="Meniu principal">
+                <a href="index.html" class="active">Acasa</a>
+                <a href="shop.html">Magazin</a>
+                <a href="cosul-meu.html" class="cart-link" data-cart-link>Cosul meu <span class="cart-count is-empty" data-cart-count>0</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="home-hero">
+            <div class="home-hero-inner">
+                <p class="hero-label">Magazin virtual pentru evenimente speciale</p>
+                <h1>Invitatii digitale, coduri QR si produse care fac evenimentul tau mai frumos si mai usor de organizat</h1>
+                <p class="hero-description">
+                    La DigitalByD gasesti invitatii digitale pentru nunta, botez si evenimente private, plus produse
+                    complementare precum coduri QR pentru poze si videoclipuri, save the date si alte materiale digitale
+                    create special pentru evenimentul tau.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="shop.html" class="btn-primary">Descopera magazinul</a>
+                    <button class="btn-secondary" type="button" onclick="openContact()">Comanda personalizata</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="home-section" id="servicii">
+            <div class="section-heading">
+                <p class="section-kicker">Ce gasesti in magazin</p>
+                <h2>Produse digitale create sa fie frumoase, utile si usor de comandat</h2>
+                <p class="section-subtitle">
+                    Fiecare produs este gandit pentru un eveniment real: sa arate premium, sa transmita emotie si sa iti usureze organizarea.
+                </p>
+            </div>
+
+            <div class="home-grid-3">
+                <article class="home-card bg-invitatii">
+                    <div class="card-overlay">
+                        <h3>Invitatii digitale</h3>
+                        <p>Pentru nunta, botez si evenimente private, cu modele elegante si personalizare rapida.</p>
+                    </div>
+                </article>
+
+                <article class="home-card bg-template">
+                    <div class="card-overlay">
+                        <h3>Coduri QR pentru poze si video</h3>
+                        <p>Invitatii pot incarca rapid amintirile de la eveniment printr-un cod QR pus pe masa sau la intrare.</p>
+                    </div>
+                </article>
+
+                <article class="home-card bg-planner">
+                    <div class="card-overlay">
+                        <h3>Alte produse digitale</h3>
+                        <p>Save the date, informatii pentru invitati, materiale extra si produse digitale care completeaza evenimentul.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="home-section invitation-showcase-section" id="colectie-invitatii">
+            <div class="section-heading">
+                <p class="section-kicker">Colectia de invitatii</p>
+                <h2>Modele reale, deja pregatite sa fie vazute ca intr-un showroom digital</h2>
+                <p class="section-subtitle">
+                    Am adus in site preview-uri autentice din colectiile create pentru nunta si botez, ca sa se simta mai clar stilul fiecarui model.
+                </p>
+            </div>
+
+            <div class="showcase-mosaic">
+                <button class="showcase-card showcase-card-large" type="button" onclick="openGallery('elegant')">
+                    <img src="img/invitatii/elegant-preview.png" alt="Preview invitatie Elegant" loading="lazy">
+                    <div class="showcase-copy">
+                        <span class="tag">Nunta</span>
+                        <h3>Elegant</h3>
+                        <p>O invitatie premium, luminoasa si foarte rafinata.</p>
+                    </div>
+                </button>
+
+                <button class="showcase-card" type="button" onclick="openGallery('minimalist')">
+                    <img src="img/invitatii/minimalist-premium-preview.png" alt="Preview invitatie Minimalist Premium" loading="lazy">
+                    <div class="showcase-copy">
+                        <span class="tag">Minimal</span>
+                        <h3>Minimalist Premium</h3>
+                    </div>
+                </button>
+
+                <button class="showcase-card" type="button" onclick="openGallery('vintage')">
+                    <img src="img/invitatii/vintage-premium-preview.png" alt="Preview invitatie The Wedding Times" loading="lazy">
+                    <div class="showcase-copy">
+                        <span class="tag">Editorial</span>
+                        <h3>The Wedding Times</h3>
+                    </div>
+                </button>
+
+                <button class="showcase-card" type="button" onclick="openGallery('babyPastel')">
+                    <img src="img/invitatii/baby-pastel-preview.png" alt="Preview invitatie Baby Pastel" loading="lazy">
+                    <div class="showcase-copy">
+                        <span class="tag">Botez</span>
+                        <h3>Baby Pastel</h3>
+                    </div>
+                </button>
+
+                <button class="showcase-card" type="button" onclick="openGallery('littlePrincePrincess')">
+                    <img src="img/invitatii/little-prince-princess-preview.png" alt="Preview invitatie Little Prince Princess" loading="lazy">
+                    <div class="showcase-copy">
+                        <span class="tag">Regal</span>
+                        <h3>Little Prince / Princess</h3>
+                    </div>
+                </button>
+            </div>
+
+            <div class="hero-buttons showcase-actions">
+                <a href="shop.html#colectie-invitatii" class="btn-primary">Vezi showroom-ul complet</a>
+                <button class="btn-secondary" type="button" onclick="openContact('Invitatie digitala personalizata')">Vreau un model personalizat</button>
+            </div>
+        </section>
+
+        <section class="home-section value-section">
+            <div class="section-heading">
+                <p class="section-kicker">Ce le place clientilor</p>
+                <h2>Produse moderne pentru persoane care vor ceva frumos, rapid si practic</h2>
+            </div>
+
+            <div class="home-grid-3">
+                <div class="home-highlight">
+                    <h3>Usor de trimis</h3>
+                    <p>Invitatiile digitale ajung instant pe WhatsApp, email sau social media, fara drumuri si fara griji.</p>
+                </div>
+                <div class="home-highlight">
+                    <h3>Aspect premium</h3>
+                    <p>Designul ramane elegant si coerent, chiar daca produsul este digital si simplu de folosit.</p>
+                </div>
+                <div class="home-highlight">
+                    <h3>Personalizare pentru fiecare eveniment</h3>
+                    <p>Textele, culorile si detaliile pot fi adaptate astfel incat produsul sa se potriveasca povestii tale.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-section process-section" id="proces">
+            <div class="section-heading">
+                <p class="section-kicker">Cum comanzi</p>
+                <h2>Totul este gandit sa fie simplu si clar</h2>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <span class="step-number">01</span>
+                    <h3>Alegi produsul</h3>
+                    <p>Intri in magazin, vezi modelele si alegi produsul care ti se potriveste.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">02</span>
+                    <h3>Trimiti detaliile</h3>
+                    <p>Imi spui data, numele, locatia si orice alte informatii importante pentru personalizare.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">03</span>
+                    <h3>Primesti varianta ta</h3>
+                    <p>Lucrez produsul in stilul ales si il adaptez in functie de evenimentul tau.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">04</span>
+                    <h3>Il folosesti imediat</h3>
+                    <p>Primesti produsul digital gata de trimis, publicat sau folosit la eveniment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-section audience-section">
+            <div class="section-heading">
+                <p class="section-kicker">Pentru ce tipuri de evenimente</p>
+                <h2>Magazinul este construit pentru produse care pot fi comandate rapid si adaptate frumos</h2>
+            </div>
+
+            <div class="audience-list">
+                <div class="audience-item">Nunti elegante, moderne sau romantice</div>
+                <div class="audience-item">Botezuri delicate, vesele sau rafinate</div>
+                <div class="audience-item">Aniversari, majorate si petreceri private</div>
+                <div class="audience-item">Evenimente unde vrei QR pentru colectarea pozelor si videoclipurilor</div>
+            </div>
+        </section>
+
+        <section class="home-section home-contact" id="contact-cta">
+            <div class="contact-panel">
+                <p class="section-kicker">Comanda sau intreaba</p>
+                <h2>Spune-mi ce produs iti doresti si il pregatim pentru evenimentul tau</h2>
+                <p>
+                    Poti alege un model din magazin sau poti cere o varianta personalizata. Daca vrei un pachet complet,
+                    putem combina invitatia digitala cu QR-uri si alte produse digitale potrivite evenimentului tau.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-contact" type="button" onclick="openContact()">Trimite cererea</button>
+                    <a href="shop.html" class="btn-secondary">Vezi toate produsele</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 DigitalByD Studio - Toate drepturile rezervate
+    </footer>
+
+    <div id="galleryModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="gallery-content" role="document">
+            <button class="close-gallery" type="button" aria-label="Inchide galerie" onclick="closeGallery()">&times;</button>
+            <div class="gallery-panel">
+                <div class="gallery-copy">
+                    <span class="gallery-label">Preview scrollabil</span>
+                    <h2 id="galleryTitle">Galerie</h2>
+                    <p id="galleryDescription" class="gallery-description"></p>
+                    <p class="gallery-tip">Preview-ul deschis iti permite sa dai scroll in invitatie, nu doar sa vezi o poza mica.</p>
+                    <div class="gallery-actions">
+                        <button id="galleryOrderButton" class="btn-primary" type="button">Comanda modelul</button>
+                        <a href="shop.html#colectie-invitatii" class="btn-secondary">Vezi colectia completa</a>
+                    </div>
+                </div>
+
+                <div class="gallery-device">
+                    <div id="galleryScroll" class="gallery-scroll" aria-live="polite">
+                        <img id="galleryImage" alt="Preview complet invitatie">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="contact-modal" aria-hidden="true">
+        <div class="contact-content">
+            <button class="close-contact" type="button" onclick="closeContact()" aria-label="Inchide fereastra">&times;</button>
+
+            <h2>Trimite o cerere</h2>
+            <p class="contact-intro">Scrie-mi ce produs iti doresti, iar eu iti raspund cu o varianta potrivita pentru evenimentul tau.</p>
+
+            <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+            >
+                <input type="hidden" name="form-name" value="contact">
+                <input type="hidden" name="bot-field">
+
+                <p>
+                    <label>Numele tau
+                        <input type="text" name="name" required>
+                    </label>
+                </p>
+
+                <p>
+                    <label>Email
+                        <input type="email" name="email" required>
+                    </label>
+                </p>
+
+                <p>
+                    <label>Tip produs
+                        <select name="subject" id="subjectField" required>
+                            <option value="Invitatie digitala">Invitatie digitala</option>
+                            <option value="QR pentru poze si videoclipuri">QR pentru poze si videoclipuri</option>
+                            <option value="Alt produs digital">Alt produs digital</option>
+                            <option value="Pachet personalizat">Pachet personalizat</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p>
+                    <label>Data evenimentului
+                        <input type="text" name="event-date" placeholder="Ex: 12 septembrie 2026">
+                    </label>
+                </p>
+
+                <p>
+                    <label>Mesaj
+                        <textarea name="message" id="messageField" required placeholder="Scrie-mi ce produs iti doresti, pentru ce tip de eveniment si orice detalii importante."></textarea>
+                    </label>
+                </p>
+
+                <p>
+                    <button type="submit" class="btn-contact">Trimite mesajul</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const galleries = {
+            minimalist: {
+                title: "Minimalist Premium",
+                description: "Invitatie de nunta in format de telefon, cu tipografie eleganta si un preview curat, usor de parcurs prin scroll.",
+                image: "img/invitatii/minimalist-premium-preview.png",
+                anchor: "shop.html#invitatii-nunta"
+            },
+            elegant: {
+                title: "Elegant",
+                description: "Model premium, luminos si rafinat, pentru o prezentare clasica si bine finisata.",
+                image: "img/invitatii/elegant-preview.png",
+                anchor: "shop.html#invitatii-nunta"
+            },
+            vintage: {
+                title: "The Wedding Times",
+                description: "Concept editorial cu personalitate, inspirat de ziarul de colectie si gandit ca model statement.",
+                image: "img/invitatii/vintage-premium-preview.png",
+                anchor: "shop.html#invitatii-nunta"
+            },
+            babyPastel: {
+                title: "Baby Pastel",
+                description: "Invitatie de botez delicata, cu ritm calm si paleta luminoasa, perfecta pentru o prezentare blanda.",
+                image: "img/invitatii/baby-pastel-preview.png",
+                anchor: "shop.html#invitatii-botez"
+            },
+            littlePrincePrincess: {
+                title: "Little Prince / Princess",
+                description: "Invitatie de botez cu directie regala si compozitie eleganta, gandita sa se parcurga fluid pe telefon.",
+                image: "img/invitatii/little-prince-princess-preview.png",
+                anchor: "shop.html#invitatii-botez"
+            }
+        };
+
+        const galleryModal = document.getElementById("galleryModal");
+        const galleryTitle = document.getElementById("galleryTitle");
+        const galleryDescription = document.getElementById("galleryDescription");
+        const galleryImage = document.getElementById("galleryImage");
+        const galleryScroll = document.getElementById("galleryScroll");
+        const galleryOrderButton = document.getElementById("galleryOrderButton");
+
+        function openGallery(key) {
+            const gallery = galleries[key];
+            if (!gallery) {
+                return;
+            }
+
+            galleryTitle.textContent = gallery.title;
+            galleryDescription.textContent = gallery.description;
+            galleryImage.src = gallery.image;
+            galleryImage.alt = gallery.title + " - preview complet";
+            galleryScroll.scrollTop = 0;
+            galleryOrderButton.textContent = "Vezi pachetele modelului";
+            galleryOrderButton.onclick = function() {
+                closeGallery();
+                if (gallery.anchor) {
+                    window.location.href = gallery.anchor;
+                }
+            };
+
+            galleryModal.classList.add("show");
+            galleryModal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeGallery() {
+            galleryModal.classList.remove("show");
+            galleryModal.setAttribute("aria-hidden", "true");
+            galleryImage.src = "";
+            galleryImage.alt = "Preview complet invitatie";
+            document.body.style.overflow = "";
+        }
+
+        function openContact(productName) {
+            const modal = document.getElementById("contactModal");
+            const messageField = document.getElementById("messageField");
+            const subjectField = document.getElementById("subjectField");
+
+            if (productName) {
+                messageField.value = "Buna! Ma intereseaza produsul: " + productName + ".\nEvenimentul meu este...";
+
+                if (productName.toLowerCase().includes("qr")) {
+                    subjectField.value = "QR pentru poze si videoclipuri";
+                } else if (productName.toLowerCase().includes("pachet")) {
+                    subjectField.value = "Pachet personalizat";
+                } else {
+                    subjectField.value = "Invitatie digitala";
+                }
+            } else {
+                messageField.value = "";
+                subjectField.value = "Invitatie digitala";
+            }
+
+            modal.style.display = "flex";
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeContact() {
+            const modal = document.getElementById("contactModal");
+            modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        window.addEventListener("click", function(event) {
+            const gallery = document.getElementById("galleryModal");
+            const modal = document.getElementById("contactModal");
+            if (event.target === gallery) {
+                closeGallery();
+            }
+            if (event.target === modal) {
+                closeContact();
+            }
+        });
+
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeGallery();
+                closeContact();
+            }
+        });
+    </script>
+    <script src="storefront.js"></script>
+</body>
+</html>

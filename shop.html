@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazin virtual | DigitalByD Studio</title>
+    <meta name="description" content="Magazin virtual mobil-first cu invitatii digitale, produse QR, save the date si resurse wedding planner pentru evenimente elegante.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand-mark" aria-label="DigitalByD Studio home">
+                <img src="img/logo.png" alt="DigitalByD Studio Logo" class="logo">
+            </a>
+
+            <input type="checkbox" id="menu-toggle" aria-label="Deschide meniul">
+            <div class="header-actions">
+                <a href="cosul-meu.html" class="mobile-cart-link" data-cart-link aria-label="Cosul meu">
+                    <span class="mobile-cart-label">Cos</span>
+                    <span class="cart-count is-empty" data-cart-count>0</span>
+                </a>
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            </div>
+
+            <nav class="nav-links" aria-label="Meniu principal">
+                <a href="index.html">Acasa</a>
+                <a href="shop.html" class="active">Magazin</a>
+                <a href="cosul-meu.html" class="cart-link" data-cart-link>Cosul meu <span class="cart-count is-empty" data-cart-count>0</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="portfolio-hero" aria-labelledby="hero-title">
+            <p class="section-kicker">Magazin virtual DigitalByD</p>
+            <h1 id="hero-title">Invitatii digitale, QR-uri si produse elegante pentru evenimentul tau</h1>
+            <p class="compact-lead">
+                Aici gasesti preview-urile reale, pachetele pentru invitatii si produsele digitale extra:
+                invitatii de nunta, botez, evenimente private, QR-uri, save the date si materiale de wedding planner.
+            </p>
+            <div class="store-quicknav" aria-label="Categorii magazin">
+                <a class="quicknav-pill" href="#colectie-invitatii">Preview</a>
+                <a class="quicknav-pill" href="#invitatii-nunta">Invitatii nunta</a>
+                <a class="quicknav-pill" href="#invitatii-botez">Invitatii botez</a>
+                <a class="quicknav-pill" href="#evenimente-private">Evenimente private</a>
+                <a class="quicknav-pill" href="#qr-uri">QR-uri</a>
+                <a class="quicknav-pill" href="#save-the-date">Save the Date</a>
+                <a class="quicknav-pill" href="#wedding-planner">Wedding Planner</a>
+            </div>
+
+            <div class="custom-brief-panel">
+                <div class="custom-brief-copy">
+                    <span class="tag">Personalizare proprie</span>
+                    <h3>Vrei o invitatie de nunta facuta exact pe stilul vostru?</h3>
+                    <p>Lasa-mi aici directia dorita, culorile si cateva repere vizuale, iar eu iti revin cu o propunere personalizata.</p>
+                </div>
+                <form class="custom-brief-form" name="style-request-wedding" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="style-request-wedding">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="category" value="Invitatii de nunta">
+                    <div class="custom-brief-grid">
+                        <label>
+                            <span>Nume</span>
+                            <input type="text" name="name" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            <span>Stil dorit</span>
+                            <input type="text" name="style" placeholder="Ex: minimalist, boho, editorial" required>
+                        </label>
+                        <label>
+                            <span>Culori dorite</span>
+                            <input type="text" name="palette" placeholder="Ex: ivory, champagne, negru" required>
+                        </label>
+                    </div>
+                    <label class="custom-brief-full">
+                        <span>Detalii / inspiratie</span>
+                        <textarea name="details" required placeholder="Spune-mi ce modele iti plac, ce vibe vrei si orice repere importante pentru invitatia ta."></textarea>
+                    </label>
+                    <button type="submit" class="btn-contact">Trimite cererea de personalizare</button>
+                </form>
+            </div>
+
+            <div class="custom-brief-panel">
+                <div class="custom-brief-copy">
+                    <span class="tag">Personalizare proprie</span>
+                    <h3>Vrei un model de botez in culorile si povestea voastra?</h3>
+                    <p>Poti sa-mi lasi aici stilul dorit, paleta si detaliile importante, iar eu pregatesc o varianta facuta special pentru eveniment.</p>
+                </div>
+                <form class="custom-brief-form" name="style-request-baptism" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="style-request-baptism">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="category" value="Invitatii de botez">
+                    <div class="custom-brief-grid">
+                        <label>
+                            <span>Nume</span>
+                            <input type="text" name="name" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            <span>Stil dorit</span>
+                            <input type="text" name="style" placeholder="Ex: pastel, story, regal" required>
+                        </label>
+                        <label>
+                            <span>Culori dorite</span>
+                            <input type="text" name="palette" placeholder="Ex: bleu, ivory, roz pudrat" required>
+                        </label>
+                    </div>
+                    <label class="custom-brief-full">
+                        <span>Detalii / inspiratie</span>
+                        <textarea name="details" required placeholder="Scrie-mi numele copilului, tema botezului si orice detaliu care te ajuta sa obtii exact stilul dorit."></textarea>
+                    </label>
+                    <button type="submit" class="btn-contact">Trimite cererea de personalizare</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="portfolio-reel" id="colectie-invitatii" aria-label="Preview real din colectie">
+            <div class="section-heading">
+                <p class="section-kicker">Preview real din colectie</p>
+            </div>
+
+            <div class="preview-strip">
+                <button class="preview-tile" type="button" onclick="openGallery('minimalist')">
+                    <img src="img/invitatii/minimalist-premium-preview.png" alt="Preview Minimalist Premium" loading="lazy">
+                    <div class="preview-tile-copy">
+                        <span class="tag">Nunta</span>
+                        <h3>Minimalist</h3>
+                        <p>Clean, elegant si foarte bun pentru telefon.</p>
+                    </div>
+                </button>
+
+                <button class="preview-tile" type="button" onclick="openGallery('elegant')">
+                    <img src="img/invitatii/elegant-preview.png" alt="Preview Elegant" loading="lazy">
+                    <div class="preview-tile-copy">
+                        <span class="tag">Nunta</span>
+                        <h3>Elegant</h3>
+                        <p>Look premium, luminos si foarte rafinat.</p>
+                    </div>
+                </button>
+
+                <button class="preview-tile" type="button" onclick="openGallery('vintage')">
+                    <img src="img/invitatii/vintage-premium-preview.png" alt="Preview The Wedding Times" loading="lazy">
+                    <div class="preview-tile-copy">
+                        <span class="tag">Editorial</span>
+                        <h3>Wedding Times</h3>
+                        <p>Un model statement cu vibe de ziar de colectie.</p>
+                    </div>
+                </button>
+
+                <button class="preview-tile" type="button" onclick="openGallery('bohoChic')">
+                    <img src="img/invitatii/boho-chic-preview.png" alt="Preview Boho Chic" loading="lazy">
+                    <div class="preview-tile-copy">
+                        <span class="tag">Boho</span>
+                        <h3>Boho Chic</h3>
+                        <p>Romantic, cald si foarte potrivit pentru o nunta relaxat-eleganta.</p>
+                    </div>
+                </button>
+
+                <button class="preview-tile" type="button" onclick="openGallery('destinationTravel')">
+                    <img src="img/invitatii/destination-travel-preview.png" alt="Preview Destination Travel" loading="lazy">
+                    <div class="preview-tile-copy">
+                        <span class="tag">Travel</span>
+                        <h3>Destination</h3>
+                        <p>Passport wedding mood, cu vibe premium de plecare si aventura.</p>
+                    </div>
+                </button>
+
+                <button class="preview-tile" type="button" onclick="openGallery('modernBold')">
+                    <img src="img/invitatii/modern-bold-preview.png" alt="Preview Modern Bold" loading="lazy">
+                    <div class="preview-tile-copy">
+                        <span class="tag">Bold</span>
+                        <h3>Modern Bold</h3>
+                        <p>Black-gold statement, dramatic si memorabil de la primul scroll.</p>
+                    </div>
+                </button>
+
+                <button class="preview-tile" type="button" onclick="openGallery('babyPastel')">
+                    <img src="img/invitatii/baby-pastel-preview.png" alt="Preview Baby Pastel" loading="lazy">
+                    <div class="preview-tile-copy">
+                        <span class="tag">Botez</span>
+                        <h3>Baby Pastel</h3>
+                        <p>Paleta blanda, aerisita si foarte delicata.</p>
+                    </div>
+                </button>
+
+                <button class="preview-tile" type="button" onclick="openGallery('littlePrincePrincess')">
+                    <img src="img/invitatii/little-prince-princess-preview.png" alt="Preview Little Prince Princess" loading="lazy">
+                    <div class="preview-tile-copy">
+                        <span class="tag">Regal</span>
+                        <h3>Little Prince</h3>
+                        <p>Botez premium cu directie regala si memorabila.</p>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section class="portfolio-section" aria-labelledby="pricing-title">
+            <div class="section-heading">
+                <p class="section-kicker">Pachete invitatii</p>
+                <h2 id="pricing-title">3 pachete clare, usor de ales</h2>
+                <p>Am pastrat 3 niveluri clare. In magazin alegi modelul, selectezi pachetul si il adaugi direct in cos.</p>
+            </div>
+
+            <div class="price-grid">
+                <article class="price-card">
+                    <span class="tag">Basic</span>
+                    <h3>Pachet Basic</h3>
+                    <span class="price-range">100 - 150 lei</span>
+                    <ul>
+                        <li>Invitatie simpla, fara formular</li>
+                        <li>Include detaliile evenimentului</li>
+                        <li>Confirmarile se fac prin datele de contact</li>
+                    </ul>
+                </article>
+
+                <article class="price-card">
+                    <span class="tag">Standard</span>
+                    <h3>Pachet Standard</h3>
+                    <span class="price-range">200 lei</span>
+                    <ul>
+                        <li>Structura mai completa si mai interactiva</li>
+                        <li>Formular simplu de confirmare</li>
+                        <li>Ideal pentru majoritatea evenimentelor</li>
+                    </ul>
+                </article>
+
+                <article class="price-card">
+                    <span class="tag">Premium</span>
+                    <h3>Pachet Premium</h3>
+                    <span class="price-range">250 - 400 lei</span>
+                    <ul>
+                        <li>Personalizare avansata in stilul dorit</li>
+                        <li>RSVP complet, animatii si extra efecte</li>
+                        <li>Muzica de fundal si prezentare wow</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="portfolio-section category-block" id="invitatii-nunta" aria-labelledby="wedding-title">
+            <div class="section-heading">
+                <h2 id="wedding-title">Invitatii de nunta</h2>
+                <p>Modelele cele mai cautate pentru nunti moderne, romantice si premium, fiecare cu selector de pachet si buton de adaugare in cos.</p>
+            </div>
+
+            <div class="category-grid">
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/minimalist-premium-preview.png" alt="Minimalist Premium" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Minimal</span>
+                            <span class="inv-card-kind">Nunta</span>
+                        </div>
+                        <h3>Minimalist Premium</h3>
+                        <p>Invitatie curata si eleganta, perfecta pentru telefon.</p>
+                        <div class="package-chooser" data-id="minimalist-premium" data-model="Minimalist Premium" data-category="Invitatie de nunta" data-image="img/invitatii/minimalist-premium-preview.png">
+                            <label for="minimalist-package">Alege pachetul</label>
+                            <select class="package-select" id="minimalist-package">
+                                <option value="120" data-package="Basic" data-note="Fara formular, doar detaliile evenimentului si date de contact pentru confirmari.">Basic - 120 lei</option>
+                                <option value="200" data-package="Standard" data-note="Formular simplu de confirmare si structura mai completa.">Standard - 200 lei</option>
+                                <option value="320" data-package="Premium" data-note="Personalizare completa, formular RSVP, animatii si extra efecte.">Premium - 320 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('minimalist')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/elegant-preview.png" alt="Elegant" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Lux</span>
+                            <span class="inv-card-kind">Nunta</span>
+                        </div>
+                        <h3>Elegant</h3>
+                        <p>Model luminos si rafinat, cu look clasic premium.</p>
+                        <div class="package-chooser" data-id="elegant" data-model="Elegant" data-category="Invitatie de nunta" data-image="img/invitatii/elegant-preview.png">
+                            <label for="elegant-package">Alege pachetul</label>
+                            <select class="package-select" id="elegant-package">
+                                <option value="150" data-package="Basic" data-note="Varianta simpla, cu detalii clare si contact pentru confirmari.">Basic - 150 lei</option>
+                                <option value="200" data-package="Standard" data-note="Formular simplu si prezentare adaptata modelului.">Standard - 200 lei</option>
+                                <option value="350" data-package="Premium" data-note="Personalizare premium, RSVP complet, animatii si muzica.">Premium - 350 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('elegant')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/vintage-premium-preview.png" alt="The Wedding Times" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Editorial</span>
+                            <span class="inv-card-kind">Nunta</span>
+                        </div>
+                        <h3>The Wedding Times</h3>
+                        <p>Concept editorial memorabil, inspirat de un ziar de colectie.</p>
+                        <div class="package-chooser" data-id="wedding-times" data-model="The Wedding Times" data-category="Invitatie de nunta" data-image="img/invitatii/vintage-premium-preview.png">
+                            <label for="times-package">Alege pachetul</label>
+                            <select class="package-select" id="times-package">
+                                <option value="150" data-package="Basic" data-note="Structura simplificata, fara formular, cu detalii de baza.">Basic - 150 lei</option>
+                                <option value="200" data-package="Standard" data-note="Formular simplu si structurare echilibrata.">Standard - 200 lei</option>
+                                <option value="380" data-package="Premium" data-note="Versiune premium completa, animatii, formulare si personalizare bogata.">Premium - 380 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('vintage')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/boho-chic-preview.png" alt="Boho Chic" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Boho</span>
+                            <span class="inv-card-kind">Nunta</span>
+                        </div>
+                        <h3>Boho Chic</h3>
+                        <p>Model romantic si organic, cu vibe cald, floral si foarte placut pentru telefon.</p>
+                        <div class="package-chooser" data-id="boho-chic" data-model="Boho Chic" data-category="Invitatie de nunta" data-image="img/invitatii/boho-chic-preview.png">
+                            <label for="boho-package">Alege pachetul</label>
+                            <select class="package-select" id="boho-package">
+                                <option value="150" data-package="Basic" data-note="Invitatie simpla, fara formular, cu datele evenimentului si contact pentru confirmari.">Basic - 150 lei</option>
+                                <option value="200" data-package="Standard" data-note="Formular simplu de confirmare si prezentare echilibrata.">Standard - 200 lei</option>
+                                <option value="360" data-package="Premium" data-note="Personalizare completa, RSVP, animatii si detalii premium in stil boho chic.">Premium - 360 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('bohoChic')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/destination-travel-preview.png" alt="Destination Travel" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Travel</span>
+                            <span class="inv-card-kind">Nunta</span>
+                        </div>
+                        <h3>Destination / Travel</h3>
+                        <p>Perfecta pentru destination wedding, cu vibe de passport, itinerariu si vacanta eleganta.</p>
+                        <div class="package-chooser" data-id="destination-travel" data-model="Destination / Travel" data-category="Invitatie de nunta" data-image="img/invitatii/destination-travel-preview.png">
+                            <label for="destination-package">Alege pachetul</label>
+                            <select class="package-select" id="destination-package">
+                                <option value="150" data-package="Basic" data-note="Structura clara, fara formular, cu detaliile esentiale si contact pentru confirmari.">Basic - 150 lei</option>
+                                <option value="200" data-package="Standard" data-note="RSVP simplu si prezentare mai completa pentru destination wedding.">Standard - 200 lei</option>
+                                <option value="380" data-package="Premium" data-note="Personalizare completa, RSVP, animatii si experienta travel premium.">Premium - 380 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('destinationTravel')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/modern-bold-preview.png" alt="Modern Bold" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Bold</span>
+                            <span class="inv-card-kind">Nunta</span>
+                        </div>
+                        <h3>Modern Bold</h3>
+                        <p>Invitatie statement black-gold, pentru cupluri care vor o prezenta puternica si memorabila.</p>
+                        <div class="package-chooser" data-id="modern-bold" data-model="Modern Bold" data-category="Invitatie de nunta" data-image="img/invitatii/modern-bold-preview.png">
+                            <label for="modern-bold-package">Alege pachetul</label>
+                            <select class="package-select" id="modern-bold-package">
+                                <option value="150" data-package="Basic" data-note="Varianta simpla, fara formular, cu detaliile principale si date de contact pentru confirmari.">Basic - 150 lei</option>
+                                <option value="200" data-package="Standard" data-note="Formular simplu si structura completa, adaptata stilului modern bold.">Standard - 200 lei</option>
+                                <option value="390" data-package="Premium" data-note="Personalizare premium, RSVP complet, cronometru, animatii si extra efecte.">Premium - 390 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('modernBold')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="portfolio-section category-block" id="invitatii-botez" aria-labelledby="baptism-title">
+            <div class="section-heading">
+                <h2 id="baptism-title">Invitatii de botez</h2>
+                <p>Modele delicate, jucause sau regale, toate pregatite pentru format de telefon si adaugare directa in cos.</p>
+            </div>
+
+            <div class="category-grid">
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/baby-pastel-preview.png" alt="Baby Pastel" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Delicat</span>
+                            <span class="inv-card-kind">Botez</span>
+                        </div>
+                        <h3>Baby Pastel</h3>
+                        <p>Invitatie delicata si luminoasa, cu aer calm si elegant.</p>
+                        <div class="package-chooser" data-id="baby-pastel" data-model="Baby Pastel" data-category="Invitatie de botez" data-image="img/invitatii/baby-pastel-preview.png">
+                            <label for="baby-package">Alege pachetul</label>
+                            <select class="package-select" id="baby-package">
+                                <option value="120" data-package="Basic" data-note="Detalii esentiale si confirmari prin contact direct.">Basic - 120 lei</option>
+                                <option value="200" data-package="Standard" data-note="Formular simplu si prezentare mai completa.">Standard - 200 lei</option>
+                                <option value="320" data-package="Premium" data-note="Personalizare completa, RSVP, animatii si experienta premium.">Premium - 320 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('babyPastel')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/sweet-little-story-preview.png" alt="Sweet Little Story" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Story</span>
+                            <span class="inv-card-kind">Botez</span>
+                        </div>
+                        <h3>Sweet Little Story</h3>
+                        <p>Varianta calda si expresiva, cu ritm narativ de familie.</p>
+                        <div class="package-chooser" data-id="sweet-little-story" data-model="Sweet Little Story" data-category="Invitatie de botez" data-image="img/invitatii/sweet-little-story-preview.png">
+                            <label for="sweet-package">Alege pachetul</label>
+                            <select class="package-select" id="sweet-package">
+                                <option value="130" data-package="Basic" data-note="Invitatie simplificata, fara formular, cu contact pentru confirmari.">Basic - 130 lei</option>
+                                <option value="200" data-package="Standard" data-note="RSVP simplu si prezentare adaptata modelului.">Standard - 200 lei</option>
+                                <option value="340" data-package="Premium" data-note="Varianta bogata, cu animatii, formulare si extra detalii.">Premium - 340 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('sweetLittleStory')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium">
+                    <div class="product-card-visual">
+                        <img src="img/invitatii/little-prince-princess-preview.png" alt="Little Prince Princess" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Regal</span>
+                            <span class="inv-card-kind">Botez</span>
+                        </div>
+                        <h3>Little Prince / Princess</h3>
+                        <p>Model regal premium, cu prezenta eleganta si memorabila.</p>
+                        <div class="package-chooser" data-id="little-prince-princess" data-model="Little Prince / Princess" data-category="Invitatie de botez" data-image="img/invitatii/little-prince-princess-preview.png">
+                            <label for="prince-package">Alege pachetul</label>
+                            <select class="package-select" id="prince-package">
+                                <option value="150" data-package="Basic" data-note="Detalii de baza si confirmari prin datele de contact.">Basic - 150 lei</option>
+                                <option value="200" data-package="Standard" data-note="Formular simplu si structura completa.">Standard - 200 lei</option>
+                                <option value="380" data-package="Premium" data-note="Personalizare avansata, RSVP complet, animatii si extra look regal.">Premium - 380 lei</option>
+                            </select>
+                            <div class="card-actions">
+                                <button class="btn-primary" type="button" onclick="DigitalByDStore.addConfiguredProduct(this)">Adauga in cos</button>
+                                <button class="btn-secondary" type="button" onclick="openGallery('littlePrincePrincess')">Vezi preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="portfolio-section category-block" id="evenimente-private" aria-labelledby="private-title">
+            <div class="section-heading">
+                <h2 id="private-title">Evenimente private</h2>
+                <p>Pentru aniversari, majorate sau petreceri private unde vrei o invitatie frumoasa si usor de distribuit.</p>
+            </div>
+
+            <div class="category-grid">
+                <article class="product-card-premium" data-product-id="private-boboci" data-product-name="Invitatie eveniment privat - Balul Bobocilor" data-product-category="Eveniment privat" data-product-price="100" data-product-image="img/bob.png" data-product-note="Model premium pentru bal, cu program, dress code si RSVP simplu.">
+                    <div class="product-card-visual">
+                        <img src="img/bob.png" alt="Preview invitatie Balul Bobocilor" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Gala</span>
+                            <span class="inv-card-kind">Privat</span>
+                        </div>
+                        <h3>Balul Bobocilor</h3>
+                        <p>Concept glam, potrivit pentru liceu, facultate sau gala de debut.</p>
+                        <span class="product-card-price">100 lei</span>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('privateBoboci')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium" data-product-id="private-club" data-product-name="Invitatie eveniment privat - Club Night" data-product-category="Eveniment privat" data-product-price="100" data-product-image="img/club.png" data-product-note="Model puternic pentru club party, launch sau majorat premium.">
+                    <div class="product-card-visual">
+                        <img src="img/club.png" alt="Preview invitatie Club Night" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Night</span>
+                            <span class="inv-card-kind">Privat</span>
+                        </div>
+                        <h3>Club Night</h3>
+                        <p>Vibe urban, neon si foarte bun pentru party, launch sau eveniment de club.</p>
+                        <span class="product-card-price">100 lei</span>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('privateClubNight')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium" data-product-id="private-signature" data-product-name="Invitatie eveniment privat - Signature Soiree" data-product-category="Eveniment privat" data-product-price="100" data-product-image="img/18.png" data-product-note="Concept personalizat pentru aniversari elegante, cina festiva sau petreceri private speciale.">
+                    <div class="product-card-visual">
+                        <img src="img/18.png" alt="Preview invitatie Signature Soiree" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Custom</span>
+                            <span class="inv-card-kind">Privat</span>
+                        </div>
+                        <h3>Signature Soiree</h3>
+                        <p>Varianta premium pentru aniversari elegante, white night sau private dinner.</p>
+                        <span class="product-card-price">100 lei</span>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('privateSignatureSoiree')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="custom-brief-panel">
+                <div class="custom-brief-copy">
+                    <span class="tag">Personalizare proprie</span>
+                    <h3>Ai un concept propriu pentru petrecerea ta?</h3>
+                    <p>Lasa-mi tema, culorile, dress code-ul si tipul evenimentului, iar eu iti pregatesc un model potrivit exact pe vibe-ul tau.</p>
+                </div>
+                <form class="custom-brief-form" name="style-request-private-event" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="style-request-private-event">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="category" value="Evenimente private">
+                    <div class="custom-brief-grid">
+                        <label>
+                            <span>Nume</span>
+                            <input type="text" name="name" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            <span>Tip eveniment</span>
+                            <input type="text" name="event-type" placeholder="Ex: majorat, bal, club party" required>
+                        </label>
+                        <label>
+                            <span>Culori dorite</span>
+                            <input type="text" name="palette" placeholder="Ex: burgundy, black-gold, neon" required>
+                        </label>
+                    </div>
+                    <label class="custom-brief-full">
+                        <span>Detalii / inspiratie</span>
+                        <textarea name="details" required placeholder="Spune-mi stilul dorit, daca vrei un vibe glam, club, elegant sau alt concept personalizat."></textarea>
+                    </label>
+                    <button type="submit" class="btn-contact">Trimite cererea de personalizare</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="portfolio-section category-block" id="qr-uri" aria-labelledby="qr-title">
+            <div class="section-heading">
+                <h2 id="qr-title">QR-uri pentru poze si video</h2>
+                <p>Produse foarte utile la eveniment, bune de vandut separat sau impreuna cu invitatia digitala.</p>
+            </div>
+
+            <div class="category-grid">
+                <article class="product-card-premium" data-product-id="qr-table" data-product-name="QR pentru mesele invitatilor" data-product-category="QR-uri" data-product-price="20" data-product-image="img/qr-previews/qr-black-gold-preview.png" data-product-note="Set QR pentru colectarea pozelor si videoclipurilor de la mese.">
+                    <div class="product-card-visual">
+                        <img src="img/qr-previews/qr-black-gold-preview.png" alt="Preview QR pentru mesele invitatilor" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Popular</span>
+                            <span class="inv-card-kind">QR</span>
+                        </div>
+                        <h3>QR pentru mesele invitatilor</h3>
+                        <p>Practic, usor de scanat si simplu de folosit la eveniment.</p>
+                        <span class="product-card-price">20 lei/buc</span>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('qrBlackGold')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium" data-product-id="qr-welcome" data-product-name="QR pentru intrare sau photo corner" data-product-category="QR-uri" data-product-price="20" data-product-image="img/qr-previews/qr-blue-arch-preview.png" data-product-note="Potrivit pentru welcome sign, photo corner sau intrare.">
+                    <div class="product-card-visual">
+                        <img src="img/qr-previews/qr-blue-arch-preview.png" alt="Preview QR pentru intrare sau photo corner" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Welcome</span>
+                            <span class="inv-card-kind">QR</span>
+                        </div>
+                        <h3>QR pentru intrare</h3>
+                        <p>Excelent pentru un punct clar de upload chiar de la inceputul evenimentului.</p>
+                        <span class="product-card-price">20 lei/buc</span>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('qrBlueArch')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card-premium" data-product-id="qr-bundle" data-product-name="Pachet invitatie + QR-uri" data-product-category="QR-uri" data-product-price="20" data-product-image="img/qr-previews/qr-floral-ivory-preview.png" data-product-note="Bundle cu invitatie digitala si QR pentru eveniment.">
+                    <div class="product-card-visual">
+                        <img src="img/qr-previews/qr-floral-ivory-preview.png" alt="Preview pachet invitatie cu QR-uri" loading="lazy">
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-meta">
+                            <span class="tag">Bundle</span>
+                            <span class="inv-card-kind">QR</span>
+                        </div>
+                        <h3>Pachet invitatie + QR</h3>
+                        <p>O alegere potrivita daca vrei totul pregatit intr-un singur pachet.</p>
+                        <span class="product-card-price">20 lei/buc</span>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('qrFloralIvory')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="custom-brief-panel">
+                <div class="custom-brief-copy">
+                    <span class="tag">Personalizare proprie</span>
+                    <h3>Vrei QR-urile pe stilul evenimentului tau?</h3>
+                    <p>Lasa-mi aici culorile, monograma, textul si vibe-ul dorit, iar eu le pregatesc in aceeasi directie cu restul evenimentului.</p>
+                </div>
+                <form class="custom-brief-form" name="style-request-qr" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="style-request-qr">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="category" value="QR-uri">
+                    <div class="custom-brief-grid">
+                        <label>
+                            <span>Nume</span>
+                            <input type="text" name="name" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            <span>Stil dorit</span>
+                            <input type="text" name="style" placeholder="Ex: elegant, floral, black-gold" required>
+                        </label>
+                        <label>
+                            <span>Culori dorite</span>
+                            <input type="text" name="palette" placeholder="Ex: ivory, navy, champagne" required>
+                        </label>
+                    </div>
+                    <label class="custom-brief-full">
+                        <span>Detalii / inspiratie</span>
+                        <textarea name="details" required placeholder="Scrie-mi ce text vrei sa apara, daca doresti monograma, suport anume sau integrare cu invitatia."></textarea>
+                    </label>
+                    <button type="submit" class="btn-contact">Trimite cererea de personalizare</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="portfolio-section category-block" id="save-the-date" aria-labelledby="save-title">
+            <div class="section-heading">
+                <h2 id="save-title">Save the Date</h2>
+                <p>Carduri digitale cu cupluri editate frumos, bune pentru teasing elegant inainte de invitatie.</p>
+            </div>
+
+            <div class="save-date-grid">
+                <article class="save-date-card" data-product-id="save-castle-romance" data-product-name="Save the Date - Castle Romance" data-product-category="Save the Date" data-product-price="100" data-product-image="img/save-the-date/save-the-date-editorial-1.png" data-product-note="Save the Date dramatic, cu look cinematic si vibe timeless.">
+                    <img src="img/save-the-date/save-the-date-editorial-1.png" alt="Save the Date Castle Romance" loading="lazy">
+                    <div class="save-date-copy">
+                        <span class="save-date-date">25 Iulie 2026</span>
+                        <h3>Castle Romance</h3>
+                        <p>Cinematic si regal, perfect pentru un teaser memorabil.</p>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos - 100 lei</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('saveCastleRomance')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="save-date-card" data-product-id="save-reflection-editorial" data-product-name="Save the Date - Reflection Editorial" data-product-category="Save the Date" data-product-price="100" data-product-image="img/save-the-date/save-the-date-editorial-2.png" data-product-note="Save the Date cu compozitie editoriala, reflexie si tonuri calde premium.">
+                    <img src="img/save-the-date/save-the-date-editorial-2.png" alt="Save the Date Reflection Editorial" loading="lazy">
+                    <div class="save-date-copy">
+                        <span class="save-date-date">25 Iulie 2026</span>
+                        <h3>Reflection Editorial</h3>
+                        <p>Editorial cald, cu reflexie si un look fashion premium.</p>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos - 100 lei</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('saveReflectionEditorial')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="save-date-card" data-product-id="save-noir-monogram" data-product-name="Save the Date - Noir Monogram" data-product-category="Save the Date" data-product-price="100" data-product-image="img/save-the-date/save-the-date-editorial-3.png" data-product-note="Save the Date black and white, cu monograma si look editorial elegant.">
+                    <img src="img/save-the-date/save-the-date-editorial-3.png" alt="Save the Date Noir Monogram" loading="lazy">
+                    <div class="save-date-copy">
+                        <span class="save-date-date">25 Iulie 2026</span>
+                        <h3>Noir Monogram</h3>
+                        <p>Black and white elegant, cu monograma si vibe modern.</p>
+                        <div class="card-actions">
+                            <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos - 100 lei</button>
+                            <button class="btn-secondary" type="button" onclick="openGallery('saveNoirMonogram')">Vezi preview</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="custom-brief-panel">
+                <div class="custom-brief-copy">
+                    <span class="tag">Personalizare proprie</span>
+                    <h3>Vrei un Save the Date creat pe poza si vibe-ul vostru?</h3>
+                    <p>Trimite-mi stilul dorit, culorile si cateva indicii despre fotografie, iar eu iti pregatesc un teaser facut special pentru voi.</p>
+                </div>
+                <form class="custom-brief-form" name="style-request-save-date" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="style-request-save-date">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="category" value="Save the Date">
+                    <div class="custom-brief-grid">
+                        <label>
+                            <span>Nume</span>
+                            <input type="text" name="name" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            <span>Stil dorit</span>
+                            <input type="text" name="style" placeholder="Ex: editorial, cinematic, romantic" required>
+                        </label>
+                        <label>
+                            <span>Culori dorite</span>
+                            <input type="text" name="palette" placeholder="Ex: sepia, black-white, champagne" required>
+                        </label>
+                    </div>
+                    <label class="custom-brief-full">
+                        <span>Detalii / inspiratie</span>
+                        <textarea name="details" required placeholder="Spune-mi daca ai deja poza, ce text vrei sa apara si ce directie vizuala iti doresti pentru teaser."></textarea>
+                    </label>
+                    <button type="submit" class="btn-contact">Trimite cererea de personalizare</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="portfolio-section category-block" id="wedding-planner" aria-labelledby="planner-title">
+            <div class="section-heading">
+                <h2 id="planner-title">Wedding Planner</h2>
+                <p>Resurse digitale care completeaza invitatia si organizarea evenimentului.</p>
+            </div>
+
+            <div class="planner-grid">
+                <article class="planner-card" data-product-id="planner-starter" data-product-name="Wedding Planner Starter Kit" data-product-category="Wedding Planner" data-product-price="80" data-product-note="Checklist, calendar si lista scurta de prioritati pentru organizare.">
+                    <span class="tag">Starter</span>
+                    <h3>Starter Kit</h3>
+                    <p>Checklist de baza, calendar si plan minim pentru un inceput mai clar al organizarii.</p>
+                    <span class="planner-price">80 lei</span>
+                    <div class="card-actions">
+                        <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                        <button class="btn-secondary" type="button" onclick="openContact('Wedding Planner Starter Kit')">Detalii</button>
+                    </div>
+                </article>
+
+                <article class="planner-card" data-product-id="planner-timeline" data-product-name="Wedding Day Timeline Pack" data-product-category="Wedding Planner" data-product-price="100" data-product-note="Timeline pentru ziua evenimentului si materiale utile pentru coordonare.">
+                    <span class="tag">Timeline</span>
+                    <h3>Wedding Day Timeline</h3>
+                    <p>Un pachet util pentru ordonarea momentelor din zi si o desfasurare mai clara.</p>
+                    <span class="planner-price">100 lei</span>
+                    <div class="card-actions">
+                        <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                        <button class="btn-secondary" type="button" onclick="openContact('Wedding Day Timeline Pack')">Detalii</button>
+                    </div>
+                </article>
+
+                <article class="planner-card" data-product-id="planner-premium" data-product-name="Wedding Planner Premium Bundle" data-product-category="Wedding Planner" data-product-price="350" data-product-note="Pachet complet cu organizare, timeline, guest notes si materiale digitale extra.">
+                    <span class="tag">Premium</span>
+                    <h3>Premium Planner Bundle</h3>
+                    <p>Bundle pentru cei care vor mai mult decat invitatia: invitatia digitala, excel pentru planificare si organizare cheltuieli, 20 de codur QR pentru poze si videoclipuri, Save the Date , personalizare dupa bunul plac si transportul gratuit al planselor cu codurile QR.</p>
+                    <span class="planner-price">350 lei</span>
+                    <div class="card-actions">
+                        <button class="btn-primary" type="button" onclick="DigitalByDStore.addSimpleProduct(this)">Adauga in cos</button>
+                        <button class="btn-secondary" type="button" onclick="openContact('Wedding Planner Premium Bundle')">Detalii</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="custom-brief-panel">
+                <div class="custom-brief-copy">
+                    <span class="tag">Personalizare proprie</span>
+                    <h3>Vrei un planner facut pe stilul si nevoile voastre?</h3>
+                    <p>Poti sa-mi spui aici ce materiale iti doresti, ce culori preferi si cum vrei sa fie organizat pachetul final.</p>
+                </div>
+                <form class="custom-brief-form" name="style-request-planner" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="style-request-planner">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="category" value="Wedding Planner">
+                    <div class="custom-brief-grid">
+                        <label>
+                            <span>Nume</span>
+                            <input type="text" name="name" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            <span>Tip planner</span>
+                            <input type="text" name="style" placeholder="Ex: minimalist, elegant, complet" required>
+                        </label>
+                        <label>
+                            <span>Culori dorite</span>
+                            <input type="text" name="palette" placeholder="Ex: ivory, nude, black-gold" required>
+                        </label>
+                    </div>
+                    <label class="custom-brief-full">
+                        <span>Detalii / inspiratie</span>
+                        <textarea name="details" required placeholder="Spune-mi ce fisiere, checklist-uri sau materiale vrei sa includa planner-ul tau personalizat."></textarea>
+                    </label>
+                    <button type="submit" class="btn-contact">Trimite cererea de personalizare</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="portfolio-cta">
+            <div class="cta-box">
+                <h2>Ai tot magazinul intr-o singura pagina. Urmatorul pas este cosul.</h2>
+                <p>
+                    Alege produsele, adauga-le in cos si trimite comanda. Vei vedea apoi rezumatul si pasii urmatori.
+                </p>
+                <div class="hero-buttons">
+                    <a href="cosul-meu.html" class="btn-primary">Deschide cosul meu</a>
+                    <button class="btn-secondary" type="button" onclick="openContact('Pachet personalizat DigitalByD')">Vreau oferta personalizata</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 DigitalByD Studio - Toate drepturile rezervate
+    </footer>
+
+    <div id="galleryModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="gallery-content" role="document">
+            <button class="close-gallery" type="button" aria-label="Inchide galerie" onclick="closeGallery()">&times;</button>
+            <div class="gallery-panel">
+                <div class="gallery-copy">
+                    <span class="gallery-label">Preview complet</span>
+                    <h2 id="galleryTitle">Galerie</h2>
+                    <p id="galleryDescription" class="gallery-description"></p>
+                    <div id="galleryDetails" class="gallery-details" hidden></div>
+                    <p id="galleryTip" class="gallery-tip">Scroll in preview ca sa vezi produsul complet, apoi te intorci direct la sectiunea lui din magazin.</p>
+                    <div class="gallery-actions">
+                        <button id="galleryOrderButton" class="btn-primary" type="button">Vezi produsul in magazin</button>
+                        <a href="cosul-meu.html" class="btn-secondary">Mergi la cos</a>
+                    </div>
+                </div>
+
+                <div class="gallery-device">
+                    <div id="galleryScroll" class="gallery-scroll" aria-live="polite">
+                        <img id="galleryImage" alt="Preview complet invitatie">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="contact-modal" aria-hidden="true">
+        <div class="contact-content">
+            <button class="close-contact" type="button" onclick="closeContact()" aria-label="Inchide fereastra">&times;</button>
+            <h2>Cerere personalizata</h2>
+            <p class="contact-intro">Pentru un produs custom sau un pachet special, trimite-mi aici ideea ta si iti raspund cu varianta potrivita.</p>
+
+            <form name="custom-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="custom-request">
+                <input type="hidden" name="bot-field">
+
+                <p>
+                    <label>Numele tau
+                        <input type="text" name="name" required>
+                    </label>
+                </p>
+
+                <p>
+                    <label>Email
+                        <input type="email" name="email" required>
+                    </label>
+                </p>
+
+                <p>
+                    <label>Tip produs
+                        <select name="subject" id="subjectField" required>
+                            <option value="Invitatie digitala">Invitatie digitala</option>
+                            <option value="QR pentru poze si videoclipuri">QR pentru poze si videoclipuri</option>
+                            <option value="Save the Date">Save the Date</option>
+                            <option value="Wedding Planner">Wedding Planner</option>
+                            <option value="Pachet personalizat">Pachet personalizat</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p>
+                    <label>Data evenimentului
+                        <input type="text" name="event-date" placeholder="Ex: 12 septembrie 2026">
+                    </label>
+                </p>
+
+                <p>
+                    <label>Mesaj
+                        <textarea name="message" id="messageField" required placeholder="Spune-mi ce produs vrei, ce stil preferi si orice detaliu important pentru eveniment."></textarea>
+                    </label>
+                </p>
+
+                <p>
+                    <button type="submit" class="btn-contact">Trimite cererea</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const galleries = {
+            minimalist: {
+                title: "Minimalist Premium",
+                description: "Invitatie de nunta in format de telefon, cu tipografie eleganta si compozitie aerisita.",
+                image: "img/invitatii/minimalist-premium-preview.png",
+                anchor: "#invitatii-nunta"
+            },
+            elegant: {
+                title: "Elegant",
+                description: "Model luminos si premium, foarte bun pentru nunti clasice si rafinate.",
+                image: "img/invitatii/elegant-preview.png",
+                anchor: "#invitatii-nunta"
+            },
+            vintage: {
+                title: "The Wedding Times",
+                description: "Concept editorial cu vibe de ziar de colectie si efect puternic de teaser.",
+                image: "img/invitatii/vintage-premium-preview.png",
+                anchor: "#invitatii-nunta"
+            },
+            bohoChic: {
+                title: "Boho Chic",
+                description: "Invitatie romantica si calda, cu directie boho premium si o atmosfera foarte placuta pentru telefon.",
+                image: "img/invitatii/boho-chic-preview.png",
+                anchor: "#invitatii-nunta"
+            },
+            destinationTravel: {
+                title: "Destination / Travel",
+                description: "Model pentru destination wedding, inspirat de passport, travel papers si vibe de plecare eleganta.",
+                image: "img/invitatii/destination-travel-preview.png",
+                anchor: "#invitatii-nunta"
+            },
+            modernBold: {
+                title: "Modern Bold",
+                description: "Invitatie statement black-gold, cu directie editoriala puternica si prezenta premium.",
+                image: "img/invitatii/modern-bold-preview.png",
+                anchor: "#invitatii-nunta"
+            },
+            privateBoboci: {
+                title: "Balul Bobocilor",
+                description: "Model premium pentru bal, cu prezenta glamour si structura perfecta pentru o invitatie memorabila.",
+                details: `
+                    <p>Ideal pentru licee, facultati sau gale de debut, cu program, dress code, locatie si RSVP clar asezate.</p>
+                    <p>Dupa ce imi trimiti detaliile evenimentului, pot adapta culorile, sigla, textele si ordinea informatiilor exact pe stilul dorit.</p>
+                `,
+                image: "img/bob.png",
+                anchor: "#evenimente-private"
+            },
+            privateClubNight: {
+                title: "Club Night",
+                description: "Preview pentru petreceri de club, launch-uri sau majorate cu vibe urban, neon si ritm puternic.",
+                details: `
+                    <p>Foarte bun pentru evenimente private unde conteaza impactul vizual: DJ line-up, guest list, ora de acces si dress code.</p>
+                    <p>Designul poate fi facut pe culorile brandului, pe tema party-ului sau intr-o directie complet personalizata pentru client.</p>
+                `,
+                image: "img/club.png",
+                anchor: "#evenimente-private"
+            },
+            privateSignatureSoiree: {
+                title: "Signature Soiree",
+                description: "Varianta premium pentru cina privata, aniversare eleganta sau seara de tip white party.",
+                details: `
+                    <p>Este modelul potrivit atunci cand vrei un concept mai rafinat, cu ton premium si informatii prezentate elegant.</p>
+                    <p>Pot include meniul, locatia, harta, programul serii si formular simplu de confirmare, in functie de pachetul ales.</p>
+                `,
+                image: "img/18.png",
+                anchor: "#evenimente-private"
+            },
+            qrBlackGold: {
+                title: "QR Black Gold",
+                description: "Preview premium pentru QR de masa, cu fundal negru si accente aurii elegante.",
+                details: `
+                    <p>Codurile QR se livreaza tiparite pe carton gros, intr-un format elegant, gata de pus pe masa sau la intrare.</p>
+                    <p>Suportul este inclus, iar livrarea o stabilim ulterior impreuna, la adresa discutata direct cu clientul.</p>
+                `,
+                image: "img/qr-previews/qr-black-gold-preview.png",
+                anchor: "#qr-uri"
+            },
+            qrBlueArch: {
+                title: "QR Blue Arch",
+                description: "Preview pentru QR de welcome sau photo corner, cu paleta bleu, ivory si detalii aurii.",
+                details: `
+                    <p>Acest model este foarte potrivit pentru intrare, photo corner sau zona de welcome, tiparit pe carton gros si livrat cu suport.</p>
+                    <p>Dupa comanda stabilim impreuna dimensiunea dorita si adresa unde vrei sa ajunga produsul final.</p>
+                `,
+                image: "img/qr-previews/qr-blue-arch-preview.png",
+                anchor: "#qr-uri"
+            },
+            qrFloralIvory: {
+                title: "QR Floral Ivory",
+                description: "Preview delicat pentru pachetul cu QR, cu fundal ivory si accente florale elegante.",
+                details: `
+                    <p>Poate fi comandat separat sau in pachet cu invitatia digitala, tiparit pe carton gros si pregatit cu suport inclus.</p>
+                    <p>Livrarea fizica se face ulterior, la adresa pe care o stabilim impreuna dupa confirmarea comenzii.</p>
+                `,
+                image: "img/qr-previews/qr-floral-ivory-preview.png",
+                anchor: "#qr-uri"
+            },
+            saveCastleRomance: {
+                title: "Save the Date - Castle Romance",
+                description: "Save the Date cinematic, potrivit pentru cupluri care vor un teaser regal si memorabil.",
+                details: `
+                    <p>Tu imi trimiti poza dorita, data si directia vizuala, iar eu construiesc designul in stilul ales pentru eveniment.</p>
+                    <p>Inainte de varianta finala putem ajusta textul, cromatica si compozitia, astfel incat teaserul sa se potriveasca perfect cu invitatia.</p>
+                `,
+                image: "img/save-the-date/save-the-date-editorial-1.png",
+                anchor: "#save-the-date"
+            },
+            saveReflectionEditorial: {
+                title: "Save the Date - Reflection Editorial",
+                description: "Varianta editoriala, calda si rafinata, foarte buna pentru o lansare eleganta a datei evenimentului.",
+                details: `
+                    <p>Clientul imi trimite fotografia preferata, iar eu pregatesc compozitia, textul si vibe-ul final pentru varianta Save the Date.</p>
+                    <p>Este un produs bun de trimis inaintea invitatiei complete, ca teasing premium pentru familie, prieteni sau invitati.</p>
+                `,
+                image: "img/save-the-date/save-the-date-editorial-2.png",
+                anchor: "#save-the-date"
+            },
+            saveNoirMonogram: {
+                title: "Save the Date - Noir Monogram",
+                description: "Preview black and white, elegant si modern, cu look foarte bun pentru cupluri care vor un teaser statement.",
+                details: `
+                    <p>Dupa ce primesc fotografia si textul dorit, fac designul in stilul ales si revin cu varianta pregatita pentru aprobare.</p>
+                    <p>Se poate personaliza cu monograma, data, locatie si directia de imagine dorita de client.</p>
+                `,
+                image: "img/save-the-date/save-the-date-editorial-3.png",
+                anchor: "#save-the-date"
+            },
+            babyPastel: {
+                title: "Baby Pastel",
+                description: "Invitatie de botez delicata, blanda si foarte buna pentru format de telefon.",
+                image: "img/invitatii/baby-pastel-preview.png",
+                anchor: "#invitatii-botez"
+            },
+            sweetLittleStory: {
+                title: "Sweet Little Story",
+                description: "Model de botez cu ritm narativ si o atmosfera de familie foarte calda.",
+                image: "img/invitatii/sweet-little-story-preview.png",
+                anchor: "#invitatii-botez"
+            },
+            littlePrincePrincess: {
+                title: "Little Prince / Princess",
+                description: "Invitatie de botez cu directie regala si compozitie premium.",
+                image: "img/invitatii/little-prince-princess-preview.png",
+                anchor: "#invitatii-botez"
+            }
+        };
+
+        const galleryModal = document.getElementById("galleryModal");
+        const galleryContent = galleryModal.querySelector(".gallery-content");
+        const galleryTitle = document.getElementById("galleryTitle");
+        const galleryDescription = document.getElementById("galleryDescription");
+        const galleryDetails = document.getElementById("galleryDetails");
+        const galleryTip = document.getElementById("galleryTip");
+        const galleryImage = document.getElementById("galleryImage");
+        const galleryScroll = document.getElementById("galleryScroll");
+        const galleryOrderButton = document.getElementById("galleryOrderButton");
+
+        function openGallery(key) {
+            const gallery = galleries[key];
+            if (!gallery) {
+                return;
+            }
+
+            galleryTitle.textContent = gallery.title;
+            galleryDescription.textContent = gallery.description;
+            galleryDetails.innerHTML = gallery.details || "";
+            galleryDetails.hidden = !gallery.details;
+            galleryTip.textContent = gallery.tip || "Scroll in preview ca sa vezi produsul complet, apoi te intorci direct la sectiunea lui din magazin.";
+            galleryOrderButton.textContent = gallery.buttonLabel || "Vezi produsul in magazin";
+            galleryImage.src = gallery.image;
+            galleryImage.alt = gallery.title + " - preview complet";
+            galleryContent.scrollTop = 0;
+            galleryScroll.scrollTop = 0;
+            galleryOrderButton.onclick = function() {
+                closeGallery();
+                if (gallery.anchor) {
+                    window.setTimeout(function() {
+                        const target = document.querySelector(gallery.anchor);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+                        }
+                    }, 40);
+                }
+            };
+
+            galleryModal.classList.add("show");
+            galleryModal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeGallery() {
+            galleryModal.classList.remove("show");
+            galleryModal.setAttribute("aria-hidden", "true");
+            galleryDetails.innerHTML = "";
+            galleryDetails.hidden = true;
+            galleryImage.src = "";
+            galleryImage.alt = "Preview complet produs";
+            document.body.style.overflow = "";
+        }
+
+        function openContact(productName) {
+            const modal = document.getElementById("contactModal");
+            const messageField = document.getElementById("messageField");
+            const subjectField = document.getElementById("subjectField");
+
+            if (productName) {
+                messageField.value = "Buna! Ma intereseaza produsul: " + productName + ".\nEvenimentul meu este...";
+
+                if (productName.toLowerCase().includes("qr")) {
+                    subjectField.value = "QR pentru poze si videoclipuri";
+                } else if (productName.toLowerCase().includes("save")) {
+                    subjectField.value = "Save the Date";
+                } else if (productName.toLowerCase().includes("planner")) {
+                    subjectField.value = "Wedding Planner";
+                } else if (productName.toLowerCase().includes("pachet")) {
+                    subjectField.value = "Pachet personalizat";
+                } else {
+                    subjectField.value = "Invitatie digitala";
+                }
+            } else {
+                messageField.value = "";
+                subjectField.value = "Invitatie digitala";
+            }
+
+            modal.style.display = "flex";
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeContact() {
+            const modal = document.getElementById("contactModal");
+            modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        window.addEventListener("click", function(event) {
+            const contactModal = document.getElementById("contactModal");
+            if (event.target === galleryModal) {
+                closeGallery();
+            }
+            if (event.target === contactModal) {
+                closeContact();
+            }
+        });
+
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeGallery();
+                closeContact();
+            }
+        });
+    </script>
+    <script src="storefront.js"></script>
+</body>
+</html>
