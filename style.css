@@ -926,6 +926,17 @@ footer {
     width: min(100%, 540px);
 }
 
+.custom-request-section {
+    padding-top: 24px;
+}
+
+.custom-request-panel {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 28px;
+    border-radius: 22px;
+}
+
 .gallery-panel {
     display: grid;
     grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
