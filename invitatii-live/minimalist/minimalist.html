@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ece4dd" />
+  <title>Invitatie de nunta - Elena & Adrian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sand: #ece4dd;
+      --sand-deep: #d6c3b5;
+      --paper: rgba(255, 252, 248, 0.72);
+      --paper-strong: rgba(255, 252, 248, 0.88);
+      --ink: #332823;
+      --muted: #7e685a;
+      --line: rgba(81, 61, 49, 0.12);
+      --shadow: 0 30px 80px rgba(58, 38, 26, 0.18);
+      --shadow-soft: 0 18px 48px rgba(58, 38, 26, 0.1);
+      --accent: #b89479;
+      --accent-strong: #8d6d57;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      color: var(--ink);
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      background:
+        linear-gradient(rgba(250, 246, 241, 0.62), rgba(250, 246, 241, 0.82)),
+        url("img/minimal1.jpg") center / cover no-repeat fixed;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      z-index: 0;
+      border-radius: 999px;
+      pointer-events: none;
+      filter: blur(10px);
+    }
+
+    body::before {
+      width: 340px;
+      height: 340px;
+      top: -110px;
+      right: -90px;
+      background: radial-gradient(circle, rgba(184, 148, 121, 0.34), rgba(184, 148, 121, 0));
+    }
+
+    body::after {
+      width: 280px;
+      height: 280px;
+      left: -120px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(214, 195, 181, 0.34), rgba(214, 195, 181, 0));
+    }
+
+    .phone-shell {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 420px);
+      min-height: min(100svh - 24px, 920px);
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(78, 57, 44, 0.11);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.02)),
+        rgba(236, 228, 221, 0.46);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .phone-shell::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 24px;
+      border: 1px solid rgba(78, 57, 44, 0.09);
+      pointer-events: none;
+    }
+
+    .invite-page {
+      position: relative;
+      min-height: min(100svh - 24px, 920px);
+      padding: 34px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 100%);
+      isolation: isolate;
+    }
+
+    .invite-page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.06) 44%, rgba(255, 255, 255, 0.2) 100%);
+      z-index: -2;
+    }
+
+    .invite-page::after {
+      content: "";
+      position: absolute;
+      inset: 18px 18px auto auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0));
+      z-index: -1;
+    }
+
+    .hero,
+    .story,
+    .details-panel,
+    .actions {
+      animation: fade-up 900ms ease both;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 8px;
+      animation-delay: 80ms;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .crest {
+      width: 88px;
+      height: 88px;
+      margin: 18px auto 16px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(78, 57, 44, 0.14);
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.16em;
+      color: var(--accent-strong);
+      white-space: nowrap;
+    }
+
+    .couple-frame {
+      width: min(72%, 250px);
+      margin: 0 auto 18px;
+      padding: 10px;
+      border-radius: 999px 999px 30px 30px;
+      background: linear-gradient(180deg, rgba(255, 252, 248, 0.72), rgba(255, 252, 248, 0.34));
+      border: 1px solid rgba(78, 57, 44, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .couple-frame img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 999px 999px 24px 24px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3rem, 11vw, 4.5rem);
+      line-height: 0.88;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .hero h1 span {
+      display: block;
+      margin: 10px 0;
+      font-size: 2.1rem;
+      line-height: 1;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero .tagline {
+      margin: 16px auto 0;
+      max-width: 28ch;
+      font-size: 0.96rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .story {
+      padding: 22px 20px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, var(--paper-strong), rgba(255, 252, 248, 0.48));
+      border: 1px solid rgba(78, 57, 44, 0.08);
+      box-shadow: var(--shadow-soft);
+      animation-delay: 180ms;
+    }
+
+    .story p {
+      margin: 0;
+      text-align: center;
+      font-size: 0.96rem;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .story strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .details-panel {
+      padding: 22px 18px 18px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 252, 248, 0.88), rgba(255, 252, 248, 0.58));
+      border: 1px solid rgba(78, 57, 44, 0.08);
+      box-shadow: var(--shadow-soft);
+      animation-delay: 280ms;
+    }
+
+    .panel-title {
+      margin: 0 0 18px;
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .detail-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .detail-card {
+      padding: 16px 14px 15px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(236, 228, 221, 0.58), rgba(255, 255, 255, 0.58));
+      border: 1px solid rgba(78, 57, 44, 0.07);
+    }
+
+    .detail-label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .detail-main {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.5rem;
+      line-height: 1.06;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .detail-sub {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(78, 57, 44, 0.08);
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 66px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .timeline-time {
+      padding: 8px 10px;
+      border-radius: 999px;
+      text-align: center;
+      background: rgba(184, 148, 121, 0.14);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    .timeline-copy {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .timeline-copy strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .actions {
+      margin-top: auto;
+      display: grid;
+      gap: 14px;
+      animation-delay: 380ms;
+    }
+
+    .rsvp-box {
+      padding: 18px;
+      border-radius: 24px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(184, 148, 121, 0.18), rgba(255, 252, 248, 0.72));
+      border: 1px solid rgba(78, 57, 44, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .rsvp-box p {
+      margin: 0;
+    }
+
+    .rsvp-kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .rsvp-copy {
+      margin-top: 10px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.58rem;
+      line-height: 1.14;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .rsvp-note {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .cta-button {
+      width: 100%;
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 24px;
+      background: linear-gradient(135deg, #41322a, #241b18);
+      color: #fffaf7;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 20px 35px rgba(36, 27, 24, 0.22);
+      transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 38px rgba(36, 27, 24, 0.28);
+    }
+
+    .footer-copy {
+      text-align: center;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .footer-copy strong {
+      color: var(--ink);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(30, 22, 18, 0.62);
+      backdrop-filter: blur(10px);
+      z-index: 30;
+    }
+
+    .modal-overlay.is-open {
+      display: flex;
+    }
+
+    .modal-card {
+      position: relative;
+      width: min(100%, 420px);
+      padding: 28px 22px 22px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 252, 248, 0.96), rgba(251, 245, 239, 0.92));
+      box-shadow: 0 30px 70px rgba(22, 15, 12, 0.24);
+      border: 1px solid rgba(78, 57, 44, 0.08);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(51, 40, 35, 0.06);
+      color: var(--accent-strong);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .modal-card h2 {
+      margin: 0 0 8px;
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.15rem;
+      letter-spacing: 0.04em;
+    }
+
+    .modal-card p {
+      margin: 0 0 20px;
+      text-align: center;
+      font-size: 0.94rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .rsvp-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .rsvp-form input,
+    .rsvp-form textarea {
+      width: 100%;
+      border: 1px solid rgba(78, 57, 44, 0.12);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.88);
+      padding: 14px 15px;
+      font: inherit;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .rsvp-form input:focus,
+    .rsvp-form textarea:focus {
+      border-color: rgba(141, 109, 87, 0.42);
+      box-shadow: 0 0 0 4px rgba(184, 148, 121, 0.12);
+    }
+
+    .rsvp-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      border: 0;
+      border-radius: 16px;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #b89479, #8d6d57);
+      color: #fffaf7;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .thank-you {
+      display: none;
+      padding-top: 10px;
+    }
+
+    .thank-you.is-visible {
+      display: block;
+    }
+
+    .thank-you p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 0;
+      }
+
+      .phone-shell {
+        width: 100%;
+        min-height: 100svh;
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .invite-page {
+        min-height: 100svh;
+        padding: 28px 18px 20px;
+      }
+
+      .phone-shell::before {
+        inset: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="phone-shell">
+    <section class="invite-page">
+      <header class="hero">
+        <p class="eyebrow">Invitatie de nunta</p>
+        <div class="crest">E A</div>
+
+        <figure class="couple-frame">
+          <img src="img/miri1.jpg" alt="Elena si Adrian" />
+        </figure>
+
+        <h1>
+          Elena
+          <span>&amp;</span>
+          Adrian
+        </h1>
+
+        <p class="tagline">
+          Va invitam sa fiti alaturi de noi in ziua in care iubirea noastra capata forma unei promisiuni pentru totdeauna.
+        </p>
+      </header>
+
+      <section class="story">
+        <p>
+          Draga familie, dragi prieteni, in <strong>14 iunie 2026</strong> vom spune
+          <strong>"da"</strong> cu inima deschisa si ne dorim sa traim aceasta zi alaturi de voi,
+          intr-un decor calm, luminos si profund personal.
+        </p>
+      </section>
+
+      <section class="details-panel">
+        <h2 class="panel-title">Detalii</h2>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <span class="detail-label">Ziua</span>
+            <span class="detail-main">14 iunie 2026</span>
+            <span class="detail-sub">Duminica, inceput de vara, lumina calda si emotii discrete.</span>
+          </article>
+
+          <article class="detail-card">
+            <span class="detail-label">Ceremonia</span>
+            <span class="detail-main">17:30</span>
+            <span class="detail-sub">Biserica Sf. Treime</span>
+          </article>
+
+          <article class="detail-card">
+            <span class="detail-label">Petrecerea</span>
+            <span class="detail-main">19:00</span>
+            <span class="detail-sub">Domeniul Liria, Timisoara</span>
+          </article>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-row">
+            <div class="timeline-time">17:00</div>
+            <div class="timeline-copy">
+              <strong>Sosirea invitatilor</strong>
+              Un inceput lin, gandit pentru revederi si emotii frumoase.
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-time">17:30</div>
+            <div class="timeline-copy">
+              <strong>Cununia religioasa</strong>
+              Momentul in care ne vom uni destinele in fata celor dragi.
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-time">19:00</div>
+            <div class="timeline-copy">
+              <strong>Receptia</strong>
+              Cina, muzica buna, dans si o seara asezata in tonuri elegante.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <div class="rsvp-box">
+          <p class="rsvp-kicker">Confirmare</p>
+          <p class="rsvp-copy">RSVP pana la 20 mai 2026</p>
+          <p class="rsvp-note">Confirmari: <strong>+40 712 345 678</strong> sau <strong>elena.adrian@nunta.ro</strong></p>
+        </div>
+
+        <button class="cta-button" type="button" onclick="openModal()">Confirma prezenta</button>
+
+        <div class="footer-copy">
+          Va asteptam cu drag sa celebram impreuna aceasta zi speciala.
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-btn" type="button" aria-label="Inchide" onclick="closeModal()">&times;</button>
+      <h2 id="modal-title">Confirmare RSVP</h2>
+      <p>
+        Lasati-ne cateva detalii, iar noi vom sti cu bucurie ca ne veti fi alaturi.
+      </p>
+
+      <form class="rsvp-form" id="rsvpForm" onsubmit="submitForm(event)">
+        <input type="text" placeholder="Nume complet" required />
+        <input type="email" placeholder="Email" required />
+        <input type="tel" placeholder="Telefon (optional)" />
+        <textarea placeholder="Mesaj pentru miri (optional)"></textarea>
+        <button class="submit-btn" type="submit">Trimite raspunsul</button>
+      </form>
+
+      <div class="thank-you" id="thankYou">
+        <p>
+          Multumim! Confirmarea ta a fost trimisa cu succes.
+          Ne bucuram sa te avem alaturi de noi.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const form = document.getElementById("rsvpForm");
+    const thankYou = document.getElementById("thankYou");
+
+    function openModal() {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      form.style.display = "grid";
+      thankYou.classList.remove("is-visible");
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      form.style.display = "none";
+      thankYou.classList.add("is-visible");
+    }
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
