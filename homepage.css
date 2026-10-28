@@ -1,0 +1,1863 @@
+/* ==================================================
+   DIGITALBYD STUDIO — DESIGN SYSTEM ȘI HOMEPAGE
+   Stilul comun al paginilor de acasă și magazin, responsive.
+   ================================================== */
+
+body.dd-home {
+    --bg: #F8F5F0;
+    --paper: #FFFEFA;
+    --ink: #302521;
+    --muted: #766D66;
+    --line: #E6DED5;
+    --accent: #A46F79;
+    --accent-dark: #80525B;
+    --soft-rose: #F0E5E2;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.65;
+    overflow-x: hidden;
+}
+
+body.dd-home *,
+body.dd-home *::before,
+body.dd-home *::after {
+    box-sizing: border-box;
+}
+
+body.dd-home img {
+    display: block;
+    max-width: 100%;
+}
+
+body.dd-home a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body.dd-home button,
+body.dd-home input,
+body.dd-home select,
+body.dd-home textarea {
+    font: inherit;
+}
+
+body.dd-home button {
+    cursor: pointer;
+}
+
+body.dd-home button:focus-visible,
+body.dd-home a:focus-visible,
+body.dd-home input:focus-visible,
+body.dd-home select:focus-visible,
+body.dd-home textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+body.dd-home h1,
+body.dd-home h2,
+body.dd-home p {
+    margin-top: 0;
+}
+
+body.dd-home h1,
+body.dd-home h2 {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-weight: 500;
+    letter-spacing: -.045em;
+}
+
+body.dd-home h1 em,
+body.dd-home h2 em {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* HEADER */
+
+body.dd-home .dd-header {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    background: rgba(248,246,242,.96);
+    border-bottom: 1px solid var(--line);
+}
+
+body.dd-home .dd-nav {
+    width: min(1320px, calc(100% - 80px));
+    min-height: 86px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+body.dd-home .dd-brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+body.dd-home .dd-brand-main {
+    font-family: var(--serif);
+    font-size: 30px;
+    letter-spacing: -.07em;
+}
+
+body.dd-home .dd-brand-main span {
+    color: var(--accent);
+}
+
+body.dd-home .dd-brand-sub {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .22em;
+}
+
+body.dd-home .dd-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+body.dd-home .dd-nav-links > a {
+    position: relative;
+    padding: 10px 0;
+    color: #625e58;
+    font-size: 12px;
+    transition: color .2s ease;
+}
+
+body.dd-home .dd-nav-links > a:hover,
+body.dd-home .dd-nav-links > a.is-active {
+    color: var(--accent-dark);
+}
+
+body.dd-home .dd-nav-links > a.is-active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    left: 0;
+    height: 1px;
+    background: var(--accent);
+}
+
+body.dd-home .dd-nav-links .dd-cart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+body.dd-home .dd-cart-link .cart-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+}
+
+body.dd-home .dd-menu-toggle {
+    display: none;
+}
+
+/* HERO */
+
+body.dd-home .dd-hero {
+    width: min(1320px, calc(100% - 80px));
+    min-height: 640px;
+    margin: 0 auto;
+    padding: 62px 0 70px;
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    align-items: center;
+    gap: clamp(40px, 7vw, 105px);
+}
+
+body.dd-home .dd-hero-copy {
+    position: relative;
+    z-index: 2;
+    padding: 10px 0;
+}
+
+body.dd-home .dd-eyebrow {
+    margin-bottom: 23px;
+    color: var(--accent-dark);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .17em;
+    line-height: 1.8;
+}
+
+body.dd-home .dd-hero h1 {
+    margin-bottom: 24px;
+    font-size: clamp(44px, 5.1vw, 76px);
+    line-height: 1.09;
+}
+
+body.dd-home .dd-hero-text {
+    max-width: 430px;
+    margin-bottom: 29px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+body.dd-home .dd-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+body.dd-home .dd-button {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+body.dd-home .dd-button span {
+    font-size: 15px;
+}
+
+body.dd-home .dd-button-dark {
+    background: var(--ink);
+    color: #fff;
+}
+
+body.dd-home .dd-button-dark:hover {
+    background: var(--accent-dark);
+    color: #fff;
+}
+
+body.dd-home .dd-button-text {
+    padding: 0 9px;
+    background: transparent;
+    color: var(--ink);
+}
+
+body.dd-home .dd-button-text:hover {
+    color: var(--accent-dark);
+}
+
+body.dd-home .dd-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 34px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+body.dd-home .dd-note-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+/* HERO VISUAL */
+
+body.dd-home .dd-hero-visual {
+    position: relative;
+    min-width: 0;
+    min-height: 510px;
+    isolation: isolate;
+}
+
+body.dd-home .dd-hero-visual::before {
+    content: "";
+    position: absolute;
+    inset: 42px 10px 14px 45px;
+    background: var(--soft-rose);
+}
+
+body.dd-home .dd-hero-visual-label {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    left: 45px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #d8c8c7;
+    color: var(--accent-dark);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+body.dd-home .dd-hero-image {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+    border: 8px solid var(--paper);
+    background: var(--paper);
+    box-shadow: 0 20px 50px rgba(42,32,27,.12);
+}
+
+body.dd-home .dd-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+}
+
+body.dd-home .dd-hero-image-main {
+    z-index: 2;
+    top: 55px;
+    left: 15%;
+    width: 55%;
+    height: 420px;
+}
+
+body.dd-home .dd-hero-image-main img {
+    object-fit: cover;
+    object-position: center top;
+}
+
+body.dd-home .dd-image-tag {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 11px;
+    background: rgba(255,254,250,.94);
+    color: var(--accent-dark);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-align: center;
+}
+
+body.dd-home .dd-hero-image-small {
+    z-index: 3;
+    right: 1%;
+    bottom: 28px;
+    width: 35%;
+    height: 265px;
+}
+
+body.dd-home .dd-hero-image-small img {
+    object-fit: cover;
+    object-position: center top;
+}
+
+body.dd-home .dd-hero-image:hover {
+    border-color: #f2e6e4;
+}
+
+body.dd-home .dd-hero-decoration {
+    position: absolute;
+    z-index: 1;
+    right: 4%;
+    top: 37%;
+    color: rgba(117,75,87,.12);
+    font-family: var(--serif);
+    font-size: clamp(100px, 15vw, 220px);
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* CATEGORII */
+
+body.dd-home .dd-category-strip {
+    width: min(1320px, calc(100% - 80px));
+    min-height: 78px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: .7fr 1fr 1fr 1.3fr 1fr;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+body.dd-home .dd-strip-label {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+
+body.dd-home .dd-category-strip a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #504b46;
+    font-size: 11px;
+    transition: color .2s ease;
+}
+
+body.dd-home .dd-category-strip a:hover {
+    color: var(--accent-dark);
+}
+
+body.dd-home .dd-category-strip a span {
+    color: var(--accent);
+    font-size: 15px;
+}
+
+body.dd-home .dd-category-strip .dd-strip-all {
+    justify-content: flex-end;
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
+/* COLECȚIE */
+
+body.dd-home .dd-collection {
+    width: min(1320px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 110px 0 100px;
+}
+
+body.dd-home .dd-section-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 38px;
+}
+
+body.dd-home .dd-section-top .dd-eyebrow {
+    margin-bottom: 15px;
+}
+
+body.dd-home .dd-section-top h2 {
+    margin-bottom: 0;
+    font-size: clamp(38px, 4.3vw, 59px);
+    line-height: 1.12;
+}
+
+body.dd-home .dd-section-description {
+    width: min(100%, 320px);
+    padding-bottom: 4px;
+}
+
+body.dd-home .dd-section-description p {
+    margin-bottom: 14px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+body.dd-home .dd-underlined-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c7aeb2;
+    color: var(--accent-dark);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+body.dd-home .dd-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px;
+}
+
+body.dd-home .dd-product-card {
+    display: block;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    text-align: left;
+}
+
+body.dd-home .dd-product-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 330px;
+    padding: 15px;
+    overflow: hidden;
+    background: #eee7e3;
+    border: 1px solid rgba(70,50,45,.07);
+}
+
+body.dd-home .dd-product-image-large {
+    height: 385px;
+}
+
+body.dd-home .dd-image-lilac {
+    background: #eae5ed;
+}
+
+body.dd-home .dd-image-sand {
+    background: #eee8dc;
+}
+
+body.dd-home .dd-image-rose {
+    background: #f0e2e2;
+}
+
+body.dd-home .dd-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    transition: transform .35s ease;
+}
+
+body.dd-home .dd-product-card:hover .dd-product-image img {
+    transform: scale(1.035);
+}
+
+body.dd-home .dd-view-label {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    padding: 11px 8px;
+    background: rgba(255,254,250,.95);
+    color: var(--accent-dark);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+body.dd-home .dd-product-card:hover .dd-view-label,
+body.dd-home .dd-product-card:focus-visible .dd-view-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.dd-home .dd-product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 15px 1px 0;
+}
+
+body.dd-home .dd-product-category {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+
+body.dd-home .dd-product-name {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+body.dd-home .dd-collection-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 23px;
+    border-top: 1px solid var(--line);
+}
+
+body.dd-home .dd-collection-footer > span {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+body.dd-home .dd-button-outline {
+    min-height: 42px;
+    border-color: #cfc6bc;
+    background: transparent;
+    color: var(--ink);
+}
+
+body.dd-home .dd-button-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+}
+
+/* CTA FINAL */
+
+body.dd-home .dd-bottom-cta {
+    padding: 76px 24px 82px;
+    background: #D8C7B3;
+    text-align: center;
+}
+
+body.dd-home .dd-bottom-cta .dd-eyebrow {
+    margin-bottom: 16px;
+}
+
+body.dd-home .dd-bottom-cta h2 {
+    margin-bottom: 19px;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.12;
+}
+
+body.dd-home .dd-bottom-cta > p:not(.dd-eyebrow) {
+    max-width: 430px;
+    margin: 0 auto 24px;
+    color: #706762;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+body.dd-home .dd-button-light {
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid #e0d3d0;
+}
+
+body.dd-home .dd-button-light:hover {
+    background: var(--accent-dark);
+    color: #fff;
+}
+
+/* FOOTER */
+
+body.dd-home .dd-footer {
+    width: min(1320px, calc(100% - 80px));
+    min-height: 90px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+body.dd-home .dd-footer-brand {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 23px;
+    letter-spacing: -.06em;
+}
+
+body.dd-home .dd-footer-brand span {
+    color: var(--accent);
+}
+
+/* MODAL PREVIEW */
+
+body.dd-home.dd-modal-open {
+    overflow: hidden;
+}
+
+body.dd-home .dd-modal {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+body.dd-home .dd-modal.is-open {
+    display: flex;
+}
+
+body.dd-home .dd-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(25,22,22,.68);
+    backdrop-filter: blur(5px);
+}
+
+body.dd-home .dd-preview-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 100%);
+    max-height: calc(100dvh - 48px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    align-items: center;
+    gap: 40px;
+    padding: 36px;
+    overflow-y: auto;
+    background: var(--paper);
+    box-shadow: 0 25px 100px rgba(0,0,0,.25);
+}
+
+body.dd-home .dd-modal-close {
+    position: absolute;
+    z-index: 5;
+    top: 12px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 26px;
+    line-height: 1;
+}
+
+body.dd-home .dd-modal-close:hover {
+    background: var(--soft-rose);
+}
+
+body.dd-home .dd-preview-copy {
+    min-width: 0;
+}
+
+body.dd-home .dd-preview-copy .dd-eyebrow {
+    margin-bottom: 12px;
+}
+
+body.dd-home .dd-preview-copy h2 {
+    margin-bottom: 14px;
+    font-size: clamp(34px, 4vw, 49px);
+    line-height: 1.12;
+}
+
+body.dd-home .dd-preview-copy > p:not(.dd-eyebrow) {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+body.dd-home .dd-preview-copy .dd-preview-instruction {
+    margin: 26px 0;
+    padding-left: 14px;
+    border-left: 2px solid var(--accent);
+}
+
+body.dd-home .dd-phone {
+    position: relative;
+    width: 100%;
+    max-width: 290px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #292727;
+    border-radius: 32px;
+    background: #252323;
+    box-shadow: 0 18px 45px rgba(0,0,0,.17);
+}
+
+body.dd-home .dd-phone-speaker {
+    position: absolute;
+    z-index: 2;
+    top: 14px;
+    left: 50%;
+    width: 58px;
+    height: 5px;
+    border-radius: 10px;
+    background: #333;
+    transform: translateX(-50%);
+}
+
+body.dd-home .dd-phone-screen {
+    width: 100%;
+    height: min(62dvh, 550px);
+    min-height: 260px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 22px;
+    background: #fff;
+    scrollbar-width: thin;
+    scrollbar-color: #b8a6a0 #f2eeee;
+}
+
+body.dd-home .dd-phone-screen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+}
+
+body.dd-home .dd-phone-home {
+    width: 42px;
+    height: 4px;
+    margin: 8px auto 0;
+    border-radius: 8px;
+    background: #777;
+}
+
+/* MODAL CONTACT */
+
+body.dd-home .dd-contact-modal {
+    position: fixed;
+    z-index: 1100;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+body.dd-home .dd-contact-modal.is-open {
+    display: flex;
+}
+
+body.dd-home .dd-contact-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(25,22,22,.68);
+    backdrop-filter: blur(5px);
+}
+
+body.dd-home .dd-contact-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(540px, 100%);
+    max-height: calc(100dvh - 40px);
+    padding: 38px;
+    overflow-y: auto;
+    background: var(--paper);
+    box-shadow: 0 25px 100px rgba(0,0,0,.25);
+}
+
+body.dd-home .dd-contact-dialog h2 {
+    max-width: 420px;
+    margin-bottom: 13px;
+    font-size: clamp(32px, 4vw, 43px);
+    line-height: 1.15;
+}
+
+body.dd-home .dd-contact-intro {
+    margin-bottom: 23px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+body.dd-home .dd-contact-dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+body.dd-home .dd-contact-dialog label {
+    margin-top: 5px;
+    color: #504b46;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+body.dd-home .dd-contact-dialog input,
+body.dd-home .dd-contact-dialog select,
+body.dd-home .dd-contact-dialog textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 12px;
+    border: 1px solid #ded7cf;
+    border-radius: 2px;
+    background: #fffefa;
+    color: var(--ink);
+    font-size: 12px;
+}
+
+body.dd-home .dd-contact-dialog textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+body.dd-home .dd-contact-dialog input:focus,
+body.dd-home .dd-contact-dialog select:focus,
+body.dd-home .dd-contact-dialog textarea:focus {
+    border-color: var(--accent);
+    outline: 1px solid var(--accent);
+}
+
+body.dd-home .dd-contact-dialog .dd-submit {
+    width: 100%;
+    margin-top: 12px;
+}
+
+body.dd-home .dd-honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+/* TABLETĂ */
+
+@media (max-width: 1000px) {
+    body.dd-home .dd-nav,
+    body.dd-home .dd-hero,
+    body.dd-home .dd-category-strip,
+    body.dd-home .dd-collection,
+    body.dd-home .dd-footer {
+        width: calc(100% - 48px);
+    }
+
+    body.dd-home .dd-hero {
+        min-height: 580px;
+        gap: 35px;
+        grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    }
+
+    body.dd-home .dd-hero h1 {
+        font-size: clamp(40px, 5vw, 58px);
+    }
+
+    body.dd-home .dd-hero-visual {
+        min-height: 440px;
+    }
+
+    body.dd-home .dd-hero-image-main {
+        height: 355px;
+    }
+
+    body.dd-home .dd-hero-image-small {
+        height: 220px;
+    }
+
+    body.dd-home .dd-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 18px;
+    }
+
+    body.dd-home .dd-product-image,
+    body.dd-home .dd-product-image-large {
+        height: 340px;
+    }
+}
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+    body.dd-home .dd-nav {
+        width: calc(100% - 36px);
+        min-height: 72px;
+    }
+
+    body.dd-home .dd-brand-main {
+        font-size: 27px;
+    }
+
+    body.dd-home .dd-menu-toggle {
+        display: flex;
+        width: 42px;
+        height: 42px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: 1px solid var(--line);
+        background: transparent;
+    }
+
+    body.dd-home .dd-menu-toggle span {
+        width: 18px;
+        height: 1px;
+        background: var(--ink);
+    }
+
+    body.dd-home .dd-nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 22px 15px;
+        border-bottom: 1px solid var(--line);
+        background: var(--bg);
+    }
+
+    body.dd-home .dd-nav-links.is-open {
+        display: flex;
+    }
+
+    body.dd-home .dd-nav-links > a {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    body.dd-home .dd-nav-links > a.is-active::after {
+        display: none;
+    }
+
+    body.dd-home .dd-hero {
+        width: calc(100% - 36px);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 35px;
+        min-height: auto;
+        padding: 52px 0 42px;
+    }
+
+    body.dd-home .dd-hero-copy {
+        padding: 0;
+    }
+
+    body.dd-home .dd-eyebrow {
+        margin-bottom: 17px;
+        font-size: 8px;
+    }
+
+    body.dd-home .dd-hero h1 {
+        margin-bottom: 18px;
+        font-size: clamp(39px, 10.5vw, 59px);
+        line-height: 1.08;
+    }
+
+    body.dd-home .dd-hero-text {
+        max-width: 460px;
+        margin-bottom: 23px;
+        font-size: 13px;
+    }
+
+    body.dd-home .dd-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    body.dd-home .dd-button {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    body.dd-home .dd-button-text {
+        border: 1px solid var(--line);
+    }
+
+    body.dd-home .dd-hero-note {
+        margin-top: 21px;
+        font-size: 9px;
+    }
+
+    body.dd-home .dd-hero-visual {
+        min-height: 390px;
+    }
+
+    body.dd-home .dd-hero-visual::before {
+        inset: 33px 0 5px 25px;
+    }
+
+    body.dd-home .dd-hero-visual-label {
+        left: 25px;
+        font-size: 7px;
+    }
+
+    body.dd-home .dd-hero-image-main {
+        top: 45px;
+        left: 12%;
+        width: 57%;
+        height: 300px;
+        border-width: 5px;
+    }
+
+    body.dd-home .dd-hero-image-small {
+        right: 1%;
+        bottom: 17px;
+        width: 36%;
+        height: 205px;
+        border-width: 5px;
+    }
+
+    body.dd-home .dd-image-tag {
+        padding: 8px 3px;
+        font-size: 6px;
+    }
+
+    body.dd-home .dd-hero-decoration {
+        right: 1%;
+        top: 38%;
+        font-size: 105px;
+    }
+
+    body.dd-home .dd-category-strip {
+        width: calc(100% - 36px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 20px;
+        padding: 15px 0;
+    }
+
+    body.dd-home .dd-strip-label {
+        grid-column: 1 / -1;
+        margin-bottom: 7px;
+    }
+
+    body.dd-home .dd-category-strip a {
+        min-height: 42px;
+        border-bottom: 1px solid var(--line);
+        font-size: 10px;
+    }
+
+    body.dd-home .dd-category-strip .dd-strip-all {
+        justify-content: space-between;
+    }
+
+    body.dd-home .dd-collection {
+        width: calc(100% - 36px);
+        padding: 70px 0;
+    }
+
+    body.dd-home .dd-section-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+        margin-bottom: 27px;
+    }
+
+    body.dd-home .dd-section-top h2 {
+        font-size: clamp(35px, 9vw, 49px);
+    }
+
+    body.dd-home .dd-section-description {
+        width: 100%;
+    }
+
+    body.dd-home .dd-section-description p {
+        max-width: 420px;
+    }
+
+    body.dd-home .dd-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 12px;
+    }
+
+    body.dd-home .dd-product-image,
+    body.dd-home .dd-product-image-large {
+        height: clamp(205px, 62vw, 300px);
+        padding: 7px;
+    }
+
+    body.dd-home .dd-product-image img {
+        object-fit: cover;
+    }
+
+    body.dd-home .dd-view-label {
+        right: 5px;
+        bottom: 5px;
+        left: 5px;
+        padding: 9px 3px;
+        font-size: 7px;
+        opacity: 1;
+        transform: none;
+    }
+
+    body.dd-home .dd-product-name {
+        font-size: 16px;
+    }
+
+    body.dd-home .dd-product-category {
+        font-size: 7px;
+    }
+
+    body.dd-home .dd-collection-footer {
+        align-items: stretch;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    body.dd-home .dd-bottom-cta {
+        padding: 60px 22px;
+    }
+
+    body.dd-home .dd-bottom-cta h2 {
+        font-size: clamp(35px, 9vw, 48px);
+    }
+
+    body.dd-home .dd-footer {
+        width: calc(100% - 36px);
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 22px 0;
+    }
+
+    body.dd-home .dd-preview-dialog {
+        width: 100%;
+        max-height: calc(100dvh - 24px);
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 18px 20px;
+    }
+
+    body.dd-home .dd-preview-copy {
+        order: 2;
+    }
+
+    body.dd-home .dd-preview-copy h2 {
+        font-size: 34px;
+    }
+
+    body.dd-home .dd-preview-copy .dd-preview-instruction {
+        margin: 15px 0;
+    }
+
+    body.dd-home .dd-preview-copy .dd-button {
+        width: 100%;
+    }
+
+    body.dd-home .dd-phone {
+        order: 1;
+        width: min(245px, 75%);
+        padding: 8px;
+        border-radius: 27px;
+    }
+
+    body.dd-home .dd-phone-screen {
+        height: min(43dvh, 370px);
+        min-height: 210px;
+        border-radius: 19px;
+    }
+
+    body.dd-home .dd-contact-dialog {
+        padding: 32px 19px 22px;
+    }
+
+    body.dd-home .dd-contact-dialog h2 {
+        font-size: 32px;
+    }
+}
+
+/* LUXURY EDITORIAL REDESIGN */
+body.dd-home {
+    --bg: #F8F5F0;
+    --paper: #FFFDFA;
+    --ink: #302521;
+    --muted: #756B64;
+    --line: #E4DCD2;
+    --accent: #A46F79;
+    --accent-dark: #79505A;
+    --soft-rose: #F0E5E2;
+    --serif: "Cormorant Garamond", "Times New Roman", serif;
+    --sans: "Manrope", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+body.dd-home h1,
+body.dd-home h2 {
+    letter-spacing: -.035em;
+}
+
+body.dd-home .dd-header {
+    background: rgba(248,245,240,.96);
+    border-color: rgba(48,37,33,.12);
+}
+
+body.dd-home .dd-nav {
+    width: min(1380px, calc(100% - 104px));
+    min-height: 78px;
+}
+
+body.dd-home .dd-brand-main {
+    font-size: 33px;
+    letter-spacing: -.075em;
+}
+
+body.dd-home .dd-brand-sub {
+    margin-top: 5px;
+    font-size: 7px;
+    letter-spacing: .25em;
+}
+
+body.dd-home .dd-nav-links {
+    gap: 40px;
+}
+
+body.dd-home .dd-nav-links > a {
+    font-size: 11px;
+    letter-spacing: .04em;
+}
+
+body.dd-home .dd-hero {
+    width: min(1380px, calc(100% - 104px));
+    min-height: 610px;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    gap: clamp(48px, 6vw, 90px);
+    padding: 46px 0 52px;
+}
+
+body.dd-home .dd-hero-copy {
+    max-width: 540px;
+}
+
+body.dd-home .dd-eyebrow {
+    margin-bottom: 16px;
+    font-size: 8px;
+    letter-spacing: .2em;
+}
+
+body.dd-home .dd-hero h1 {
+    margin-bottom: 18px;
+    font-size: clamp(58px, 6vw, 82px);
+    font-weight: 400;
+    line-height: .94;
+    letter-spacing: -.045em;
+}
+
+body.dd-home .dd-hero h1 em,
+body.dd-home .dd-section-top h2 em,
+body.dd-home .dd-bottom-cta h2 em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+body.dd-home .dd-hero-text {
+    max-width: 350px;
+    margin-bottom: 22px;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+body.dd-home .dd-button {
+    min-height: 45px;
+    padding-inline: 18px;
+    font-size: 9px;
+    letter-spacing: .055em;
+    text-transform: uppercase;
+}
+
+body.dd-home .dd-button-dark {
+    background: var(--ink);
+}
+
+body.dd-home .dd-button-dark:hover {
+    background: var(--accent-dark);
+}
+
+body.dd-home .dd-button-text {
+    font-size: 9px;
+}
+
+body.dd-home .dd-hero-note {
+    margin-top: 22px;
+    font-size: 9px;
+    letter-spacing: .025em;
+}
+
+body.dd-home .dd-hero-visual {
+    min-height: 490px;
+}
+
+body.dd-home .dd-hero-visual::before {
+    inset: 34px 0 10px 66px;
+    background: linear-gradient(132deg, #D8C7B3 0%, #E6D9CD 58%, #EEE4DE 100%);
+}
+
+body.dd-home .dd-hero-visual-label {
+    left: 66px;
+    padding-bottom: 9px;
+    border-color: #D8C7B3;
+    color: var(--accent-dark);
+    font-size: 7px;
+    letter-spacing: .19em;
+}
+
+body.dd-home .dd-hero-image {
+    border: 7px solid var(--paper);
+    box-shadow: 0 24px 60px rgba(48,37,33,.13);
+}
+
+body.dd-home .dd-hero-image-main {
+    top: 48px;
+    left: 17%;
+    width: 48%;
+    height: 397px;
+}
+
+body.dd-home .dd-hero-image-small {
+    right: 2%;
+    bottom: 17px;
+    width: 31%;
+    height: 252px;
+}
+
+body.dd-home .dd-image-tag {
+    padding: 10px 6px;
+    font-size: 7px;
+    letter-spacing: .17em;
+}
+
+body.dd-home .dd-hero-decoration {
+    right: 4%;
+    top: 34%;
+    color: rgba(121,80,90,.10);
+    font-size: clamp(120px, 14vw, 210px);
+}
+
+body.dd-home .dd-category-strip {
+    width: min(1380px, calc(100% - 104px));
+    min-height: 66px;
+    grid-template-columns: .65fr 1fr 1fr 1.25fr 1fr;
+    gap: 18px;
+    border-color: var(--line);
+}
+
+body.dd-home .dd-category-strip a {
+    font-size: 10px;
+}
+
+body.dd-home .dd-strip-label,
+body.dd-home .dd-collection-footer > span {
+    font-size: 7px;
+    letter-spacing: .2em;
+}
+
+body.dd-home .dd-collection {
+    width: min(1380px, calc(100% - 104px));
+    padding: 87px 0 86px;
+}
+
+body.dd-home .dd-section-top {
+    margin-bottom: 30px;
+}
+
+body.dd-home .dd-section-top h2 {
+    font-size: clamp(45px, 5vw, 68px);
+    line-height: .98;
+    font-weight: 400;
+}
+
+body.dd-home .dd-section-description {
+    width: min(100%, 300px);
+}
+
+body.dd-home .dd-section-description p {
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+body.dd-home .dd-product-grid {
+    gap: 18px;
+}
+
+body.dd-home .dd-product-card:nth-child(even) {
+    margin-top: 32px;
+}
+
+body.dd-home .dd-product-image,
+body.dd-home .dd-product-image-large {
+    height: clamp(285px, 31vw, 405px);
+    padding: 11px;
+    border: 0;
+    background: #EEE7E1;
+}
+
+body.dd-home .dd-image-lilac {
+    background: #EAE5E4;
+}
+
+body.dd-home .dd-image-sand {
+    background: #EDE6DB;
+}
+
+body.dd-home .dd-image-rose {
+    background: #F0E2E2;
+}
+
+body.dd-home .dd-product-image img {
+    object-position: center 12%;
+}
+
+body.dd-home .dd-view-label {
+    right: 11px;
+    bottom: 11px;
+    left: 11px;
+    padding: 10px 8px;
+    font-size: 7px;
+    letter-spacing: .16em;
+}
+
+body.dd-home .dd-product-details {
+    gap: 3px;
+    padding-top: 12px;
+}
+
+body.dd-home .dd-product-category {
+    font-size: 7px;
+    letter-spacing: .17em;
+}
+
+body.dd-home .dd-product-name {
+    font-size: 23px;
+    line-height: 1.15;
+}
+
+body.dd-home .dd-collection-footer {
+    margin-top: 30px;
+    padding-top: 18px;
+}
+
+body.dd-home .dd-button-outline {
+    min-height: 40px;
+}
+
+body.dd-home .dd-bottom-cta {
+    padding: 68px 24px 72px;
+    background: linear-gradient(132deg, #D8C7B3 0%, #E6D9CD 58%, #EEE4DE 100%);
+}
+
+body.dd-home .dd-bottom-cta h2 {
+    margin-bottom: 13px;
+    font-size: clamp(48px, 5.6vw, 74px);
+    font-weight: 400;
+    line-height: .98;
+}
+
+body.dd-home .dd-bottom-cta > p:not(.dd-eyebrow) {
+    max-width: 390px;
+    margin-bottom: 20px;
+    font-size: 11px;
+}
+
+body.dd-home .dd-footer {
+    width: min(1380px, calc(100% - 104px));
+    min-height: 76px;
+    font-size: 9px;
+}
+
+body.dd-home .dd-footer-brand {
+    font-size: 26px;
+}
+
+body.dd-home .dd-preview-dialog {
+    width: min(940px, 100%);
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 56px;
+    padding: 42px 52px;
+    border: 1px solid rgba(216,199,179,.55);
+}
+
+body.dd-home .dd-preview-copy h2,
+body.dd-home .dd-contact-dialog h2 {
+    font-weight: 400;
+}
+
+body.dd-home .dd-phone {
+    max-width: 270px;
+}
+
+@media (max-width: 1000px) {
+    body.dd-home .dd-nav,
+    body.dd-home .dd-hero,
+    body.dd-home .dd-category-strip,
+    body.dd-home .dd-collection,
+    body.dd-home .dd-footer {
+        width: calc(100% - 64px);
+    }
+
+    body.dd-home .dd-hero {
+        gap: 38px;
+        grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    }
+
+    body.dd-home .dd-product-card:nth-child(even) {
+        margin-top: 20px;
+    }
+
+    body.dd-home .dd-product-image,
+    body.dd-home .dd-product-image-large {
+        height: 330px;
+    }
+}
+
+@media (max-width: 700px) {
+    body.dd-home .dd-nav,
+    body.dd-home .dd-hero,
+    body.dd-home .dd-category-strip,
+    body.dd-home .dd-collection,
+    body.dd-home .dd-footer {
+        width: calc(100% - 36px);
+    }
+
+    body.dd-home .dd-nav {
+        min-height: 64px;
+    }
+
+    body.dd-home .dd-hero {
+        gap: 26px;
+        padding: 37px 0 33px;
+    }
+
+    body.dd-home .dd-hero h1 {
+        margin-bottom: 14px;
+        font-size: clamp(48px, 13vw, 67px);
+        line-height: .96;
+    }
+
+    body.dd-home .dd-hero-text {
+        margin-bottom: 17px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    body.dd-home .dd-hero-actions {
+        gap: 6px;
+    }
+
+    body.dd-home .dd-hero-note {
+        margin-top: 14px;
+    }
+
+    body.dd-home .dd-hero-visual {
+        min-height: 350px;
+    }
+
+    body.dd-home .dd-hero-image-main {
+        top: 43px;
+        height: 270px;
+    }
+
+    body.dd-home .dd-hero-image-small {
+        bottom: 10px;
+        height: 190px;
+    }
+
+    body.dd-home .dd-category-strip {
+        padding-block: 13px;
+    }
+
+    body.dd-home .dd-collection {
+        padding: 60px 0 58px;
+    }
+
+    body.dd-home .dd-section-top {
+        gap: 13px;
+        margin-bottom: 23px;
+    }
+
+    body.dd-home .dd-section-top h2 {
+        font-size: clamp(42px, 11vw, 58px);
+    }
+
+    body.dd-home .dd-product-grid {
+        gap: 22px 11px;
+    }
+
+    body.dd-home .dd-product-card:nth-child(even) {
+        margin-top: 18px;
+    }
+
+    body.dd-home .dd-product-image,
+    body.dd-home .dd-product-image-large {
+        height: clamp(190px, 58vw, 280px);
+        padding: 6px;
+    }
+
+    body.dd-home .dd-product-name {
+        font-size: 18px;
+    }
+
+    body.dd-home .dd-bottom-cta {
+        padding: 53px 21px 57px;
+    }
+
+    body.dd-home .dd-bottom-cta h2 {
+        font-size: clamp(43px, 11vw, 58px);
+    }
+
+    body.dd-home .dd-preview-dialog {
+        gap: 13px;
+        padding: 29px 17px 18px;
+    }
+
+    body.dd-home .dd-phone {
+        width: min(230px, 72%);
+    }
+
+    body.dd-home .dd-phone-screen {
+        height: min(39dvh, 330px);
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 380px) {
+    body.dd-home .dd-product-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    body.dd-home .dd-product-card:nth-child(even) {
+        margin-top: 0;
+    }
+
+    body.dd-home .dd-product-image,
+    body.dd-home .dd-product-image-large {
+        height: 310px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.dd-home *,
+    body.dd-home *::before,
+    body.dd-home *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* Ajustări fine pentru spațierea homepage-ului */
+
+@media (max-width: 700px) {
+    body.dd-home .dd-nav {
+        min-height: 66px;
+    }
+
+    body.dd-home .dd-hero {
+        padding-top: 38px;
+        padding-bottom: 34px;
+        gap: 27px;
+    }
+
+    body.dd-home .dd-eyebrow {
+        margin-bottom: 13px;
+        line-height: 1.5;
+    }
+
+    body.dd-home .dd-hero h1 {
+        margin-bottom: 15px;
+        line-height: 1.04;
+    }
+
+    body.dd-home .dd-hero-text {
+        margin-bottom: 21px;
+        line-height: 1.75;
+    }
+
+    body.dd-home .dd-hero-actions {
+        gap: 7px;
+    }
+
+    body.dd-home .dd-hero-note {
+        margin-top: 17px;
+    }
+}
+
+/* Preview responsive: keep the full invitation inside a touch-scrollable screen. */
+body.dd-home .dd-preview-dialog {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 270px);
+}
+
+body.dd-home .dd-phone {
+    min-width: 0;
+    flex: 0 0 auto;
+}
+
+body.dd-home .dd-phone-screen {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    touch-action: pan-y pinch-zoom;
+    -webkit-overflow-scrolling: touch;
+}
+
+body.dd-home .dd-phone-screen img {
+    display: block;
+    width: 114%;
+    max-width: none;
+    height: auto;
+    margin-left: -7%;
+}
+
+@media (max-width: 800px) {
+    body.dd-home .dd-preview-dialog {
+        grid-template-columns: minmax(0, 1fr);
+        align-content: start;
+        gap: 14px;
+        overflow-y: auto;
+    }
+
+    body.dd-home .dd-preview-copy {
+        order: 2;
+    }
+
+    body.dd-home .dd-phone {
+        order: 1;
+        width: min(205px, 68vw);
+        max-width: 205px;
+        margin-inline: auto;
+        justify-self: center;
+    }
+
+    body.dd-home .dd-phone-screen {
+        height: min(54dvh, 360px);
+        min-height: 260px;
+    }
+
+    body.dd-home .dd-preview-copy .dd-preview-instruction {
+        margin: 12px 0;
+    }
+}
+
+/* Live HTML invitation preview: the invitation itself scrolls inside the phone screen. */
+body.dd-home .dd-phone-screen {
+    overflow: hidden;
+    padding: 0;
+    background: #fff;
+}
+
+body.dd-home .dd-phone-screen iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border: 0;
+    background: #fff;
+}
+
+@media (max-width: 800px) {
+    body.dd-home .dd-phone {
+        width: min(230px, 74vw);
+        max-width: 230px;
+    }
+
+    body.dd-home .dd-phone-screen {
+        height: min(54dvh, 370px);
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 800px) and (max-height: 700px) {
+    body.dd-home .dd-phone-screen {
+        height: min(45dvh, 310px);
+        min-height: 210px;
+    }
+}

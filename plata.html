@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multumim pentru comanda | DigitalByD Studio</title>
+    <meta name="description" content="Pagina DigitalByD de multumire si confirmare, cu rezumatul comenzii si pasii urmatori.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand-mark" aria-label="DigitalByD Studio home">
+                <img src="img/logo.png" alt="DigitalByD Studio Logo" class="logo">
+            </a>
+
+            <input type="checkbox" id="menu-toggle" aria-label="Deschide meniul">
+            <div class="header-actions">
+                <a href="cosul-meu.html" class="mobile-cart-link" data-cart-link aria-label="Cosul meu">
+                    <span class="mobile-cart-label">Cos</span>
+                    <span class="cart-count is-empty" data-cart-count>0</span>
+                </a>
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            </div>
+
+            <nav class="nav-links" aria-label="Meniu principal">
+                <a href="index.html">Acasa</a>
+                <a href="shop.html">Magazin</a>
+                <a href="cosul-meu.html" class="cart-link" data-cart-link>Cosul meu <span class="cart-count is-empty" data-cart-count>0</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="portfolio-hero" aria-labelledby="payment-title">
+            <p class="section-kicker">Multumim pentru comanda</p>
+            <h1 id="payment-title">Comanda ta a fost trimisa cu succes</h1>
+            <p class="compact-lead">
+                Mai jos vezi rezumatul comenzii, iar in urmatoarele 1-2 zile vei fi contactat telefonic sau pe email pentru plata si pentru toate detaliile finale.
+            </p>
+        </section>
+
+        <section class="portfolio-section">
+            <div class="payment-layout">
+                <div class="payment-panel">
+                    <p class="section-kicker">Rezumat comanda</p>
+                    <h2>Rezumatul tau</h2>
+                    <strong class="payment-total" data-payment-total>0 lei</strong>
+
+                    <div class="payment-summary" data-payment-summary></div>
+                </div>
+
+                <aside class="payment-panel">
+                    <div class="thank-you-banner">
+                        <span class="payment-label">Confirmare primita</span>
+                        <h2>Multumim pentru comanda</h2>
+                        <p>
+                            Comanda ta a ajuns la noi si revino linistit la aceasta pagina daca vrei sa verifici rezumatul.
+                        </p>
+                    </div>
+
+                    <p class="section-kicker">Datele tale</p>
+                    <h2>Informatiile trimise</h2>
+                    <div class="payment-status">
+                        <span class="payment-label">Nume</span>
+                        <p data-payment-name>-</p>
+                        <span class="payment-label">Email</span>
+                        <p data-payment-email>-</p>
+                        <span class="payment-label">Telefon</span>
+                        <p data-payment-phone>-</p>
+                        <span class="payment-label">Eveniment</span>
+                        <p data-payment-event>-</p>
+                    </div>
+
+                    <div class="payment-action-box">
+                        <span class="payment-label">Ce urmeaza</span>
+                        <h3>Te contactez eu in continuare</h3>
+                        <p class="payment-action-copy" data-payment-copy>
+                            Comanda ta a fost inregistrata cu succes.
+                        </p>
+                        <div class="payment-action-status" data-payment-status>
+                            In scurt timp vei fi contactat pentru plata si pentru stabilirea tuturor detaliilor finale.
+                        </div>
+                        <div class="followup-steps">
+                            <div class="followup-step">
+                                <span class="followup-step-no">1</span>
+                                <div>
+                                    <strong>Revin in 1-2 zile</strong>
+                                    <p>Te contactez telefonic sau pe email pentru confirmarea comenzii.</p>
+                                </div>
+                            </div>
+                            <div class="followup-step">
+                                <span class="followup-step-no">2</span>
+                                <div>
+                                    <strong>Stabilim plata si detaliile</strong>
+                                    <p>Discutam detaliile finale ale produsului si metoda de plata potrivita.</p>
+                                </div>
+                            </div>
+                            <div class="followup-step">
+                                <span class="followup-step-no">3</span>
+                                <div>
+                                    <strong>Incepem pregatirea comenzii</strong>
+                                    <p>Dupa confirmare, trecem la realizarea produsului tau.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions payment-action-buttons">
+                            <a href="index.html" class="btn-primary">Inapoi la site</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 DigitalByD Studio - Toate drepturile rezervate
+    </footer>
+    <script src="storefront.js"></script>
+</body>
+</html>

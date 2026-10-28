@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DigitalByD Studio | Invitații digitale pentru nuntă și botez</title>
+    <meta name="description" content="Descoperă invitații digitale elegante pentru nuntă și botez. Alege modelul preferat sau solicită o invitație personalizată.">
+    <meta name="theme-color" content="#F8F5F0">
+    <link rel="canonical" href="https://digitalbyd.com/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./homepage.css">
+</head>
+
+<body class="dd-home">
+
+<header class="dd-header">
+    <div class="dd-nav">
+
+        <a href="index.html" class="dd-brand" aria-label="DigitalByD Studio - Acasă">
+            <span class="dd-brand-main">digital<span>by</span>d</span>
+            <span class="dd-brand-sub">INVITATION STUDIO</span>
+        </a>
+
+        <button class="dd-menu-toggle" id="menuToggle"
+                type="button" aria-label="Deschide meniul"
+                aria-expanded="false" aria-controls="mainNav">
+            <span></span><span></span>
+        </button>
+
+        <nav class="dd-nav-links" id="mainNav" aria-label="Navigare principală">
+            <a href="index.html" class="is-active">Acasă</a>
+            <a href="shop.html">Magazin</a>
+            <a href="cosul-meu.html" class="dd-cart-link">
+                Coș <span class="cart-count is-empty" data-cart-count>0</span>
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="dd-hero">
+        <div class="dd-hero-copy">
+            <p class="dd-eyebrow">INVITAȚII DIGITALE · NUNTĂ · BOTEZ</p>
+
+            <h1>
+                Momente speciale.<br>
+                <em>Invitații cu poveste.</em>
+            </h1>
+
+            <p class="dd-hero-text">
+                Designuri digitale create cu grijă pentru evenimentele
+                pe care vrei să le ții minte.
+            </p>
+
+            <div class="dd-hero-actions">
+                <a href="shop.html" class="dd-button dd-button-dark">
+                    Explorează colecția <span>↗</span>
+                </a>
+
+                <button type="button" class="dd-button dd-button-text"
+                        onclick="openContact('Invitatie digitala personalizata')">
+                    Invitație personalizată <span>→</span>
+                </button>
+            </div>
+
+            <div class="dd-hero-note">
+                <span class="dd-note-dot"></span>
+                Design digital · Personalizare la cerere
+            </div>
+        </div>
+
+        <div class="dd-hero-visual">
+            <div class="dd-hero-visual-label">
+                <span>THE ART OF INVITING</span>
+                <span>01 / 04</span>
+            </div>
+
+            <button class="dd-hero-image dd-hero-image-main"
+                    type="button" onclick="openGallery('elegant')"
+                    aria-label="Vezi invitația Elegant">
+                <img src="img/invitatii/elegant-preview.png"
+                     alt="Invitație digitală Elegant">
+                <span class="dd-image-tag">WEDDING COLLECTION</span>
+            </button>
+
+            <button class="dd-hero-image dd-hero-image-small"
+                    type="button" onclick="openGallery('babyPastel')"
+                    aria-label="Vezi invitația Baby Pastel">
+                <img src="img/invitatii/baby-pastel-preview.png"
+                     alt="Invitație digitală Baby Pastel">
+            </button>
+
+            <span class="dd-hero-decoration" aria-hidden="true">D.</span>
+        </div>
+    </section>
+
+    <!-- CATEGORII -->
+    <section class="dd-category-strip" aria-label="Categorii">
+        <span class="dd-strip-label">DESCOPERĂ</span>
+        <a href="shop.html#invitatii-nunta">Nuntă <span>↗</span></a>
+        <a href="shop.html#invitatii-botez">Botez <span>↗</span></a>
+        <a href="shop.html#qr-uri">QR pentru amintiri <span>↗</span></a>
+        <a href="shop.html" class="dd-strip-all">Tot magazinul <span>→</span></a>
+    </section>
+
+    <!-- COLECȚIE -->
+    <section class="dd-collection" id="colectie">
+        <div class="dd-section-top">
+            <div>
+                <p class="dd-eyebrow">01 / COLECȚIE</p>
+                <h2>Găsește stilul<br><em>care vi se potrivește.</em></h2>
+            </div>
+
+            <div class="dd-section-description">
+                <p>
+                    De la modele minimaliste la invitații romantice,
+                    fiecare detaliu contează.
+                </p>
+                <a href="shop.html" class="dd-underlined-link">
+                    Vezi toate modelele <span>↗</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="dd-product-grid">
+
+            <button class="dd-product-card" type="button"
+                    onclick="openGallery('elegant')">
+                <span class="dd-product-image dd-product-image-large">
+                    <img src="img/invitatii/elegant-preview.png"
+                         alt="Preview invitație Elegant" loading="lazy">
+                    <span class="dd-view-label">VEZI INVITAȚIA ↗</span>
+                </span>
+                <span class="dd-product-details">
+                    <span class="dd-product-category">01 / NUNTĂ</span>
+                    <span class="dd-product-name">Elegant</span>
+                </span>
+            </button>
+
+            <button class="dd-product-card" type="button"
+                    onclick="openGallery('minimalist')">
+                <span class="dd-product-image dd-image-lilac">
+                    <img src="img/invitatii/minimalist-premium-preview.png"
+                         alt="Preview invitație Minimalist Premium" loading="lazy">
+                    <span class="dd-view-label">VEZI INVITAȚIA ↗</span>
+                </span>
+                <span class="dd-product-details">
+                    <span class="dd-product-category">02 / NUNTĂ</span>
+                    <span class="dd-product-name">Minimalist Premium</span>
+                </span>
+            </button>
+
+            <button class="dd-product-card" type="button"
+                    onclick="openGallery('vintage')">
+                <span class="dd-product-image dd-image-sand">
+                    <img src="img/invitatii/vintage-premium-preview.png"
+                         alt="Preview invitație The Wedding Times" loading="lazy">
+                    <span class="dd-view-label">VEZI INVITAȚIA ↗</span>
+                </span>
+                <span class="dd-product-details">
+                    <span class="dd-product-category">03 / EDITORIAL</span>
+                    <span class="dd-product-name">The Wedding Times</span>
+                </span>
+            </button>
+
+            <button class="dd-product-card" type="button"
+                    onclick="openGallery('babyPastel')">
+                <span class="dd-product-image dd-image-rose">
+                    <img src="img/invitatii/baby-pastel-preview.png"
+                         alt="Preview invitație Baby Pastel" loading="lazy">
+                    <span class="dd-view-label">VEZI INVITAȚIA ↗</span>
+                </span>
+                <span class="dd-product-details">
+                    <span class="dd-product-category">04 / BOTEZ</span>
+                    <span class="dd-product-name">Baby Pastel</span>
+                </span>
+            </button>
+
+        </div>
+
+        <div class="dd-collection-footer">
+            <span>COLECȚIA DIGITALBYD</span>
+            <a href="shop.html" class="dd-button dd-button-outline">
+                Explorează magazinul <span>↗</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- MESAJ SCURT -->
+    <section class="dd-bottom-cta">
+        <p class="dd-eyebrow">02 / MODELUL TĂU</p>
+        <h2>Ai o idee în minte?<br><em>Hai să-i dăm formă.</em></h2>
+        <p>
+            Povestește-ne ce îți dorești, iar noi te ajutăm
+            să găsești direcția potrivită.
+        </p>
+        <button type="button" class="dd-button dd-button-light"
+                onclick="openContact('Invitatie digitala personalizata')">
+            Cere o invitație personalizată <span>↗</span>
+        </button>
+    </section>
+
+</main>
+
+<footer class="dd-footer">
+    <a href="index.html" class="dd-footer-brand">digital<span>by</span>d</a>
+    <span>Invitații digitale pentru momente speciale.</span>
+    <span>© 2026 DigitalByD Studio</span>
+</footer>
+
+
+<!-- PREVIEW INVITAȚIE -->
+<div class="dd-modal" id="galleryModal" aria-hidden="true"
+     role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+
+    <div class="dd-modal-backdrop" data-close-gallery></div>
+
+    <div class="dd-preview-dialog">
+        <button class="dd-modal-close" type="button"
+                onclick="closeGallery()" aria-label="Închide preview-ul">
+            ×
+        </button>
+
+        <div class="dd-preview-copy">
+            <p class="dd-eyebrow">PREVIEW INVITAȚIE</p>
+            <h2 id="galleryTitle">Invitație</h2>
+            <p id="galleryDescription"></p>
+
+            <p class="dd-preview-instruction">
+                Derulează în interiorul telefonului pentru a vedea invitația completă.
+            </p>
+
+            <button type="button" id="galleryOrderButton"
+                    class="dd-button dd-button-dark">
+                Vezi modelul în magazin <span>↗</span>
+            </button>
+        </div>
+
+        <div class="dd-phone">
+            <div class="dd-phone-speaker"></div>
+            <div class="dd-phone-screen" id="galleryScroll">
+                <iframe id="galleryFrame" title="Previzualizare invitație" src="about:blank" sandbox="allow-same-origin"></iframe>
+            </div>
+            <div class="dd-phone-home"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- CONTACT -->
+<div class="dd-contact-modal" id="contactModal" aria-hidden="true">
+    <div class="dd-contact-backdrop" data-close-contact></div>
+
+    <div class="dd-contact-dialog" role="dialog" aria-modal="true"
+         aria-labelledby="contactTitle">
+
+        <button type="button" class="dd-modal-close"
+                onclick="closeContact()" aria-label="Închide formularul">
+            ×
+        </button>
+
+        <p class="dd-eyebrow">CONTACT DIGITALBYD</p>
+        <h2 id="contactTitle">Hai să vorbim despre invitația ta.</h2>
+        <p class="dd-contact-intro">
+            Completează câteva detalii și spune-ne ce ai în minte.
+        </p>
+
+        <!-- Formularul Netlify funcționează doar dacă site-ul este găzduit pe Netlify. -->
+        <form name="contact" method="POST" data-netlify="true"
+              netlify-honeypot="bot-field">
+
+            <input type="hidden" name="form-name" value="contact">
+            <p class="dd-honeypot">
+                <label>Nu completa acest câmp
+                    <input name="bot-field">
+                </label>
+            </p>
+
+            <label for="contactName">Numele tău</label>
+            <input id="contactName" name="name" type="text"
+                   autocomplete="name" required>
+
+            <label for="contactEmail">Adresa de email</label>
+            <input id="contactEmail" name="email" type="email"
+                   autocomplete="email" required>
+
+            <label for="subjectField">Ce te interesează?</label>
+            <select id="subjectField" name="subject" required>
+                <option value="Invitatie digitala">Invitație digitală</option>
+                <option value="QR pentru poze si videoclipuri">QR pentru amintiri</option>
+                <option value="Alt produs digital">Alt produs digital</option>
+                <option value="Pachet personalizat">Pachet personalizat</option>
+            </select>
+
+            <label for="eventDate">Data evenimentului (opțional)</label>
+            <input id="eventDate" name="event-date" type="text"
+                   placeholder="Ex. 12 septembrie 2027">
+
+            <label for="messageField">Detalii</label>
+            <textarea id="messageField" name="message" rows="4"
+                      placeholder="Ce tip de eveniment organizezi și ce stil îți dorești?"
+                      required></textarea>
+
+            <button class="dd-button dd-button-dark dd-submit" type="submit">
+                Trimite cererea <span>↗</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+(function () {
+    "use strict";
+
+    const galleries = {
+        elegant: {
+            title: "Elegant",
+            description: "Un model rafinat pentru ziua voastră specială.",
+            page: "invitatii-live/elegant/preview.html",
+            anchor: "shop.html#invitatii-nunta"
+        },
+        minimalist: {
+            title: "Minimalist Premium",
+            description: "Un design contemporan, cu linii curate.",
+            page: "invitatii-live/minimalist/preview.html",
+            anchor: "shop.html#invitatii-nunta"
+        },
+        vintage: {
+            title: "The Wedding Times",
+            description: "O invitație editorială cu personalitate.",
+            page: "invitatii-live/vintage/preview.html",
+            anchor: "shop.html#invitatii-nunta"
+        },
+        babyPastel: {
+            title: "Baby Pastel",
+            description: "Un model delicat pentru un moment de familie.",
+            page: "invitatii-live/baby-pastel/preview.html",
+            anchor: "shop.html#invitatii-botez"
+        }
+    };
+
+    const galleryModal = document.getElementById("galleryModal");
+    const contactModal = document.getElementById("contactModal");
+    const galleryFrame = document.getElementById("galleryFrame");
+    const galleryScroll = document.getElementById("galleryScroll");
+    const galleryOrderButton = document.getElementById("galleryOrderButton");
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    let previousFocus = null;
+
+    function lockPage(locked) {
+        document.body.classList.toggle("dd-modal-open", locked);
+    }
+
+    function openGallery(key) {
+        const item = galleries[key];
+        if (!item) return;
+
+        previousFocus = document.activeElement;
+
+        document.getElementById("galleryTitle").textContent = item.title;
+        document.getElementById("galleryDescription").textContent = item.description;
+
+        galleryFrame.src = item.page;
+        galleryFrame.title = item.title + " — invitație completă";
+        galleryScroll.scrollTop = 0;
+
+        galleryOrderButton.onclick = function () {
+            window.location.href = item.anchor;
+        };
+
+        galleryModal.classList.add("is-open");
+        galleryModal.setAttribute("aria-hidden", "false");
+        lockPage(true);
+        document.querySelector("#galleryModal .dd-modal-close").focus();
+    }
+
+    function closeGallery() {
+        galleryModal.classList.remove("is-open");
+        galleryModal.setAttribute("aria-hidden", "true");
+        galleryFrame.src = "about:blank";
+
+        if (!contactModal.classList.contains("is-open")) {
+            lockPage(false);
+        }
+
+        if (previousFocus && typeof previousFocus.focus === "function") {
+            previousFocus.focus();
+        }
+    }
+
+    function openContact(productName) {
+        previousFocus = document.activeElement;
+
+        const subjectField = document.getElementById("subjectField");
+        const messageField = document.getElementById("messageField");
+
+        if (productName) {
+            messageField.value = "Bună! Mă interesează: " + productName +
+                ".\nDetalii despre eveniment: ";
+
+            if (productName.toLowerCase().includes("qr")) {
+                subjectField.value = "QR pentru poze si videoclipuri";
+            } else if (productName.toLowerCase().includes("pachet")) {
+                subjectField.value = "Pachet personalizat";
+            } else {
+                subjectField.value = "Invitatie digitala";
+            }
+        }
+
+        contactModal.classList.add("is-open");
+        contactModal.setAttribute("aria-hidden", "false");
+        lockPage(true);
+        document.getElementById("contactName").focus();
+    }
+
+    function closeContact() {
+        contactModal.classList.remove("is-open");
+        contactModal.setAttribute("aria-hidden", "true");
+
+        if (!galleryModal.classList.contains("is-open")) {
+            lockPage(false);
+        }
+
+        if (previousFocus && typeof previousFocus.focus === "function") {
+            previousFocus.focus();
+        }
+    }
+
+    function closeMenu() {
+        mainNav.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Deschide meniul");
+    }
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Închide meniul" : "Deschide meniul");
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.querySelectorAll("[data-close-gallery]").forEach(function (element) {
+        element.addEventListener("click", closeGallery);
+    });
+
+    document.querySelectorAll("[data-close-contact]").forEach(function (element) {
+        element.addEventListener("click", closeContact);
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeGallery();
+            closeContact();
+            closeMenu();
+        }
+    });
+
+    window.openGallery = openGallery;
+    window.closeGallery = closeGallery;
+    window.openContact = openContact;
+    window.closeContact = closeContact;
+})();
+</script>
+
+<script src="./storefront.js"></script>
+</body>
+</html>
+

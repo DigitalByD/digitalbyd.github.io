@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosul meu | DigitalByD Studio</title>
+    <meta name="description" content="Cosul de comanda DigitalByD pentru invitatii digitale, produse QR, save the date si pachete de eveniment.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand-mark" aria-label="DigitalByD Studio home">
+                <img src="img/logo.png" alt="DigitalByD Studio Logo" class="logo">
+            </a>
+
+            <input type="checkbox" id="menu-toggle" aria-label="Deschide meniul">
+            <div class="header-actions">
+                <a href="cosul-meu.html" class="mobile-cart-link" data-cart-link aria-label="Cosul meu">
+                    <span class="mobile-cart-label">Cos</span>
+                    <span class="cart-count is-empty" data-cart-count>0</span>
+                </a>
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            </div>
+
+            <nav class="nav-links" aria-label="Meniu principal">
+                <a href="index.html">Acasa</a>
+                <a href="shop.html">Magazin</a>
+                <a href="cosul-meu.html" class="active cart-link" data-cart-link>Cosul meu <span class="cart-count is-empty" data-cart-count>0</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="portfolio-hero" aria-labelledby="cart-title">
+            <p class="section-kicker">Cosul meu</p>
+            <h1 id="cart-title">Aici se aduna comanda si de aici incepe confirmarea</h1>
+            <p class="compact-lead">
+                Aici vezi sumarul comenzii, completezi datele si trimiti cererea.
+                Dupa trimitere vei ajunge la pagina de confirmare, iar apoi vei fi contactat pentru plata si restul detaliilor.
+            </p>
+        </section>
+
+        <section class="portfolio-section">
+            <div class="cart-layout">
+                <div class="cart-panel">
+                    <div class="cart-summary">
+                        <div>
+                            <p class="section-kicker">Produsele alese</p>
+                            <h2>Cosul de comanda</h2>
+                            <p data-cart-items-count>0 produse</p>
+                        </div>
+                        <button class="btn-secondary" type="button" data-clear-cart onclick="DigitalByDStore.clearCart()">Goleste cosul</button>
+                    </div>
+
+                    <div class="cart-empty" data-cart-empty>
+                        Cosul este gol momentan. Intoarce-te in <a href="shop.html">magazin</a> si adauga produsele dorite.
+                    </div>
+
+                    <div class="cart-items-list" data-cart-items></div>
+                </div>
+
+                <aside class="checkout-panel">
+                    <p class="section-kicker">Checkout</p>
+                    <h2>Trimite comanda</h2>
+                    <p>Dupa trimitere vei vedea rezumatul comenzii, iar apoi vei fi contactat pentru plata si stabilirea ultimelor detalii.</p>
+
+                    <div class="checkout-total">
+                        <span>Subtotal comanda</span>
+                        <strong data-cart-subtotal>0 lei</strong>
+                        <span>Total de plata: <span data-cart-total>0 lei</span></span>
+                    </div>
+
+                    <form action="https://formsubmit.co/digitalbyd@yahoo.com" method="POST" data-checkout-form>
+                        <input type="hidden" name="_subject" value="Comanda noua DigitalByD">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="">
+                        <input type="hidden" name="_url" value="">
+                        <textarea name="order-summary" hidden></textarea>
+                        <input type="hidden" name="order-total" value="">
+                        <input type="hidden" name="order-count" value="">
+
+                        <p>
+                            <label>Numele complet
+                                <input type="text" name="name" required>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>Email
+                                <input type="email" name="email" required>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>Telefon
+                                <input type="tel" name="phone" required placeholder="Ex: 07xx xxx xxx">
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>Tip eveniment
+                                <select name="event-type" required>
+                                    <option value="Nunta">Nunta</option>
+                                    <option value="Botez">Botez</option>
+                                    <option value="Eveniment privat">Eveniment privat</option>
+                                    <option value="Save the Date">Save the Date</option>
+                                    <option value="Wedding Planner">Wedding Planner</option>
+                                </select>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>Data evenimentului
+                                <input type="text" name="event-date" placeholder="Ex: 14 iunie 2026">
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>Mesaj / preferinte
+                                <textarea name="message" placeholder="Modelul dorit, culori, nume, locatie, orice detaliu important."></textarea>
+                            </label>
+                        </p>
+
+                        <p>
+                            <button class="btn-contact" type="submit" data-cart-submit>Trimite comanda</button>
+                        </p>
+                    </form>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 DigitalByD Studio - Toate drepturile rezervate
+    </footer>
+
+    <script src="storefront.js"></script>
+</body>
+</html>
