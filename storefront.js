@@ -256,23 +256,16 @@
     function setCheckoutTargets(form) {
         const nextField = form.querySelector('input[name="_next"]');
         const urlField = form.querySelector('input[name="_url"]');
+        const isServedPage = window.location.protocol === "http:" || window.location.protocol === "https:";
 
         if (urlField) {
-            if (window.location.protocol === "file:") {
-                urlField.value = "cosul-meu.html";
-            } else {
-                urlField.value = window.location.href;
-            }
+            urlField.value = isServedPage ? window.location.href : "";
         }
 
-        if (!nextField) {
-            return;
-        }
-
-        if (window.location.protocol === "file:") {
-            nextField.value = "plata.html";
-        } else {
-            nextField.value = new URL("plata.html", window.location.href).href;
+        if (nextField) {
+            nextField.value = isServedPage
+                ? new URL("plata.html", window.location.href).href
+                : "";
         }
     }
 
@@ -285,12 +278,28 @@
 
         setCheckoutTargets(form);
 
+        const checkoutNote = form.querySelector(".dd-checkout-note");
+        const openedFromFile = window.location.protocol === "file:";
+        if (checkoutNote && openedFromFile) {
+            checkoutNote.textContent = "Pentru trimiterea comenzii, deschide site-ul prin Live Server sau prin adresa lui publică, nu direct din fișierul HTML.";
+            checkoutNote.classList.add("is-local-warning");
+            checkoutNote.setAttribute("role", "status");
+        }
+
         form.addEventListener("submit", function(event) {
             const cart = loadCart();
 
             if (!cart.length) {
                 event.preventDefault();
                 showToast("Cosul este gol");
+                return;
+            }
+
+            if (window.location.protocol === "file:") {
+                event.preventDefault();
+                if (checkoutNote) {
+                    checkoutNote.textContent = "Nu se poate trimite dintr-un fișier deschis direct. Folosește Live Server sau adresa publică a site-ului.";
+                }
                 return;
             }
 

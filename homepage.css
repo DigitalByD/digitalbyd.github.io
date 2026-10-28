@@ -83,11 +83,13 @@ body.dd-home h2 em {
 /* HEADER */
 
 body.dd-home .dd-header {
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 50;
     width: 100%;
     background: rgba(248,246,242,.96);
     border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
 }
 
 body.dd-home .dd-nav {
@@ -175,6 +177,10 @@ body.dd-home .dd-cart-link .cart-count {
 }
 
 body.dd-home .dd-menu-toggle {
+    display: none;
+}
+
+body.dd-home .dd-mobile-cart {
     display: none;
 }
 
@@ -967,6 +973,7 @@ body.dd-home .dd-honeypot {
     body.dd-home .dd-nav {
         width: calc(100% - 36px);
         min-height: 72px;
+        gap: 12px;
     }
 
     body.dd-home .dd-brand-main {
@@ -984,6 +991,39 @@ body.dd-home .dd-honeypot {
         border: 1px solid var(--line);
         background: transparent;
     }
+
+    body.dd-home .dd-mobile-cart {
+        display: inline-flex;
+        min-height: 40px;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        margin-left: auto;
+        padding: 0 9px;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 9px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    body.dd-home .dd-mobile-cart:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+    body.dd-home .dd-mobile-cart .cart-count {
+        display: inline-flex;
+        min-width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 9px;
+        line-height: 1;
+    }
+
+    body.dd-home .dd-mobile-cart .cart-count.is-empty { opacity: .58; }
 
     body.dd-home .dd-menu-toggle span {
         width: 18px;

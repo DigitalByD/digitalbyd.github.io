@@ -3,120 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multumim pentru comanda | DigitalByD Studio</title>
-    <meta name="description" content="Pagina DigitalByD de multumire si confirmare, cu rezumatul comenzii si pasii urmatori.">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Mulțumim pentru comandă | DigitalByD Studio</title>
+    <meta name="description" content="Confirmarea comenzii tale DigitalByD Studio și pașii următori.">
+    <meta name="theme-color" content="#F8F5F0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="payment.css">
 </head>
-<body>
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="brand-mark" aria-label="DigitalByD Studio home">
-                <img src="img/logo.png" alt="DigitalByD Studio Logo" class="logo">
+<body class="dd-home dd-payment-page">
+    <header class="dd-header">
+        <div class="dd-nav">
+            <a href="index.html" class="dd-brand" aria-label="DigitalByD Studio - Acasă">
+                <span class="dd-brand-main">digital<span>by</span>d</span>
+                <span class="dd-brand-sub">INVITATION STUDIO</span>
             </a>
 
-            <input type="checkbox" id="menu-toggle" aria-label="Deschide meniul">
-            <div class="header-actions">
-                <a href="cosul-meu.html" class="mobile-cart-link" data-cart-link aria-label="Cosul meu">
-                    <span class="mobile-cart-label">Cos</span>
-                    <span class="cart-count is-empty" data-cart-count>0</span>
-                </a>
-                <label for="menu-toggle" class="menu-icon">&#9776;</label>
-            </div>
+            <a href="cosul-meu.html" class="dd-mobile-cart" data-cart-link aria-label="Deschide coșul meu">
+                Coșul meu <span class="cart-count is-empty" data-cart-count>0</span>
+            </a>
 
-            <nav class="nav-links" aria-label="Meniu principal">
-                <a href="index.html">Acasa</a>
+            <button class="dd-menu-toggle" id="menuToggle" type="button"
+                    aria-label="Deschide meniul" aria-expanded="false" aria-controls="mainNav">
+                <span></span><span></span>
+            </button>
+
+            <nav class="dd-nav-links" id="mainNav" aria-label="Navigare principală">
+                <a href="index.html">Acasă</a>
                 <a href="shop.html">Magazin</a>
-                <a href="cosul-meu.html" class="cart-link" data-cart-link>Cosul meu <span class="cart-count is-empty" data-cart-count>0</span></a>
+                <a href="cosul-meu.html" class="dd-cart-link" data-cart-link>
+                    Coș <span class="cart-count is-empty" data-cart-count>0</span>
+                </a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="portfolio-hero" aria-labelledby="payment-title">
-            <p class="section-kicker">Multumim pentru comanda</p>
-            <h1 id="payment-title">Comanda ta a fost trimisa cu succes</h1>
-            <p class="compact-lead">
-                Mai jos vezi rezumatul comenzii, iar in urmatoarele 1-2 zile vei fi contactat telefonic sau pe email pentru plata si pentru toate detaliile finale.
-            </p>
+        <section class="dd-payment-hero" aria-labelledby="payment-title">
+            <div class="dd-payment-hero-copy">
+                <p class="dd-eyebrow">COMANDĂ TRANSMISĂ · DIGITALBYD STUDIO</p>
+                <h1 id="payment-title">Mulțumim<br><em>pentru comandă.</em></h1>
+                <p>Am primit detaliile tale. Te vom contacta în următoarele 1–2 zile pe email sau telefon pentru confirmare, plată și pașii de personalizare.</p>
+            </div>
+            <div class="dd-payment-confirmation" aria-label="Comandă trimisă cu succes">
+                <span class="dd-payment-check" aria-hidden="true">✓</span>
+                <div>
+                    <span class="dd-payment-confirmation-label">CONFIRMARE PRIMITĂ</span>
+                    <strong>Solicitarea ta a ajuns la noi.</strong>
+                    <p>Revenim curând cu toate detaliile.</p>
+                </div>
+            </div>
         </section>
 
-        <section class="portfolio-section">
-            <div class="payment-layout">
-                <div class="payment-panel">
-                    <p class="section-kicker">Rezumat comanda</p>
-                    <h2>Rezumatul tau</h2>
-                    <strong class="payment-total" data-payment-total>0 lei</strong>
+        <section class="dd-payment-content" aria-label="Rezumatul comenzii și pașii următori">
+            <div class="dd-payment-grid">
+                <section class="dd-payment-panel dd-payment-summary-panel" aria-labelledby="summary-title">
+                    <p class="dd-eyebrow">COMANDA TA</p>
+                    <h2 id="summary-title">Rezumatul comenzii</h2>
+                    <div class="dd-payment-total" data-payment-total>0 lei</div>
+                    <div class="payment-summary" data-payment-summary aria-live="polite"></div>
+                </section>
 
-                    <div class="payment-summary" data-payment-summary></div>
-                </div>
+                <aside class="dd-payment-panel dd-payment-details-panel">
+                    <p class="dd-eyebrow">DATELE TRIMISE</p>
+                    <h2>Te contactăm în curând.</h2>
+                    <dl class="dd-payment-details">
+                        <div><dt>Nume</dt><dd data-payment-name>—</dd></div>
+                        <div><dt>Email</dt><dd data-payment-email>—</dd></div>
+                        <div><dt>Telefon</dt><dd data-payment-phone>—</dd></div>
+                        <div><dt>Eveniment</dt><dd data-payment-event>—</dd></div>
+                    </dl>
 
-                <aside class="payment-panel">
-                    <div class="thank-you-banner">
-                        <span class="payment-label">Confirmare primita</span>
-                        <h2>Multumim pentru comanda</h2>
-                        <p>
-                            Comanda ta a ajuns la noi si revino linistit la aceasta pagina daca vrei sa verifici rezumatul.
-                        </p>
+                    <div class="dd-payment-next">
+                        <span class="dd-payment-next-label">CE URMEAZĂ</span>
+                        <p data-payment-copy>Te vom contacta în următoarele 1–2 zile pentru confirmarea comenzii și stabilirea detaliilor.</p>
+                        <div class="dd-payment-next-status" data-payment-status role="status">Îți trimitem pașii următori pe email sau telefon.</div>
+                        <ol class="dd-payment-steps">
+                            <li><span>01</span><div><strong>Confirmăm comanda</strong><p>Revenim pe email sau telefon cu detaliile produselor alese.</p></div></li>
+                            <li><span>02</span><div><strong>Stabilim plata și personalizarea</strong><p>Discutăm împreună toate detaliile înainte să începem.</p></div></li>
+                            <li><span>03</span><div><strong>Pregătim designul</strong><p>Începem realizarea după confirmarea tuturor informațiilor.</p></div></li>
+                        </ol>
                     </div>
 
-                    <p class="section-kicker">Datele tale</p>
-                    <h2>Informatiile trimise</h2>
-                    <div class="payment-status">
-                        <span class="payment-label">Nume</span>
-                        <p data-payment-name>-</p>
-                        <span class="payment-label">Email</span>
-                        <p data-payment-email>-</p>
-                        <span class="payment-label">Telefon</span>
-                        <p data-payment-phone>-</p>
-                        <span class="payment-label">Eveniment</span>
-                        <p data-payment-event>-</p>
-                    </div>
-
-                    <div class="payment-action-box">
-                        <span class="payment-label">Ce urmeaza</span>
-                        <h3>Te contactez eu in continuare</h3>
-                        <p class="payment-action-copy" data-payment-copy>
-                            Comanda ta a fost inregistrata cu succes.
-                        </p>
-                        <div class="payment-action-status" data-payment-status>
-                            In scurt timp vei fi contactat pentru plata si pentru stabilirea tuturor detaliilor finale.
-                        </div>
-                        <div class="followup-steps">
-                            <div class="followup-step">
-                                <span class="followup-step-no">1</span>
-                                <div>
-                                    <strong>Revin in 1-2 zile</strong>
-                                    <p>Te contactez telefonic sau pe email pentru confirmarea comenzii.</p>
-                                </div>
-                            </div>
-                            <div class="followup-step">
-                                <span class="followup-step-no">2</span>
-                                <div>
-                                    <strong>Stabilim plata si detaliile</strong>
-                                    <p>Discutam detaliile finale ale produsului si metoda de plata potrivita.</p>
-                                </div>
-                            </div>
-                            <div class="followup-step">
-                                <span class="followup-step-no">3</span>
-                                <div>
-                                    <strong>Incepem pregatirea comenzii</strong>
-                                    <p>Dupa confirmare, trecem la realizarea produsului tau.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-actions payment-action-buttons">
-                            <a href="index.html" class="btn-primary">Inapoi la site</a>
-                        </div>
+                    <div class="dd-payment-actions">
+                        <a href="shop.html" class="dd-button dd-button-dark">Înapoi la magazin <span>↗</span></a>
+                        <a href="index.html" class="dd-underlined-link">Acasă <span>→</span></a>
                     </div>
                 </aside>
             </div>
         </section>
     </main>
 
-    <footer>
-        &copy; 2026 DigitalByD Studio - Toate drepturile rezervate
+    <footer class="dd-footer">
+        <a href="index.html" class="dd-footer-brand">digital<span>by</span>d</a>
+        <span>Invitații digitale pentru momente speciale.</span>
+        <span>© 2026 DigitalByD Studio</span>
     </footer>
+
     <script src="storefront.js"></script>
+    <script>
+        (function() {
+            const menuToggle = document.getElementById("menuToggle");
+            const mainNav = document.getElementById("mainNav");
+            if (!menuToggle || !mainNav) return;
+
+            function closeMenu() {
+                mainNav.classList.remove("is-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Deschide meniul");
+            }
+
+            menuToggle.addEventListener("click", function() {
+                const isOpen = mainNav.classList.toggle("is-open");
+                menuToggle.setAttribute("aria-expanded", String(isOpen));
+                menuToggle.setAttribute("aria-label", isOpen ? "Închide meniul" : "Deschide meniul");
+            });
+
+            mainNav.querySelectorAll("a").forEach(function(link) {
+                link.addEventListener("click", closeMenu);
+            });
+        })();
+    </script>
 </body>
 </html>
