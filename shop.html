@@ -87,7 +87,7 @@
                     <h2 id="pricing-title">Alege nivelul<br><em>potrivit evenimentului.</em></h2>
                 </div>
                 <div class="dd-section-description">
-                    <p>Fiecare model poate fi comandat în trei variante. Selectează pachetul direct pe cardul invitației.</p>
+                    <p>Alege nivelul dorit, apoi selectează modelul. Prețul final și comanda sunt disponibile și în preview.</p>
                 </div>
             </div>
 
@@ -97,10 +97,11 @@
                     <h3>Pachet Basic</h3>
                     <span class="price-range">100 - 150 lei</span>
                     <ul>
-                        <li>Invitatie simpla, fara formular</li>
-                        <li>Include detaliile evenimentului</li>
-                        <li>Confirmarile se fac prin datele de contact</li>
+                        <li>Detaliile esențiale ale evenimentului</li>
+                        <li>Fără formular RSVP</li>
+                        <li>Confirmări prin contact</li>
                     </ul>
+                    <button class="package-tier-button" type="button" onclick="choosePackage('Basic')">Alege o invitație Basic <span>↗</span></button>
                 </article>
 
                 <article class="price-card">
@@ -108,10 +109,11 @@
                     <h3>Pachet Standard</h3>
                     <span class="price-range">200 lei</span>
                     <ul>
-                        <li>Structura mai completa si mai interactiva</li>
-                        <li>Formular simplu de confirmare</li>
-                        <li>Ideal pentru majoritatea evenimentelor</li>
+                        <li>Structură completă și interactivă</li>
+                        <li>Formular RSVP simplu</li>
+                        <li>Potrivit pentru majoritatea evenimentelor</li>
                     </ul>
+                    <button class="package-tier-button" type="button" onclick="choosePackage('Standard')">Alege o invitație Standard <span>↗</span></button>
                 </article>
 
                 <article class="price-card">
@@ -119,10 +121,11 @@
                     <h3>Pachet Premium</h3>
                     <span class="price-range">250 - 400 lei</span>
                     <ul>
-                        <li>Personalizare avansata in stilul dorit</li>
-                        <li>RSVP complet, animatii si extra efecte</li>
-                        <li>Muzica de fundal si prezentare wow</li>
+                        <li>Personalizare avansată</li>
+                        <li>RSVP, animații și muzică</li>
+                        <li>Extra efecte vizuale</li>
                     </ul>
+                    <button class="package-tier-button" type="button" onclick="choosePackage('Premium')">Alege o invitație Premium <span>↗</span></button>
                 </article>
             </div>
         </section>
@@ -726,11 +729,26 @@
                 <p class="dd-eyebrow">PREVIEW INVITAȚIE</p>
                 <h2 id="galleryTitle">Invitație</h2>
                 <p id="galleryDescription"></p>
-                <div id="galleryDetails" class="gallery-details" hidden></div>
-                <p id="galleryTip" class="dd-preview-instruction">Derulează în interiorul telefonului pentru a vedea invitația completă.</p>
+                <div class="gallery-purchase" id="galleryPurchase" hidden>
+                    <label class="gallery-package-field" id="galleryPackageField" for="galleryPackageSelect">
+                        Alege pachetul
+                        <select class="package-select" id="galleryPackageSelect"></select>
+                    </label>
+                    <div class="gallery-price-row">
+                        <span>Preț</span>
+                        <strong id="galleryPrice" aria-live="polite"></strong>
+                    </div>
+                    <button type="button" id="galleryAddButton" class="dd-button dd-button-dark">
+                        Adaugă în coș <span>↗</span>
+                    </button>
+                </div>
+                <details id="galleryDetails" class="gallery-details" hidden>
+                    <summary>Detalii despre model</summary>
+                    <div id="galleryDetailsContent"></div>
+                </details>
+                <p id="galleryTip" class="dd-preview-instruction">Derulează în telefon pentru a vedea invitația completă.</p>
                 <div class="gallery-actions">
-                    <button type="button" id="galleryOrderButton" class="dd-button dd-button-dark">Vezi modelul în magazin <span>↗</span></button>
-                    <a href="cosul-meu.html" class="dd-button dd-button-outline">Mergi la coș <span>→</span></a>
+                    <a href="cosul-meu.html" class="dd-button dd-button-outline">Deschide coșul <span>→</span></a>
                 </div>
             </div>
 
@@ -947,16 +965,43 @@
             }
         };
 
+        const galleryProducts = {
+            minimalist: "minimalist-premium",
+            elegant: "elegant",
+            vintage: "wedding-times",
+            bohoChic: "boho-chic",
+            destinationTravel: "destination-travel",
+            modernBold: "modern-bold",
+            privateBoboci: "private-boboci",
+            privateClubNight: "private-club",
+            privateSignatureSoiree: "private-signature",
+            qrBlackGold: "qr-table",
+            qrBlueArch: "qr-welcome",
+            qrFloralIvory: "qr-bundle",
+            saveCastleRomance: "save-castle-romance",
+            saveReflectionEditorial: "save-reflection-editorial",
+            saveNoirMonogram: "save-noir-monogram",
+            babyPastel: "baby-pastel",
+            sweetLittleStory: "sweet-little-story",
+            littlePrincePrincess: "little-prince-princess"
+        };
+
         const galleryModal = document.getElementById("galleryModal");
         const galleryContent = galleryModal.querySelector(".dd-preview-dialog");
         const galleryTitle = document.getElementById("galleryTitle");
         const galleryDescription = document.getElementById("galleryDescription");
         const galleryDetails = document.getElementById("galleryDetails");
+        const galleryDetailsContent = document.getElementById("galleryDetailsContent");
         const galleryTip = document.getElementById("galleryTip");
         const galleryImage = document.getElementById("galleryImage");
         const galleryFrame = document.getElementById("galleryFrame");
         const galleryScroll = document.getElementById("galleryScroll");
-        const galleryOrderButton = document.getElementById("galleryOrderButton");
+        const galleryPurchase = document.getElementById("galleryPurchase");
+        const galleryPackageField = document.getElementById("galleryPackageField");
+        const galleryPackageSelect = document.getElementById("galleryPackageSelect");
+        const galleryPrice = document.getElementById("galleryPrice");
+        const galleryAddButton = document.getElementById("galleryAddButton");
+        let previousGalleryFocus = null;
 
         document.querySelectorAll(".package-chooser").forEach(function(chooser) {
             const select = chooser.querySelector(".package-select");
@@ -978,13 +1023,68 @@
                 return;
             }
 
+            previousGalleryFocus = document.activeElement;
             galleryTitle.textContent = gallery.title;
             galleryDescription.textContent = gallery.description;
-            galleryDetails.innerHTML = gallery.details || "";
+            galleryDetailsContent.innerHTML = gallery.details || "";
             galleryDetails.hidden = !gallery.details;
-            galleryTip.textContent = gallery.tip || "Derulează în interiorul telefonului pentru a vedea invitația completă, apoi revino în magazin pentru a alege pachetul.";
-            galleryOrderButton.firstChild.textContent = (gallery.buttonLabel || "Vezi modelul în magazin") + " ";
+            galleryDetails.open = false;
+            galleryTip.textContent = gallery.tip || "Derulează în telefon pentru a explora modelul. Poți selecta pachetul și comanda direct de aici.";
             galleryScroll.classList.toggle("is-image-preview", !gallery.page);
+            galleryModal.classList.toggle("has-photo-preview", !gallery.page);
+
+            const productId = galleryProducts[key];
+            const packageChooser = productId
+                ? document.querySelector('.package-chooser[data-id="' + productId + '"]')
+                : null;
+            const productCard = packageChooser
+                ? packageChooser.closest(".product-card-premium")
+                : (productId ? document.querySelector('[data-product-id="' + productId + '"]') : null);
+            const sourcePackageSelect = packageChooser
+                ? packageChooser.querySelector(".package-select")
+                : null;
+
+            galleryPurchase.hidden = !productCard;
+            galleryPackageField.hidden = !sourcePackageSelect;
+            galleryPackageSelect.innerHTML = "";
+
+            if (sourcePackageSelect) {
+                Array.from(sourcePackageSelect.options).forEach(function(option) {
+                    galleryPackageSelect.appendChild(option.cloneNode(true));
+                });
+                galleryPackageSelect.value = sourcePackageSelect.value;
+
+                function updateGalleryPackagePrice() {
+                    const selectedOption = galleryPackageSelect.options[galleryPackageSelect.selectedIndex];
+                    if (!selectedOption) return;
+                    sourcePackageSelect.value = selectedOption.value;
+                    sourcePackageSelect.dispatchEvent(new Event("change", { bubbles: true }));
+                    galleryPrice.textContent = selectedOption.value + " lei";
+                }
+
+                galleryPackageSelect.onchange = updateGalleryPackagePrice;
+                updateGalleryPackagePrice();
+            } else if (productCard) {
+                const productPrice = productCard.querySelector(".product-card-price");
+                galleryPrice.textContent = productPrice
+                    ? productPrice.textContent.trim()
+                    : (productCard.dataset.productPrice || "") + " lei";
+                galleryPackageSelect.onchange = null;
+            }
+
+            galleryAddButton.onclick = function() {
+                if (!productCard || !window.DigitalByDStore) return;
+                if (sourcePackageSelect) {
+                    sourcePackageSelect.value = galleryPackageSelect.value;
+                    sourcePackageSelect.dispatchEvent(new Event("change", { bubbles: true }));
+                    const addButton = packageChooser.querySelector(".btn-primary");
+                    if (addButton) DigitalByDStore.addConfiguredProduct(addButton);
+                } else {
+                    const addButton = productCard.querySelector(".btn-primary");
+                    if (addButton) DigitalByDStore.addSimpleProduct(addButton);
+                }
+            };
+
             if (gallery.page) {
                 galleryFrame.hidden = false;
                 galleryImage.hidden = true;
@@ -999,21 +1099,6 @@
             }
             galleryContent.scrollTop = 0;
             galleryScroll.scrollTop = 0;
-            galleryOrderButton.onclick = function() {
-                closeGallery();
-                if (gallery.anchor) {
-                    window.setTimeout(function() {
-                        const target = document.querySelector(gallery.anchor);
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: "smooth",
-                                block: "start"
-                            });
-                        }
-                    }, 40);
-                }
-            };
-
             galleryModal.classList.add("is-open");
             galleryModal.setAttribute("aria-hidden", "false");
             document.body.classList.add("dd-modal-open");
@@ -1023,13 +1108,36 @@
         function closeGallery() {
             galleryModal.classList.remove("is-open");
             galleryModal.setAttribute("aria-hidden", "true");
-            galleryDetails.innerHTML = "";
             galleryDetails.hidden = true;
+            galleryDetails.open = false;
             galleryFrame.src = "about:blank";
             galleryFrame.hidden = true;
             galleryImage.src = "";
             galleryImage.alt = "Preview complet produs";
+            galleryPurchase.hidden = true;
+            galleryDetailsContent.innerHTML = "";
+            galleryModal.classList.remove("has-photo-preview");
             document.body.classList.remove("dd-modal-open");
+            if (previousGalleryFocus && typeof previousGalleryFocus.focus === "function") {
+                previousGalleryFocus.focus();
+            }
+        }
+
+        function choosePackage(packageName) {
+            document.querySelectorAll(".package-chooser .package-select").forEach(function(select) {
+                const matchingOption = Array.from(select.options).find(function(option) {
+                    return option.dataset.package === packageName;
+                });
+                if (matchingOption) {
+                    select.value = matchingOption.value;
+                    select.dispatchEvent(new Event("change", { bubbles: true }));
+                }
+            });
+
+            const invitationSection = document.getElementById("invitatii-nunta");
+            if (invitationSection) {
+                invitationSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         }
 
         function openContact(productName) {

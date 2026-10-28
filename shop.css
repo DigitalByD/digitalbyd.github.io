@@ -11,6 +11,7 @@ body.dd-shop .shop-category-strip {
 /* Editorial category and product sections. */
 body.dd-shop .portfolio-section { scroll-margin-top: 90px; }
 body.dd-shop .category-block { border-top: 1px solid var(--line); }
+body.dd-shop .tag { color: var(--accent-dark); font-size: 8px; font-weight: 700; letter-spacing: .15em; line-height: 1.5; text-transform: uppercase; }
 body.dd-shop .category-grid,
 body.dd-shop .save-date-grid,
 body.dd-shop .planner-grid {
@@ -184,25 +185,44 @@ body.dd-shop .planner-card .card-actions { margin-top: 0; }
 
 /* Package comparison */
 body.dd-shop #pachete { padding-top: 58px; }
-body.dd-shop .price-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+body.dd-shop #pachete .dd-section-top h2 { font-size: clamp(42px, 4.4vw, 58px); }
+body.dd-shop .price-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 body.dd-shop .price-card {
-    min-height: 240px;
-    padding: 24px 23px;
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 19px 16px;
     border: 1px solid var(--line);
     background: rgba(255, 253, 250, .78);
 }
 body.dd-shop .price-card:nth-child(2) { background: #F0E5E2; }
-body.dd-shop .price-card:nth-child(3) { border-color: var(--ink); background: var(--ink); }
-body.dd-shop .price-card:nth-child(3) h3,
-body.dd-shop .price-card:nth-child(3) li,
-body.dd-shop .price-card:nth-child(3) .price-range { color: #fffdfa; }
+body.dd-shop .price-card:nth-child(3) { border-color: var(--line); background: #EEE7E1; }
+body.dd-shop .price-card:nth-child(3) .price-range { color: var(--accent-dark); }
 body.dd-shop .price-card .tag { color: var(--accent-dark); }
-body.dd-shop .price-card:nth-child(3) .tag { color: #D8C7B3; }
-body.dd-shop .price-card h3 { margin: 10px 0 3px; font-size: 29px; }
-body.dd-shop .price-range { display: block; margin-bottom: 13px; color: var(--accent-dark); font-size: 10px; font-weight: 700; }
-body.dd-shop .price-card ul { display: grid; gap: 7px; margin: 0; padding: 13px 0 0; border-top: 1px solid rgba(118, 109, 102, .22); list-style: none; }
-body.dd-shop .price-card li { position: relative; padding-left: 14px; color: var(--muted); font-size: 9px; line-height: 1.6; }
+body.dd-shop .price-card:nth-child(3) .tag { color: var(--accent-dark); }
+body.dd-shop .price-card h3 { margin: 5px 0 2px; color: var(--ink); font-family: var(--serif); font-size: 25px; font-weight: 400; line-height: 1.05; }
+body.dd-shop .price-range { display: block; margin-bottom: 9px; color: var(--accent-dark); font-size: 9px; font-weight: 700; }
+body.dd-shop .price-card ul { display: grid; gap: 5px; width: 100%; margin: 0; padding: 10px 0 0; border-top: 1px solid rgba(118, 109, 102, .22); list-style: none; }
+body.dd-shop .price-card li { position: relative; padding-left: 12px; color: var(--muted); font-size: 8px; line-height: 1.5; }
 body.dd-shop .price-card li::before { position: absolute; top: .72em; left: 0; width: 5px; height: 1px; background: var(--accent); content: ""; }
+body.dd-shop .package-tier-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 11px;
+    padding: 0 0 3px;
+    border: 0;
+    border-bottom: 1px solid #c7aeb2;
+    background: transparent;
+    color: var(--accent-dark);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .045em;
+    text-transform: uppercase;
+}
+body.dd-shop .package-tier-button:hover { border-color: var(--accent-dark); color: var(--ink); }
+body.dd-shop .package-tier-button span { font-size: 12px; }
 
 /* Matching closing invitation and custom request */
 body.dd-shop .shop-bottom-cta { text-align: center; }
@@ -235,8 +255,17 @@ body.dd-shop .custom-request-panel textarea { min-height: 100px; resize: vertica
 body.dd-shop .custom-request-panel .btn-contact { min-width: 175px; }
 
 /* The real invitation remains inside the same phone preview as the homepage. */
-body.dd-shop .gallery-details { margin: 12px 0; color: var(--muted); font-size: 10px; line-height: 1.75; }
-body.dd-shop .gallery-details p { margin: 0 0 8px; }
+body.dd-shop .gallery-purchase { display: grid; gap: 9px; margin: 16px 0 12px; }
+body.dd-shop .gallery-package-field { display: grid; gap: 5px; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+body.dd-shop .gallery-package-field[hidden] { display: none !important; }
+body.dd-shop .gallery-price-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 9px; }
+body.dd-shop .gallery-price-row strong { color: var(--accent-dark); font-family: var(--serif); font-size: 25px; font-weight: 500; line-height: 1; }
+body.dd-shop .gallery-purchase > .dd-button { width: 100%; }
+body.dd-shop .gallery-details { margin: 10px 0; color: var(--muted); font-size: 9px; line-height: 1.7; }
+body.dd-shop .gallery-details summary { width: fit-content; cursor: pointer; color: var(--accent-dark); font-size: 8px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+body.dd-shop .gallery-details[open] summary { margin-bottom: 7px; }
+body.dd-shop .gallery-details p { margin: 0 0 7px; }
+body.dd-shop #galleryModal [hidden] { display: none !important; }
 body.dd-shop #galleryModal .dd-phone-screen [hidden] { display: none !important; }
 body.dd-shop #galleryModal .dd-phone-screen iframe { background: #fff; touch-action: pan-y pinch-zoom; }
 body.dd-shop #galleryModal .dd-phone-screen.is-image-preview { overflow-y: auto; overflow-x: hidden; }
@@ -308,14 +337,40 @@ body.dd-shop .cart-toast.show { opacity: 1; transform: translateY(0); }
     body.dd-shop .planner-card { min-height: 230px; padding: 15px; }
     body.dd-shop .planner-card h3 { font-size: 20px; }
     body.dd-shop .planner-card > p { font-size: 8px; }
-    body.dd-shop #pachete .price-grid { grid-template-columns: 1fr; gap: 9px; }
-    body.dd-shop .price-card { min-height: 0; padding: 19px; }
-    body.dd-shop .price-card h3 { font-size: 26px; }
+    body.dd-shop #pachete .dd-section-top { margin-bottom: 17px; }
+    body.dd-shop #pachete .dd-section-top h2 { font-size: clamp(38px, 9vw, 47px); }
+    body.dd-shop #pachete .price-grid { grid-template-columns: 1fr; gap: 8px; }
+    body.dd-shop .price-card {
+        display: grid;
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+        grid-template-rows: auto auto auto auto;
+        align-items: center;
+        column-gap: 12px;
+        row-gap: 1px;
+        padding: 12px 14px;
+    }
+    body.dd-shop .price-card > .tag { grid-column: 1; grid-row: 1; }
+    body.dd-shop .price-card h3 { grid-column: 1; grid-row: 2; margin: 3px 0 1px; font-size: 22px; }
+    body.dd-shop .price-card .price-range { grid-column: 1; grid-row: 3; margin: 0; font-size: 9px; }
+    body.dd-shop .price-card ul {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        align-self: center;
+        gap: 4px;
+        padding: 1px 0 1px 11px;
+        border-top: 0;
+        border-left: 1px solid rgba(118, 109, 102, .22);
+    }
+    body.dd-shop .price-card li { padding-left: 10px; font-size: 7px; line-height: 1.45; }
+    body.dd-shop .price-card li::before { width: 4px; }
+    body.dd-shop .package-tier-button { grid-column: 1 / -1; grid-row: 4; margin-top: 8px; font-size: 7px; }
     body.dd-shop .custom-request-panel form { grid-template-columns: 1fr; }
     body.dd-shop .custom-request-panel form > p:nth-of-type(5),
     body.dd-shop .custom-request-panel form > p:nth-of-type(6) { grid-column: auto; }
     body.dd-shop .shop-cta-actions { align-items: stretch; flex-direction: column; }
     body.dd-shop .shop-cta-actions .dd-button { width: 100%; }
+    body.dd-shop .gallery-purchase { gap: 7px; margin: 12px 0 9px; }
+    body.dd-shop .gallery-price-row { padding: 6px 0; }
 }
 
 @media (max-width: 380px) {
@@ -333,4 +388,72 @@ body.dd-shop .cart-toast.show { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
     body.dd-shop *, body.dd-shop *::before, body.dd-shop *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+/* Static product galleries show the artwork itself; only live HTML invitations use a phone frame. */
+body.dd-shop #galleryModal.has-photo-preview .dd-preview-dialog {
+    grid-template-columns: minmax(0, 1.05fr) minmax(260px, .95fr);
+    gap: clamp(24px, 5vw, 56px);
+}
+
+body.dd-shop #galleryModal.has-photo-preview .dd-phone {
+    width: 100%;
+    max-width: 390px;
+    margin-inline: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body.dd-shop #galleryModal.has-photo-preview .dd-phone-speaker,
+body.dd-shop #galleryModal.has-photo-preview .dd-phone-home {
+    display: none;
+}
+
+body.dd-shop #galleryModal.has-photo-preview .dd-phone-screen {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: min(68dvh, 640px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 0;
+    background: transparent;
+    touch-action: pan-y pinch-zoom;
+    -webkit-overflow-scrolling: touch;
+}
+
+body.dd-shop #galleryModal.has-photo-preview .dd-phone-screen.is-image-preview img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0;
+    object-fit: contain;
+}
+
+@media (max-width: 800px) {
+    body.dd-shop #galleryModal.has-photo-preview .dd-preview-dialog {
+        grid-template-columns: minmax(0, 1fr);
+        align-content: start;
+        gap: 14px;
+    }
+
+    body.dd-shop #galleryModal.has-photo-preview .dd-preview-copy {
+        order: 2;
+    }
+
+    body.dd-shop #galleryModal.has-photo-preview .dd-phone {
+        order: 1;
+        width: min(100%, 390px);
+        max-width: 390px;
+        justify-self: center;
+    }
+
+    body.dd-shop #galleryModal.has-photo-preview .dd-phone-screen {
+        max-height: min(43dvh, 360px);
+    }
 }

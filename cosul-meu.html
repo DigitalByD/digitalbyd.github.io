@@ -3,73 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosul meu | DigitalByD Studio</title>
-    <meta name="description" content="Cosul de comanda DigitalByD pentru invitatii digitale, produse QR, save the date si pachete de eveniment.">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Coșul meu | DigitalByD Studio</title>
+    <meta name="description" content="Revizuiește produsele alese și trimite comanda ta către DigitalByD Studio.">
+    <meta name="theme-color" content="#F8F5F0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
-<body>
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="brand-mark" aria-label="DigitalByD Studio home">
-                <img src="img/logo.png" alt="DigitalByD Studio Logo" class="logo">
+<body class="dd-home dd-cart-page">
+    <header class="dd-header">
+        <div class="dd-nav">
+            <a href="index.html" class="dd-brand" aria-label="DigitalByD Studio - Acasă">
+                <span class="dd-brand-main">digital<span>by</span>d</span>
+                <span class="dd-brand-sub">INVITATION STUDIO</span>
             </a>
 
-            <input type="checkbox" id="menu-toggle" aria-label="Deschide meniul">
-            <div class="header-actions">
-                <a href="cosul-meu.html" class="mobile-cart-link" data-cart-link aria-label="Cosul meu">
-                    <span class="mobile-cart-label">Cos</span>
-                    <span class="cart-count is-empty" data-cart-count>0</span>
-                </a>
-                <label for="menu-toggle" class="menu-icon">&#9776;</label>
-            </div>
+            <button class="dd-menu-toggle" id="menuToggle" type="button"
+                    aria-label="Deschide meniul" aria-expanded="false" aria-controls="mainNav">
+                <span></span><span></span>
+            </button>
 
-            <nav class="nav-links" aria-label="Meniu principal">
-                <a href="index.html">Acasa</a>
+            <nav class="dd-nav-links" id="mainNav" aria-label="Navigare principală">
+                <a href="index.html">Acasă</a>
                 <a href="shop.html">Magazin</a>
-                <a href="cosul-meu.html" class="active cart-link" data-cart-link>Cosul meu <span class="cart-count is-empty" data-cart-count>0</span></a>
+                <a href="cosul-meu.html" class="dd-cart-link is-active" data-cart-link aria-current="page">
+                    Coș <span class="cart-count is-empty" data-cart-count>0</span>
+                </a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="portfolio-hero" aria-labelledby="cart-title">
-            <p class="section-kicker">Cosul meu</p>
-            <h1 id="cart-title">Aici se aduna comanda si de aici incepe confirmarea</h1>
-            <p class="compact-lead">
-                Aici vezi sumarul comenzii, completezi datele si trimiti cererea.
-                Dupa trimitere vei ajunge la pagina de confirmare, iar apoi vei fi contactat pentru plata si restul detaliilor.
-            </p>
+        <section class="dd-cart-intro" aria-labelledby="cart-title">
+            <div class="dd-cart-intro-copy">
+                <p class="dd-eyebrow">DIGITALBYD STUDIO · COMANDA TA</p>
+                <h1 id="cart-title">Coșul tău.<br><em>Pasul spre o zi specială.</em></h1>
+                <p>Verifică produsele alese și lasă-ne detaliile pentru personalizare. Revenim cu confirmarea și pașii următori.</p>
+            </div>
+            <div class="dd-cart-next-step">
+                <span class="dd-cart-next-label">CE URMEAZĂ</span>
+                <div class="dd-cart-step-line" aria-hidden="true"><span></span><i></i></div>
+                <div class="dd-cart-step-copy">
+                    <span><strong>01</strong> Comanda ta</span>
+                    <span><strong>02</strong> Confirmare și detalii</span>
+                </div>
+                <p>Primești răspuns pe email sau telefon pentru plata și pregătirea comenzii.</p>
+            </div>
         </section>
 
-        <section class="portfolio-section">
-            <div class="cart-layout">
-                <div class="cart-panel">
-                    <div class="cart-summary">
+        <section class="dd-cart-content" aria-label="Produse și datele comenzii">
+            <div class="dd-cart-layout">
+                <section class="dd-cart-panel" aria-labelledby="cart-products-title">
+                    <div class="dd-cart-panel-head">
                         <div>
-                            <p class="section-kicker">Produsele alese</p>
-                            <h2>Cosul de comanda</h2>
-                            <p data-cart-items-count>0 produse</p>
+                            <p class="dd-eyebrow">SELECȚIA TA</p>
+                            <h2 id="cart-products-title">Produse alese</h2>
+                            <p class="dd-cart-count" data-cart-items-count>0 produse</p>
                         </div>
-                        <button class="btn-secondary" type="button" data-clear-cart onclick="DigitalByDStore.clearCart()">Goleste cosul</button>
+                        <button class="dd-cart-clear" type="button" data-clear-cart
+                                onclick="DigitalByDStore.clearCart()">Golește coșul</button>
                     </div>
 
-                    <div class="cart-empty" data-cart-empty>
-                        Cosul este gol momentan. Intoarce-te in <a href="shop.html">magazin</a> si adauga produsele dorite.
+                    <div class="dd-cart-empty" data-cart-empty>
+                        <span class="dd-cart-empty-mark" aria-hidden="true">D.</span>
+                        <h3>Coșul tău este încă gol.</h3>
+                        <p>Alege modelul care vi se potrivește, apoi îl poți personaliza aici.</p>
+                        <a class="dd-button dd-button-dark" href="shop.html">Descoperă magazinul <span>↗</span></a>
                     </div>
 
-                    <div class="cart-items-list" data-cart-items></div>
-                </div>
+                    <div class="cart-items-list" data-cart-items aria-live="polite"></div>
 
-                <aside class="checkout-panel">
-                    <p class="section-kicker">Checkout</p>
-                    <h2>Trimite comanda</h2>
-                    <p>Dupa trimitere vei vedea rezumatul comenzii, iar apoi vei fi contactat pentru plata si stabilirea ultimelor detalii.</p>
+                    <a class="dd-cart-continue" href="shop.html"><span aria-hidden="true">←</span> Înapoi la magazin</a>
+                </section>
 
-                    <div class="checkout-total">
-                        <span>Subtotal comanda</span>
-                        <strong data-cart-subtotal>0 lei</strong>
-                        <span>Total de plata: <span data-cart-total>0 lei</span></span>
+                <aside class="dd-checkout-panel" aria-labelledby="checkout-title">
+                    <p class="dd-eyebrow">ULTIMUL PAS</p>
+                    <h2 id="checkout-title">Trimite comanda</h2>
+                    <p class="dd-checkout-intro">Completează datele de contact. Comanda ajunge la noi, iar noi revenim pentru confirmare.</p>
+
+                    <div class="dd-cart-total">
+                        <span>Subtotal produse</span>
+                        <strong class="dd-cart-subtotal" data-cart-subtotal>0 lei</strong>
+                        <span class="dd-cart-total-final">Total estimativ</span>
+                        <strong data-cart-total>0 lei</strong>
+                        <small>Prețurile finale și detaliile de livrare le confirmăm împreună.</small>
                     </div>
 
                     <form action="https://formsubmit.co/digitalbyd@yahoo.com" method="POST" data-checkout-form>
@@ -82,61 +101,78 @@
                         <input type="hidden" name="order-total" value="">
                         <input type="hidden" name="order-count" value="">
 
-                        <p>
-                            <label>Numele complet
-                                <input type="text" name="name" required>
-                            </label>
-                        </p>
-
-                        <p>
-                            <label>Email
-                                <input type="email" name="email" required>
-                            </label>
-                        </p>
-
-                        <p>
-                            <label>Telefon
-                                <input type="tel" name="phone" required placeholder="Ex: 07xx xxx xxx">
-                            </label>
-                        </p>
-
-                        <p>
-                            <label>Tip eveniment
-                                <select name="event-type" required>
-                                    <option value="Nunta">Nunta</option>
+                        <div class="dd-checkout-fields">
+                            <p class="dd-field">
+                                <label for="customer-name">Numele complet <span>*</span></label>
+                                <input id="customer-name" type="text" name="name" autocomplete="name" required>
+                            </p>
+                            <p class="dd-field">
+                                <label for="customer-email">Email <span>*</span></label>
+                                <input id="customer-email" type="email" name="email" autocomplete="email" required>
+                            </p>
+                            <p class="dd-field">
+                                <label for="customer-phone">Telefon <span>*</span></label>
+                                <input id="customer-phone" type="tel" name="phone" autocomplete="tel" placeholder="Ex.: 07xx xxx xxx" required>
+                            </p>
+                            <p class="dd-field">
+                                <label for="event-type">Tipul evenimentului <span>*</span></label>
+                                <select id="event-type" name="event-type" required>
+                                    <option value="Nunta">Nuntă</option>
                                     <option value="Botez">Botez</option>
                                     <option value="Eveniment privat">Eveniment privat</option>
                                     <option value="Save the Date">Save the Date</option>
                                     <option value="Wedding Planner">Wedding Planner</option>
                                 </select>
-                            </label>
-                        </p>
+                            </p>
+                            <p class="dd-field dd-field-wide">
+                                <label for="event-date">Data evenimentului</label>
+                                <input id="event-date" type="text" name="event-date" placeholder="Ex.: 14 iunie 2026">
+                            </p>
+                            <p class="dd-field dd-field-wide">
+                                <label for="order-message">Mesaj sau preferințe</label>
+                                <textarea id="order-message" name="message" rows="3" placeholder="Modelul dorit, culori, nume, locație sau alte detalii utile."></textarea>
+                            </p>
+                        </div>
 
-                        <p>
-                            <label>Data evenimentului
-                                <input type="text" name="event-date" placeholder="Ex: 14 iunie 2026">
-                            </label>
-                        </p>
-
-                        <p>
-                            <label>Mesaj / preferinte
-                                <textarea name="message" placeholder="Modelul dorit, culori, nume, locatie, orice detaliu important."></textarea>
-                            </label>
-                        </p>
-
-                        <p>
-                            <button class="btn-contact" type="submit" data-cart-submit>Trimite comanda</button>
-                        </p>
+                        <button class="dd-checkout-submit" type="submit" data-cart-submit>
+                            Trimite comanda <span aria-hidden="true">↗</span>
+                        </button>
+                        <p class="dd-checkout-note">Fără plată online acum. Te contactăm pentru confirmare și detalii.</p>
                     </form>
                 </aside>
             </div>
         </section>
     </main>
 
-    <footer>
-        &copy; 2026 DigitalByD Studio - Toate drepturile rezervate
+    <footer class="dd-footer">
+        <a href="index.html" class="dd-footer-brand">digital<span>by</span>d</a>
+        <span>Invitații digitale pentru momente speciale.</span>
+        <span>© 2026 DigitalByD Studio</span>
     </footer>
 
     <script src="storefront.js"></script>
+    <script>
+        (function() {
+            const menuToggle = document.getElementById("menuToggle");
+            const mainNav = document.getElementById("mainNav");
+            if (!menuToggle || !mainNav) return;
+
+            function closeMenu() {
+                mainNav.classList.remove("is-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Deschide meniul");
+            }
+
+            menuToggle.addEventListener("click", function() {
+                const isOpen = mainNav.classList.toggle("is-open");
+                menuToggle.setAttribute("aria-expanded", String(isOpen));
+                menuToggle.setAttribute("aria-label", isOpen ? "Închide meniul" : "Deschide meniul");
+            });
+
+            mainNav.querySelectorAll("a").forEach(function(link) {
+                link.addEventListener("click", closeMenu);
+            });
+        })();
+    </script>
 </body>
 </html>
