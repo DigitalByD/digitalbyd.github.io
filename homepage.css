@@ -923,6 +923,23 @@ body.dd-home .dd-honeypot {
     clip-path: inset(50%);
 }
 
+body.dd-home .dd-email-result {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-left: 2px solid var(--accent);
+    background: var(--soft-rose);
+    color: var(--ink);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+body.dd-home .dd-email-result[hidden] { display: none !important; }
+body.dd-home .dd-email-result.is-error {
+    border-left-color: var(--accent-dark);
+    background: #f5e9e7;
+    color: var(--accent-dark);
+}
+
 /* TABLETĂ */
 
 @media (max-width: 1000px) {

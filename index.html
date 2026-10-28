@@ -66,7 +66,7 @@
 
             <div class="dd-hero-actions">
                 <a href="shop.html" class="dd-button dd-button-dark">
-                    Explorează colecția <span>↗</span>
+                    Explorează colecția <span>↗︎</span>
                 </a>
 
                 <button type="button" class="dd-button dd-button-text"
@@ -109,9 +109,9 @@
     <!-- CATEGORII -->
     <section class="dd-category-strip" aria-label="Categorii">
         <span class="dd-strip-label">DESCOPERĂ</span>
-        <a href="shop.html#invitatii-nunta">Nuntă <span>↗</span></a>
-        <a href="shop.html#invitatii-botez">Botez <span>↗</span></a>
-        <a href="shop.html#qr-uri">QR pentru amintiri <span>↗</span></a>
+        <a href="shop.html#invitatii-nunta">Nuntă <span>↗︎</span></a>
+        <a href="shop.html#invitatii-botez">Botez <span>↗︎</span></a>
+        <a href="shop.html#qr-uri">QR pentru amintiri <span>↗︎</span></a>
         <a href="shop.html" class="dd-strip-all">Tot magazinul <span>→</span></a>
     </section>
 
@@ -129,7 +129,7 @@
                     fiecare detaliu contează.
                 </p>
                 <a href="shop.html" class="dd-underlined-link">
-                    Vezi toate modelele <span>↗</span>
+                    Vezi toate modelele <span>↗︎</span>
                 </a>
             </div>
         </div>
@@ -141,7 +141,7 @@
                 <span class="dd-product-image dd-product-image-large">
                     <img src="img/invitatii/elegant-preview.png"
                          alt="Preview invitație Elegant" loading="lazy">
-                    <span class="dd-view-label">VEZI INVITAȚIA ↗</span>
+                    <span class="dd-view-label">VEZI INVITAȚIA ↗︎</span>
                 </span>
                 <span class="dd-product-details">
                     <span class="dd-product-category">01 / NUNTĂ</span>
@@ -154,7 +154,7 @@
                 <span class="dd-product-image dd-image-lilac">
                     <img src="img/invitatii/minimalist-premium-preview.png"
                          alt="Preview invitație Minimalist Premium" loading="lazy">
-                    <span class="dd-view-label">VEZI INVITAȚIA ↗</span>
+                    <span class="dd-view-label">VEZI INVITAȚIA ↗︎</span>
                 </span>
                 <span class="dd-product-details">
                     <span class="dd-product-category">02 / NUNTĂ</span>
@@ -167,7 +167,7 @@
                 <span class="dd-product-image dd-image-sand">
                     <img src="img/invitatii/vintage-premium-preview.png"
                          alt="Preview invitație The Wedding Times" loading="lazy">
-                    <span class="dd-view-label">VEZI INVITAȚIA ↗</span>
+                    <span class="dd-view-label">VEZI INVITAȚIA ↗︎</span>
                 </span>
                 <span class="dd-product-details">
                     <span class="dd-product-category">03 / EDITORIAL</span>
@@ -180,7 +180,7 @@
                 <span class="dd-product-image dd-image-rose">
                     <img src="img/invitatii/baby-pastel-preview.png"
                          alt="Preview invitație Baby Pastel" loading="lazy">
-                    <span class="dd-view-label">VEZI INVITAȚIA ↗</span>
+                    <span class="dd-view-label">VEZI INVITAȚIA ↗︎</span>
                 </span>
                 <span class="dd-product-details">
                     <span class="dd-product-category">04 / BOTEZ</span>
@@ -193,7 +193,7 @@
         <div class="dd-collection-footer">
             <span>COLECȚIA DIGITALBYD</span>
             <a href="shop.html" class="dd-button dd-button-outline">
-                Explorează magazinul <span>↗</span>
+                Explorează magazinul <span>↗︎</span>
             </a>
         </div>
     </section>
@@ -208,7 +208,7 @@
         </p>
         <button type="button" class="dd-button dd-button-light"
                 onclick="openContact('Invitatie digitala personalizata')">
-            Cere o invitație personalizată <span>↗</span>
+            Cere o invitație personalizată <span>↗︎</span>
         </button>
     </section>
 
@@ -244,7 +244,7 @@
 
             <button type="button" id="galleryOrderButton"
                     class="dd-button dd-button-dark">
-                Vezi modelul în magazin <span>↗</span>
+                Vezi modelul în magazin <span>↗︎</span>
             </button>
         </div>
 
@@ -277,14 +277,14 @@
             Completează câteva detalii și spune-ne ce ai în minte.
         </p>
 
-        <!-- Formularul Netlify funcționează doar dacă site-ul este găzduit pe Netlify. -->
-        <form name="contact" method="POST" data-netlify="true"
-              netlify-honeypot="bot-field">
-
-            <input type="hidden" name="form-name" value="contact">
+        <form name="contact" action="https://formsubmit.co/digitalbyd@yahoo.com"
+              method="POST" data-email-form>
+            <input type="hidden" name="_subject" value="Cerere personalizată DigitalByD">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
             <p class="dd-honeypot">
                 <label>Nu completa acest câmp
-                    <input name="bot-field">
+                    <input name="_honey" autocomplete="off" tabindex="-1">
                 </label>
             </p>
 
@@ -302,6 +302,7 @@
                 <option value="QR pentru poze si videoclipuri">QR pentru amintiri</option>
                 <option value="Alt produs digital">Alt produs digital</option>
                 <option value="Pachet personalizat">Pachet personalizat</option>
+                <option value="Feedback despre site">Spune-ne ce părere ai</option>
             </select>
 
             <label for="eventDate">Data evenimentului (opțional)</label>
@@ -314,9 +315,10 @@
                       required></textarea>
 
             <button class="dd-button dd-button-dark dd-submit" type="submit">
-                Trimite cererea <span>↗</span>
+                Trimite cererea <span>↗︎</span>
             </button>
         </form>
+        <div class="dd-email-result" data-email-result hidden role="status" aria-live="polite"></div>
     </div>
 </div>
 

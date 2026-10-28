@@ -1,6 +1,7 @@
 (function() {
     const CART_KEY = "digitalbyd-cart";
     const ORDER_KEY = "digitalbyd-last-order";
+    const EMAIL_ENDPOINT = "https://formsubmit.co/ajax/digitalbyd@yahoo.com";
 
     function loadCart() {
         try {
@@ -286,7 +287,7 @@
             checkoutNote.setAttribute("role", "status");
         }
 
-        form.addEventListener("submit", function(event) {
+        form.addEventListener("submit", async function(event) {
             const cart = loadCart();
 
             if (!cart.length) {
@@ -303,6 +304,8 @@
                 return;
             }
 
+            event.preventDefault();
+
             const summary = buildOrderSummary(cart);
             const total = getCartTotal();
             const nameField = form.querySelector('input[name="name"]');
@@ -311,6 +314,8 @@
             const eventTypeField = form.querySelector('select[name="event-type"]');
             const eventDateField = form.querySelector('input[name="event-date"]');
             const notesField = form.querySelector('textarea[name="message"]');
+            const submitButton = form.querySelector("[data-cart-submit]");
+            const successPanel = document.querySelector("[data-checkout-success]");
 
             form.querySelector('textarea[name="order-summary"]').value = summary;
             form.querySelector('input[name="order-total"]').value = formatPrice(total);
@@ -328,6 +333,136 @@
                     notes: notesField ? notesField.value : ""
                 }
             }));
+
+            const originalButtonContent = submitButton ? submitButton.innerHTML : "";
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.setAttribute("aria-busy", "true");
+                submitButton.innerHTML = "Se trimite comanda…";
+            }
+            if (checkoutNote) checkoutNote.classList.remove("is-error");
+
+            const successCopy = successPanel
+                ? successPanel.querySelector("[data-checkout-success-copy]")
+                : null;
+            if (successPanel) {
+                form.hidden = true;
+                successPanel.hidden = false;
+                if (successCopy) {
+                    successCopy.textContent = "Comanda ta se trimite acum. Te vom contacta în următoarele 1–2 zile pe email sau telefon pentru confirmare și detaliile personalizării.";
+                }
+                successPanel.focus({ preventScroll: true });
+                successPanel.scrollIntoView({ block: "center" });
+            } else if (checkoutNote) {
+                checkoutNote.textContent = "Comanda ta se trimite acum. Te vom contacta în următoarele 1–2 zile.";
+                checkoutNote.setAttribute("role", "status");
+            }
+
+            try {
+                const response = await fetch(EMAIL_ENDPOINT, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+                    keepalive: true
+                });
+                const result = await response.json();
+
+                if (!response.ok || result.success === false || String(result.success).toLowerCase() === "false") {
+                    throw new Error(result.message || "Trimiterea nu a fost confirmată.");
+                }
+
+                if (successPanel) {
+                    if (successCopy) {
+                        successCopy.textContent = "Comanda ta a fost trimisă. Te vom contacta în următoarele 1–2 zile pe email sau telefon pentru confirmare și detaliile personalizării.";
+                    }
+                }
+            } catch (error) {
+                if (successPanel) successPanel.hidden = true;
+                form.hidden = false;
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.removeAttribute("aria-busy");
+                    submitButton.innerHTML = originalButtonContent;
+                }
+                if (checkoutNote) {
+                    checkoutNote.textContent = "Nu am putut confirma trimiterea. Verifică conexiunea și încearcă din nou sau contactează-ne direct.";
+                    checkoutNote.classList.add("is-error");
+                    checkoutNote.setAttribute("role", "alert");
+                }
+            }
+        });
+    }
+
+    function bindEmailForms() {
+        document.querySelectorAll("form[data-email-form]").forEach(function(form) {
+            const resultPanel = form.nextElementSibling && form.nextElementSibling.matches("[data-email-result]")
+                ? form.nextElementSibling
+                : null;
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault();
+
+                if (window.location.protocol === "file:") {
+                    if (resultPanel) {
+                        resultPanel.hidden = false;
+                        resultPanel.classList.add("is-error");
+                        resultPanel.textContent = "Pentru a trimite mesajul, deschide site-ul prin Live Server sau prin adresa lui publică, nu direct din fișierul HTML.";
+                    }
+                    return;
+                }
+
+                const formPayload = Object.fromEntries(new FormData(form).entries());
+                const originalButtonContent = submitButton ? submitButton.innerHTML : "";
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.setAttribute("aria-busy", "true");
+                    submitButton.textContent = "Se trimite…";
+                }
+
+                if (resultPanel) {
+                    resultPanel.hidden = false;
+                    resultPanel.classList.remove("is-error");
+                    resultPanel.textContent = "Mulțumim! Cererea ta se trimite acum. Revenim în cel mai scurt timp.";
+                    form.hidden = true;
+                }
+
+                try {
+                    const response = await fetch(EMAIL_ENDPOINT, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify(formPayload),
+                        keepalive: true
+                    });
+                    const responseData = await response.json();
+
+                    if (!response.ok || responseData.success === false || String(responseData.success).toLowerCase() === "false") {
+                        throw new Error(responseData.message || "Trimiterea nu a fost confirmată.");
+                    }
+
+                    if (resultPanel) {
+                        resultPanel.textContent = "Cererea ta a fost trimisă cu succes. Te vom contacta în cel mai scurt timp.";
+                    }
+                } catch (error) {
+                    if (resultPanel) {
+                        resultPanel.hidden = false;
+                        resultPanel.classList.add("is-error");
+                        resultPanel.textContent = "Nu am putut confirma trimiterea. Verifică datele și conexiunea, apoi încearcă din nou.";
+                    }
+                    form.hidden = false;
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.removeAttribute("aria-busy");
+                        submitButton.innerHTML = originalButtonContent;
+                    }
+                }
+            });
         });
     }
 
@@ -402,6 +537,7 @@
         renderCartBadges();
         renderCartPage();
         bindCheckoutForm();
+        bindEmailForms();
         renderPaymentPage();
     });
 
