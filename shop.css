@@ -9,7 +9,10 @@ body.dd-shop .shop-category-strip {
 }
 
 /* Editorial category and product sections. */
-body.dd-shop .portfolio-section { scroll-margin-top: 90px; }
+body.dd-shop .portfolio-section {
+    scroll-margin-top: 90px;
+    padding-block: 50px;
+}
 body.dd-shop .category-block { border-top: 1px solid var(--line); }
 body.dd-shop .tag { color: var(--accent-dark); font-size: 9px; font-weight: 700; letter-spacing: .15em; line-height: 1.5; text-transform: uppercase; }
 body.dd-shop .category-grid,
@@ -184,7 +187,7 @@ body.dd-shop .planner-price { margin-top: auto; }
 body.dd-shop .planner-card .card-actions { margin-top: 0; }
 
 /* Package comparison */
-body.dd-shop #pachete { padding-top: 58px; }
+body.dd-shop #pachete { padding-top: 38px; }
 body.dd-shop #pachete .dd-section-top h2 { font-size: calc(clamp(42px, 4.4vw, 58px) + 1px); }
 body.dd-shop .price-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 body.dd-shop .price-card {
@@ -388,6 +391,11 @@ body.dd-shop .cart-toast.show { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
     body.dd-shop *, body.dd-shop *::before, body.dd-shop *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+@media (max-width: 700px) {
+    body.dd-shop .portfolio-section { padding-block: 36px; }
+    body.dd-shop #pachete { padding-top: 26px; }
 }
 
 /* Static product galleries show the artwork itself; only live HTML invitations use a phone frame. */
