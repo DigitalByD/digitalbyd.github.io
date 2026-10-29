@@ -1,7 +1,7 @@
 (function() {
     const CART_KEY = "digitalbyd-cart";
     const ORDER_KEY = "digitalbyd-last-order";
-    const EMAIL_ENDPOINT = "https://formsubmit.co/ajax/digitalbyd@yahoo.com";
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvkkqonk";
 
     function loadCart() {
         try {
@@ -22,6 +22,32 @@
             currency: "RON",
             maximumFractionDigits: 0
         }).format(value);
+    }
+
+    async function sendFormspree(form, formData) {
+        const response = await fetch(form.action || FORMSPREE_ENDPOINT, {
+            method: "POST",
+            headers: {
+                "Accept": "application/json"
+            },
+            body: formData || new FormData(form)
+        });
+
+        let result = null;
+        try {
+            result = await response.json();
+        } catch (error) {
+            // A successful non-JSON response is still a successful submission.
+        }
+
+        if (!response.ok) {
+            const formErrors = result && Array.isArray(result.errors)
+                ? result.errors.map(function(item) { return item.message; }).filter(Boolean).join(" ")
+                : "";
+            throw new Error(formErrors || "Trimiterea nu a fost acceptată de Formspree.");
+        }
+
+        return result;
     }
 
     function getCartCount() {
@@ -254,30 +280,12 @@
         }
     }
 
-    function setCheckoutTargets(form) {
-        const nextField = form.querySelector('input[name="_next"]');
-        const urlField = form.querySelector('input[name="_url"]');
-        const isServedPage = window.location.protocol === "http:" || window.location.protocol === "https:";
-
-        if (urlField) {
-            urlField.value = isServedPage ? window.location.href : "";
-        }
-
-        if (nextField) {
-            nextField.value = isServedPage
-                ? new URL("plata.html", window.location.href).href
-                : "";
-        }
-    }
-
     function bindCheckoutForm() {
         const form = document.querySelector("[data-checkout-form]");
 
         if (!form) {
             return;
         }
-
-        setCheckoutTargets(form);
 
         const checkoutNote = form.querySelector(".dd-checkout-note");
         const openedFromFile = window.location.protocol === "file:";
@@ -320,6 +328,7 @@
             form.querySelector('textarea[name="order-summary"]').value = summary;
             form.querySelector('input[name="order-total"]').value = formatPrice(total);
             form.querySelector('input[name="order-count"]').value = String(getCartCount());
+            const formData = new FormData(form);
 
             localStorage.setItem(ORDER_KEY, JSON.stringify({
                 items: cart,
@@ -359,20 +368,7 @@
             }
 
             try {
-                const response = await fetch(EMAIL_ENDPOINT, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
-                    },
-                    body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
-                    keepalive: true
-                });
-                const result = await response.json();
-
-                if (!response.ok || result.success === false || String(result.success).toLowerCase() === "false") {
-                    throw new Error(result.message || "Trimiterea nu a fost confirmată.");
-                }
+                await sendFormspree(form, formData);
 
                 if (successPanel) {
                     if (successCopy) {
@@ -397,19 +393,6 @@
     }
 
     function bindEmailForms() {
-        const frameName = "digitalbydEmailTarget";
-        let submitFrame = document.querySelector('iframe[name="' + frameName + '"]');
-
-        if (!submitFrame) {
-            submitFrame = document.createElement("iframe");
-            submitFrame.name = frameName;
-            submitFrame.title = "Trimitere cerere";
-            submitFrame.hidden = true;
-            submitFrame.setAttribute("aria-hidden", "true");
-            submitFrame.style.display = "none";
-            document.body.appendChild(submitFrame);
-        }
-
         document.querySelectorAll("form[data-email-form]").forEach(function(form) {
             const resultPanel = form.nextElementSibling && form.nextElementSibling.matches("[data-email-result]")
                 ? form.nextElementSibling
@@ -417,7 +400,7 @@
             const submitButton = form.querySelector('button[type="submit"]');
             const originalButtonContent = submitButton ? submitButton.innerHTML : "";
 
-            form.addEventListener("submit", function(event) {
+            form.addEventListener("submit", async function(event) {
                 event.preventDefault();
 
                 if (window.location.protocol === "file:") {
@@ -429,9 +412,11 @@
                     return;
                 }
 
+                const formData = new FormData(form);
                 if (submitButton) {
                     submitButton.disabled = true;
                     submitButton.setAttribute("aria-busy", "true");
+                    submitButton.textContent = "Se trimite…";
                 }
 
                 if (resultPanel) {
@@ -442,13 +427,15 @@
                 }
 
                 try {
-                    form.target = frameName;
-                    form.submit();
+                    await sendFormspree(form, formData);
+                    if (resultPanel) {
+                        resultPanel.textContent = "Cererea ta a fost trimisă cu succes. Te vom contacta în cel mai scurt timp.";
+                    }
                 } catch (error) {
                     if (resultPanel) {
                         resultPanel.hidden = false;
                         resultPanel.classList.add("is-error");
-                        resultPanel.textContent = "Nu am putut trimite cererea. Verifică datele și încearcă din nou.";
+                        resultPanel.textContent = "Nu am putut confirma trimiterea. Verifică datele și conexiunea, apoi încearcă din nou.";
                     }
                     form.hidden = false;
                     if (submitButton) {
