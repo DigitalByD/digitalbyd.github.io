@@ -1,9 +1,5 @@
 /* Shop extensions for the shared DigitalByD editorial design system. */
 
-body.dd-shop .shop-hero .dd-hero-copy { max-width: 560px; }
-body.dd-shop .shop-hero .dd-hero-text { max-width: 385px; }
-body.dd-shop .shop-hero .dd-hero-image { cursor: default; }
-body.dd-shop .shop-hero .dd-hero-image:hover { border-color: var(--paper); }
 body.dd-shop .shop-category-strip {
     grid-template-columns: .65fr repeat(7, minmax(0, 1fr));
 }
