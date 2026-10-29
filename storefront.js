@@ -397,13 +397,27 @@
     }
 
     function bindEmailForms() {
+        const frameName = "digitalbydEmailTarget";
+        let submitFrame = document.querySelector('iframe[name="' + frameName + '"]');
+
+        if (!submitFrame) {
+            submitFrame = document.createElement("iframe");
+            submitFrame.name = frameName;
+            submitFrame.title = "Trimitere cerere";
+            submitFrame.hidden = true;
+            submitFrame.setAttribute("aria-hidden", "true");
+            submitFrame.style.display = "none";
+            document.body.appendChild(submitFrame);
+        }
+
         document.querySelectorAll("form[data-email-form]").forEach(function(form) {
             const resultPanel = form.nextElementSibling && form.nextElementSibling.matches("[data-email-result]")
                 ? form.nextElementSibling
                 : null;
             const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonContent = submitButton ? submitButton.innerHTML : "";
 
-            form.addEventListener("submit", async function(event) {
+            form.addEventListener("submit", function(event) {
                 event.preventDefault();
 
                 if (window.location.protocol === "file:") {
@@ -415,12 +429,9 @@
                     return;
                 }
 
-                const formPayload = Object.fromEntries(new FormData(form).entries());
-                const originalButtonContent = submitButton ? submitButton.innerHTML : "";
                 if (submitButton) {
                     submitButton.disabled = true;
                     submitButton.setAttribute("aria-busy", "true");
-                    submitButton.textContent = "Se trimite…";
                 }
 
                 if (resultPanel) {
@@ -431,29 +442,13 @@
                 }
 
                 try {
-                    const response = await fetch(EMAIL_ENDPOINT, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-                            "Accept": "application/json"
-                        },
-                        body: new URLSearchParams(formPayload).toString(),
-                        keepalive: true
-                    });
-                    const responseData = await response.json();
-
-                    if (!response.ok || responseData.success === false || String(responseData.success).toLowerCase() === "false") {
-                        throw new Error(responseData.message || "Trimiterea nu a fost confirmată.");
-                    }
-
-                    if (resultPanel) {
-                        resultPanel.textContent = "Cererea ta a fost trimisă cu succes. Te vom contacta în cel mai scurt timp.";
-                    }
+                    form.target = frameName;
+                    form.submit();
                 } catch (error) {
                     if (resultPanel) {
                         resultPanel.hidden = false;
                         resultPanel.classList.add("is-error");
-                        resultPanel.textContent = "Nu am putut confirma trimiterea. Verifică datele și conexiunea, apoi încearcă din nou.";
+                        resultPanel.textContent = "Nu am putut trimite cererea. Verifică datele și încearcă din nou.";
                     }
                     form.hidden = false;
                     if (submitButton) {

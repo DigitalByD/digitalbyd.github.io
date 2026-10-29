@@ -1902,3 +1902,22 @@ body.dd-home .dd-phone-screen iframe {
         min-height: 210px;
     }
 }
+
+/* The homepage hero no longer includes the editorial image panel. */
+body.dd-home:not(.dd-shop) .dd-hero {
+    display: flex;
+    min-height: min(640px, calc(100svh - 86px));
+    align-items: center;
+    padding: clamp(44px, 8vw, 96px) 0;
+}
+
+body.dd-home:not(.dd-shop) .dd-hero-copy {
+    max-width: 700px;
+}
+
+@media (max-width: 800px) {
+    body.dd-home:not(.dd-shop) .dd-hero {
+        min-height: auto;
+        padding: 42px 0;
+    }
+}
