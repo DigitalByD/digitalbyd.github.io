@@ -314,24 +314,8 @@ body.dd-home .dd-hero-visual {
 body.dd-home .dd-hero-visual::before {
     content: "";
     position: absolute;
-    inset: 42px 10px 14px 45px;
+    inset: 10px 10px 14px 45px;
     background: var(--soft-rose);
-}
-
-body.dd-home .dd-hero-visual-label {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    right: 0;
-    left: 45px;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #d8c8c7;
-    color: var(--accent-dark);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: .14em;
 }
 
 body.dd-home .dd-hero-image {
@@ -355,7 +339,7 @@ body.dd-home .dd-hero-image img {
 
 body.dd-home .dd-hero-image-main {
     z-index: 2;
-    top: 55px;
+    top: 25px;
     left: 15%;
     width: 55%;
     height: 420px;
@@ -1145,16 +1129,11 @@ body.dd-home .dd-email-result.is-error {
     }
 
     body.dd-home .dd-hero-visual::before {
-        inset: 33px 0 5px 25px;
-    }
-
-    body.dd-home .dd-hero-visual-label {
-        left: 25px;
-        font-size: 8px;
+        inset: 10px 0 5px 25px;
     }
 
     body.dd-home .dd-hero-image-main {
-        top: 45px;
+        top: 20px;
         left: 12%;
         width: 57%;
         height: 300px;
@@ -1450,17 +1429,8 @@ body.dd-home .dd-hero-visual {
 }
 
 body.dd-home .dd-hero-visual::before {
-    inset: 34px 0 10px 66px;
+    inset: 10px 0 10px 66px;
     background: linear-gradient(132deg, #D8C7B3 0%, #E6D9CD 58%, #EEE4DE 100%);
-}
-
-body.dd-home .dd-hero-visual-label {
-    left: 66px;
-    padding-bottom: 9px;
-    border-color: #D8C7B3;
-    color: var(--accent-dark);
-    font-size: 8px;
-    letter-spacing: .19em;
 }
 
 body.dd-home .dd-hero-image {
@@ -1469,7 +1439,7 @@ body.dd-home .dd-hero-image {
 }
 
 body.dd-home .dd-hero-image-main {
-    top: 48px;
+    top: 22px;
     left: 17%;
     width: 48%;
     height: 397px;

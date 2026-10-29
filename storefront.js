@@ -434,10 +434,10 @@
                     const response = await fetch(EMAIL_ENDPOINT, {
                         method: "POST",
                         headers: {
-                            "Content-Type": "application/json",
+                            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
                             "Accept": "application/json"
                         },
-                        body: JSON.stringify(formPayload),
+                        body: new URLSearchParams(formPayload).toString(),
                         keepalive: true
                     });
                     const responseData = await response.json();

@@ -82,11 +82,6 @@
         </div>
 
         <div class="dd-hero-visual">
-            <div class="dd-hero-visual-label">
-                <span>THE ART OF INVITING</span>
-                <span>01 / 04</span>
-            </div>
-
             <button class="dd-hero-image dd-hero-image-main"
                     type="button" onclick="openGallery('elegant')"
                     aria-label="Vezi invitația Elegant">
@@ -282,11 +277,7 @@
             <input type="hidden" name="_subject" value="Cerere personalizată DigitalByD">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
-            <p class="dd-honeypot">
-                <label>Nu completa acest câmp
-                    <input name="_honey" autocomplete="off" tabindex="-1">
-                </label>
-            </p>
+            <input type="text" name="_honey" hidden autocomplete="off" tabindex="-1" aria-hidden="true">
 
             <label for="contactName">Numele tău</label>
             <input id="contactName" name="name" type="text"
