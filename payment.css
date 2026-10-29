@@ -17,14 +17,14 @@ body.dd-home.dd-payment-page .dd-payment-hero-copy { max-width: 720px; }
 body.dd-home.dd-payment-page .dd-payment-hero-copy .dd-eyebrow { margin-bottom: 16px; }
 body.dd-home.dd-payment-page .dd-payment-hero h1 {
     margin: 0 0 14px;
-    font-size: clamp(52px, 6.4vw, 80px);
+    font-size: calc(clamp(52px, 6.4vw, 80px) + 1px);
     line-height: .96;
 }
 body.dd-home.dd-payment-page .dd-payment-hero-copy > p:last-child {
     max-width: 510px;
     margin: 0;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.85;
 }
 
@@ -45,14 +45,14 @@ body.dd-home.dd-payment-page .dd-payment-check {
     border: 1px solid #cbb2ae;
     border-radius: 50%;
     color: var(--accent-dark);
-    font-size: 17px;
+    font-size: 18px;
 }
 body.dd-home.dd-payment-page .dd-payment-confirmation-label,
 body.dd-home.dd-payment-page .dd-payment-next-label {
     display: block;
     margin: 0 0 7px;
     color: var(--accent-dark);
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: .15em;
 }
@@ -60,14 +60,14 @@ body.dd-home.dd-payment-page .dd-payment-confirmation strong {
     display: block;
     color: var(--ink);
     font-family: var(--serif);
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 500;
     line-height: 1.15;
 }
 body.dd-home.dd-payment-page .dd-payment-confirmation p {
     margin: 6px 0 0;
     color: var(--muted);
-    font-size: 9px;
+    font-size: 10px;
 }
 
 body.dd-home.dd-payment-page .dd-payment-content { padding: 34px 0 88px; }
@@ -86,7 +86,7 @@ body.dd-home.dd-payment-page .dd-payment-panel {
 body.dd-home.dd-payment-page .dd-payment-panel > .dd-eyebrow { margin: 0 0 8px; }
 body.dd-home.dd-payment-page .dd-payment-panel h2 {
     margin: 0;
-    font-size: clamp(30px, 3.2vw, 38px);
+    font-size: calc(clamp(30px, 3.2vw, 38px) + 1px);
     line-height: 1.08;
 }
 body.dd-home.dd-payment-page .dd-payment-total {
@@ -95,7 +95,7 @@ body.dd-home.dd-payment-page .dd-payment-total {
     border-bottom: 1px solid var(--line);
     color: var(--accent-dark);
     font-family: var(--serif);
-    font-size: 37px;
+    font-size: 38px;
     font-weight: 500;
     line-height: 1;
 }
@@ -111,18 +111,18 @@ body.dd-home.dd-payment-page .payment-line {
 body.dd-home.dd-payment-page .payment-line strong {
     color: var(--ink);
     font-family: var(--serif);
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
 }
 body.dd-home.dd-payment-page .payment-line span {
     flex: 0 0 auto;
     color: var(--muted);
-    font-size: 9px;
+    font-size: 10px;
 }
 body.dd-home.dd-payment-page .payment-empty {
     margin: 12px 0 0;
     color: var(--muted);
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.7;
 }
 
@@ -141,7 +141,7 @@ body.dd-home.dd-payment-page .dd-payment-details > div {
 body.dd-home.dd-payment-page .dd-payment-details dt {
     margin-bottom: 3px;
     color: var(--muted);
-    font-size: 7px;
+    font-size: 8px;
     font-weight: 700;
     letter-spacing: .12em;
     text-transform: uppercase;
@@ -150,7 +150,7 @@ body.dd-home.dd-payment-page .dd-payment-details dd {
     overflow-wrap: anywhere;
     margin: 0;
     color: var(--ink);
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 600;
 }
 
@@ -162,7 +162,7 @@ body.dd-home.dd-payment-page .dd-payment-next {
 body.dd-home.dd-payment-page .dd-payment-next > p {
     margin: 0 0 10px;
     color: var(--muted);
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.7;
 }
 body.dd-home.dd-payment-page .dd-payment-next-status {
@@ -171,7 +171,7 @@ body.dd-home.dd-payment-page .dd-payment-next-status {
     border-left: 2px solid var(--accent);
     background: rgba(255, 254, 250, .75);
     color: var(--ink);
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1.6;
 }
 body.dd-home.dd-payment-page .dd-payment-steps {
@@ -190,16 +190,16 @@ body.dd-home.dd-payment-page .dd-payment-steps li {
 body.dd-home.dd-payment-page .dd-payment-steps li > span {
     color: var(--accent-dark);
     font-family: var(--serif);
-    font-size: 15px;
+    font-size: 16px;
 }
 body.dd-home.dd-payment-page .dd-payment-steps strong {
     color: var(--ink);
-    font-size: 9px;
+    font-size: 10px;
 }
 body.dd-home.dd-payment-page .dd-payment-steps p {
     margin: 2px 0 0;
     color: var(--muted);
-    font-size: 8px;
+    font-size: 9px;
     line-height: 1.6;
 }
 body.dd-home.dd-payment-page .dd-payment-actions {
@@ -208,8 +208,8 @@ body.dd-home.dd-payment-page .dd-payment-actions {
     gap: 17px;
     margin-top: 18px;
 }
-body.dd-home.dd-payment-page .dd-payment-actions .dd-button { min-height: 43px; padding-inline: 15px; font-size: 8px; }
-body.dd-home.dd-payment-page .dd-payment-actions .dd-underlined-link { font-size: 9px; }
+body.dd-home.dd-payment-page .dd-payment-actions .dd-button { min-height: 43px; padding-inline: 15px; font-size: 9px; }
+body.dd-home.dd-payment-page .dd-payment-actions .dd-underlined-link { font-size: 10px; }
 body.dd-home.dd-payment-page .dd-footer { border-top: 1px solid var(--line); }
 
 @media (max-width: 850px) {
@@ -227,13 +227,13 @@ body.dd-home.dd-payment-page .dd-footer { border-top: 1px solid var(--line); }
     body.dd-home.dd-payment-page .dd-payment-hero,
     body.dd-home.dd-payment-page .dd-payment-content { width: calc(100% - 36px); }
     body.dd-home.dd-payment-page .dd-payment-hero { grid-template-columns: 1fr; gap: 19px; padding: 44px 0 26px; }
-    body.dd-home.dd-payment-page .dd-payment-hero h1 { font-size: clamp(49px, 12vw, 65px); }
-    body.dd-home.dd-payment-page .dd-payment-hero-copy > p:last-child { font-size: 10px; }
+    body.dd-home.dd-payment-page .dd-payment-hero h1 { font-size: calc(clamp(49px, 12vw, 65px) + 1px); }
+    body.dd-home.dd-payment-page .dd-payment-hero-copy > p:last-child { font-size: 11px; }
     body.dd-home.dd-payment-page .dd-payment-confirmation { padding: 16px; }
     body.dd-home.dd-payment-page .dd-payment-content { padding: 19px 0 55px; }
     body.dd-home.dd-payment-page .dd-payment-grid { grid-template-columns: 1fr; gap: 13px; }
     body.dd-home.dd-payment-page .dd-payment-panel { padding: 20px 16px; }
-    body.dd-home.dd-payment-page .dd-payment-panel h2 { font-size: 32px; }
+    body.dd-home.dd-payment-page .dd-payment-panel h2 { font-size: 33px; }
 }
 
 @media (max-width: 380px) {
